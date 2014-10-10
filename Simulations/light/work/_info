@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+dD:\altera\14.0
+Elight
+Z0 w1412846161
+Z1 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z2 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z3 dD:\altera\Simulations\light
+Z4 8D:/altera/Projects/Light/light.vhd
+Z5 FD:/altera/Projects/Light/light.vhd
+l0
+L4
+V?f?PF>X_3UQagX2I8ILeO1
+Z6 OV;C;10.1e;51
+32
+Z7 !s108 1412847824.676000
+Z8 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/altera/Projects/Light/light.vhd|
+Z9 !s107 D:/altera/Projects/Light/light.vhd|
+Z10 o-work work -2002 -explicit -O0
+Z11 tExplicit 1
+!s100 FMTEhX]`12BA7^DU]o:8j3
+!i10b 1
+Alogicfunction
+R1
+R2
+DEx4 work 5 light 0 22 ?f?PF>X_3UQagX2I8ILeO1
+l11
+L10
+VUFYUgc@8I2k76ReeF0fU^2
+!s100 E7;gC^hgE42DaikFNIU3n3
+R6
+32
+R7
+R8
+R9
+R10
+R11
+!i10b 1
+Elightvhd
+Z12 w1412847826
+R1
+R2
+R3
+Z13 8D:/altera/Simulations/light/lightVHD.vhd
+Z14 FD:/altera/Simulations/light/lightVHD.vhd
+l0
+L5
+VCWXAJQJ3LgVCS_jg]08Y01
+!s100 mW<E5hW:kQ@FPgCZc_0[03
+R6
+32
+!i10b 1
+Z15 !s108 1412847826.171000
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/altera/Simulations/light/lightVHD.vhd|
+Z17 !s107 D:/altera/Simulations/light/lightVHD.vhd|
+R10
+R11
+Abehav
+R1
+R2
+DEx4 work 8 lightvhd 0 22 CWXAJQJ3LgVCS_jg]08Y01
+l20
+L8
+VLBUdkM]9I1aBzSl];G?Vm0
+!s100 NnXz[522T:VSi6P0FNn1f3
+R6
+32
+!i10b 1
+R15
+R16
+R17
+R10
+R11

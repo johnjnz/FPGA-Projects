@@ -1,0 +1,17 @@
+D:/altera/Simulations/light/lightVHD.vhd {1 {vcom -work work -2002 -explicit D:/altera/Simulations/light/lightVHD.vhd
+Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity lightVHD
+-- Compiling architecture behav of lightVHD
+
+} {} {}} D:/altera/Projects/Light/light.vhd {1 {vcom -work work -2002 -explicit D:/altera/Projects/Light/light.vhd
+Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity light
+-- Compiling architecture LogicFunction of light
+
+} {} {}}
