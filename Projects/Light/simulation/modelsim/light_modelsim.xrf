@@ -1,6 +1,7 @@
 vendor_name = ModelSim
-source_file = 1, D:/altera/Projects/Light/light.vhd
-source_file = 1, D:/altera/Projects/Light/db/light.cbx.xml
+source_file = 1, D:/altera/FPGA-Projects/Projects/Light/light.vhd
+source_file = 1, D:/altera/FPGA-Projects/Projects/Light/output_files/Chain3.cdf
+source_file = 1, D:/altera/FPGA-Projects/Projects/Light/db/light.cbx.xml
 source_file = 1, d:/altera/14.0/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, d:/altera/14.0/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, d:/altera/14.0/quartus/libraries/vhdl/ieee/timing_b.vhd
