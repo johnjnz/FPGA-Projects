@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\altera\FPGA-Projects\Projects\de2_clock\simulation\modelsim
+Pseven_segment_display
+Z1 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z2 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+w1413275452
+Z3 dD:\altera\FPGA-Projects\Projects\de2_clock\simulation\modelsim
+8D:/altera/FPGA-Projects/Projects/de2_clock/seven_segment_display.vhd
+FD:/altera/FPGA-Projects/Projects/de2_clock/seven_segment_display.vhd
+l0
+L5
+VX<hz]ZA36A@DdUSdB<[;81
+!s100 8oLPgG_V89MU[MnCaXTL52
+Z4 OV;C;10.1e;51
+31
+b1
+!i10b 1
+!s108 1413277172.603000
+!s90 -reportprogress|300|-93|-work|work|D:/altera/FPGA-Projects/Projects/de2_clock/seven_segment_display.vhd|
+!s107 D:/altera/FPGA-Projects/Projects/de2_clock/seven_segment_display.vhd|
+o-93 -work work -O0
+Z5 tExplicit 1

@@ -1,0 +1,52 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\altera\FPGA-Projects\Projects\de2_clock\simulation\modelsim
+Ede2_clock
+Z1 w1413277346
+Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 CE7YSQM=5ad5d^n]:Q:9f3
+Z3 DPx10 cycloneive 21 cycloneive_components 0 22 JAkmF1XdfP?@oZmn1^fRY1
+Z4 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
+Z5 DPx6 altera 11 dffeas_pack 0 22 klZmljF1h?BL:ijbbhd9K3
+Z6 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
+Z7 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z8 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z9 DPx6 altera 28 altera_primitives_components 0 22 1>Z<UM25THDV12FN?5hLo0
+Z10 dD:\altera\FPGA-Projects\Projects\de2_clock\simulation\modelsim
+Z11 8DE2_Clock_7_1200mv_85c_slow.vho
+Z12 FDE2_Clock_7_1200mv_85c_slow.vho
+l0
+L37
+VimSi74FF<OR:mcmo0Fb[80
+!s100 ;k3iaUK?dzS[FdDGYJA<f2
+Z13 OV;C;10.1e;51
+31
+!i10b 1
+Z14 !s108 1413277380.445000
+Z15 !s90 -reportprogress|300|-93|-work|work|DE2_Clock_7_1200mv_85c_slow.vho|
+Z16 !s107 DE2_Clock_7_1200mv_85c_slow.vho|
+Z17 o-93 -work work -O0
+Z18 tExplicit 1
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 9 de2_clock 0 22 imSi74FF<OR:mcmo0Fb[80
+l608
+L145
+Vl5HFWaT:k7h2K@=XS9CQa3
+!s100 A0H;3`MkHni]1kZRj[C812
+R13
+31
+!i10b 1
+R14
+R15
+R16
+R17
+R18
