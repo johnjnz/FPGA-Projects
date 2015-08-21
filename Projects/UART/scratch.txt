@@ -1,0 +1,27 @@
+							if( clk_count = (clk_freq * 20)) then
+								lcd_enable <= '1';
+								lcd_bus <= "0000000001";
+							elsif ( clk_count = (clk_freq * 50) ) then
+								lcd_enable <= '1';
+								lcd_bus <= "10" & TXD_STRING(cmd_index);
+								cmd_index := cmd_index + 1;
+							elsif ( clk_count = (clk_freq * 100)) then
+								lcd_enable <= '1';
+								lcd_bus <= "10" & TXD_STRING(cmd_index);
+								cmd_index := cmd_index + 1;
+							elsif ( clk_count = (clk_freq * 150)) then
+								lcd_enable <= '1';
+								lcd_bus <= "10" & TXD_STRING(cmd_index);
+								cmd_index := cmd_index + 1;
+							elsif ( clk_count = (clk_freq * 200)) then
+								lcd_enable <= '1';
+								lcd_bus <= "10" & TXD_STRING(cmd_index);
+								cmd_index := cmd_index + 1;
+							elsif ( clk_count = (clk_freq * 250)) then
+								lcd_enable <= '1';
+								lcd_bus <= "10" & TXD_STRING(cmd_index);
+								cmd_index := cmd_index + 1;
+							elsif ( clk_count = (clk_freq * 300)) then
+								lcd_enable <= '1';
+								lcd_bus <= "10" & TXD_STRING(cmd_index);
+							end if;

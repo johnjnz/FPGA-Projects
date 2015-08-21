@@ -1,0 +1,241 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\altera\FPGA-Projects\Projects\UART\simulation\modelsim
+Elcd_controller
+Z1 w1414203335
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dD:\altera\FPGA-Projects\Projects\UART\simulation\modelsim
+Z5 8D:/altera/FPGA-Projects/Projects/UART/lcd_controller.vhd
+Z6 FD:/altera/FPGA-Projects/Projects/UART/lcd_controller.vhd
+l0
+L31
+V;Gkn6Zz@A3jF0cfo>4Xd=3
+Z7 OV;C;10.1e;51
+31
+Z8 !s108 1414308091.043000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/altera/FPGA-Projects/Projects/UART/lcd_controller.vhd|
+Z10 !s107 D:/altera/FPGA-Projects/Projects/UART/lcd_controller.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 ^Y1l<6IhN7:EHJS:gWG`42
+!i10b 1
+Amain
+R2
+R3
+Z13 DEx4 work 14 lcd_controller 0 22 ;Gkn6Zz@A3jF0cfo>4Xd=3
+l48
+L44
+V4n0=m18_QUUSgSzR_cDj92
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 5^QOU7>l1ioi6kicW2D4S3
+!i10b 1
+Elcd_controller_tb
+Z14 w1414319175
+R2
+R3
+R4
+Z15 8D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/lcd_contoller_tb.vhd
+Z16 FD:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/lcd_contoller_tb.vhd
+l0
+L4
+VVND57XnZZB`c1LeO?L9M90
+!s100 C59JYXhaR0oC_b?VK7NO53
+R7
+32
+!i10b 1
+Z17 !s108 1414319179.615000
+Z18 !s90 -reportprogress|300|-work|work|D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/lcd_contoller_tb.vhd|
+Z19 !s107 D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/lcd_contoller_tb.vhd|
+Z20 o-work work -O0
+R12
+Abehavior
+R13
+R2
+R3
+Z21 DEx4 work 17 lcd_controller_tb 0 22 VND57XnZZB`c1LeO?L9M90
+l21
+L9
+Z22 VC_f[QVmWbMc>B1i`BazIe3
+Z23 !s100 2Aholb4QacZX2NO@K_55k2
+R7
+32
+!i10b 1
+R17
+R18
+R19
+R20
+R12
+Clcd_controller_tb_behavior_cfg
+abehavior
+elcd_controller_tb
+R13
+DAx4 work 17 lcd_controller_tb 8 behavior 22 C_f[QVmWbMc>B1i`BazIe3
+R2
+R3
+R21
+R14
+R4
+R15
+R16
+l0
+L81
+Vnm__bF]dEg>nTR0EFOXW=0
+!s100 ohaAVJ@GBAFFR2X>GjP`S3
+R7
+32
+!i10b 0
+R17
+R18
+R19
+R20
+R12
+Erx
+Z24 w1414133849
+Z25 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R2
+R3
+R4
+Z26 8D:/altera/FPGA-Projects/Projects/UART/RX.vhd
+Z27 FD:/altera/FPGA-Projects/Projects/UART/RX.vhd
+l0
+L5
+VMj^Bo2[Y[:T@`TA:<DbQk2
+R7
+31
+Z28 !s108 1414308091.253000
+Z29 !s90 -reportprogress|300|-93|-work|work|D:/altera/FPGA-Projects/Projects/UART/RX.vhd|
+Z30 !s107 D:/altera/FPGA-Projects/Projects/UART/RX.vhd|
+R11
+R12
+!s100 ;]E6nO4hG580U_nzhk^i:1
+!i10b 1
+Amain
+R25
+R2
+R3
+DEx4 work 2 rx 0 22 Mj^Bo2[Y[:T@`TA:<DbQk2
+l24
+L17
+VEd8B>bP6X3N4o^>IjmUT02
+R7
+31
+R28
+R29
+R30
+R11
+R12
+!s100 L4_`AbG2O5SHe3@m@QOeX2
+!i10b 1
+Etx
+Z31 w1414133936
+R25
+R2
+R3
+R4
+Z32 8D:/altera/FPGA-Projects/Projects/UART/TX.vhd
+Z33 FD:/altera/FPGA-Projects/Projects/UART/TX.vhd
+l0
+L5
+V5>4[oH^lW1219PVfA:mDi2
+R7
+31
+Z34 !s108 1414308091.101000
+Z35 !s90 -reportprogress|300|-93|-work|work|D:/altera/FPGA-Projects/Projects/UART/TX.vhd|
+Z36 !s107 D:/altera/FPGA-Projects/Projects/UART/TX.vhd|
+R11
+R12
+!s100 09=nQNNo?b_VFQIFVaYBR3
+!i10b 1
+Amain
+R25
+R2
+R3
+DEx4 work 2 tx 0 22 5>4[oH^lW1219PVfA:mDi2
+l23
+L16
+Vl9AeX;alNB8Zb<FbF6eLR3
+R7
+31
+R34
+R35
+R36
+R11
+R12
+!s100 Sgk5WjK<OgcDaT^hnNI@P0
+!i10b 1
+Euart
+Z37 w1414314564
+Z38 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 CE7YSQM=5ad5d^n]:Q:9f3
+Z39 DPx10 cycloneive 21 cycloneive_components 0 22 JAkmF1XdfP?@oZmn1^fRY1
+Z40 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
+Z41 DPx6 altera 11 dffeas_pack 0 22 klZmljF1h?BL:ijbbhd9K3
+Z42 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
+R2
+R3
+Z43 DPx6 altera 28 altera_primitives_components 0 22 1>Z<UM25THDV12FN?5hLo0
+R4
+Z44 8D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/UART.vho
+Z45 FD:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/UART.vho
+l0
+L37
+VBd=AiXn39N9O]G8X0EQ:o3
+R7
+32
+Z46 !s108 1414314834.741000
+Z47 !s90 -reportprogress|300|-work|work|D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/UART.vho|
+Z48 !s107 D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/UART.vho|
+R20
+R12
+!s100 D[DDY2dd3Z5A9_gRhAWhZ1
+!i10b 1
+Astructure
+R38
+R39
+R40
+R41
+R42
+R2
+R3
+R43
+DEx4 work 4 uart 0 22 Bd=AiXn39N9O]G8X0EQ:o3
+l668
+L104
+V56c7[YeBmT0A8VASN?F[d2
+R7
+32
+R46
+R47
+R48
+R20
+R12
+!s100 X8OPcKDA3dn65?^5cQ?8b0
+!i10b 1
+Amain
+R25
+R2
+R3
+DEx4 work 4 uart 0 22 zWT9jQ2Lkc:<Q5IbBKnFh3
+l83
+L29
+V8nkffkI;0;SnDR3k^nkCn0
+R7
+31
+R11
+R12
+FD:/altera/FPGA-Projects/Projects/UART/UART.vhd
+w1414306860
+8D:/altera/FPGA-Projects/Projects/UART/UART.vhd
+!s108 1414308091.164000
+!s90 -reportprogress|300|-93|-work|work|D:/altera/FPGA-Projects/Projects/UART/UART.vhd|
+!s107 D:/altera/FPGA-Projects/Projects/UART/UART.vhd|
+!s100 17fR280<AIM_Ao5[A=7[g1
+!i10b 1

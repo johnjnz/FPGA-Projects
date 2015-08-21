@@ -1,0 +1,24 @@
+m255
+K3
+13
+cModel Technology
+dD:\altera\FPGA-Projects\Projects\UART\simulation\modelsim
+Elcd_controller_tb
+w1414307995
+Z0 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z1 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+dD:\altera\FPGA-Projects\Simulations
+8D:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd
+FD:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd
+l0
+L4
+VXnjHHYj99_VFHC16PkM872
+!s100 C59JYXhaR0oC_b?VK7NO53
+Z2 OV;C;10.1e;51
+32
+!i10b 1
+!s108 1414308032.592000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|D:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd|
+!s107 D:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd|
+o-work work -2002 -explicit -O0
+Z3 tExplicit 1

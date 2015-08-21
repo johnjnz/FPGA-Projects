@@ -1,0 +1,21 @@
+D:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd {0 {vcom -work work -2002 -explicit D:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd
+Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity lcd_controller_tb
+-- Compiling architecture behavior of lcd_controller_tb
+** Error: (vcom-11) Could not find work.lcd_controller.
+
+** Error: D:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd(23): (vcom-1195) Cannot find expanded name "work.lcd_controller".
+
+** Error: D:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd(23): Unknown expanded name.
+** Warning: [4] D:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd(48): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Error: D:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd(48): (vcom-1136) Unknown identifier "lk".
+
+** Error: D:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd(48): No feasible entries for infix operator "=".
+** Error: D:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd(48): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+** Warning: [2] D:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd(48): Wait statement has no sensitivity list or time out clause.
+** Error: D:/altera/FPGA-Projects/Simulations/lcd_controller_tb/lcd_controller_db.vhd(51): VHDL Compiler exiting
+
+} {8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 18.0 19.0 20.0} {}}

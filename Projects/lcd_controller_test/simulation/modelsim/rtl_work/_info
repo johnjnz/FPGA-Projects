@@ -1,0 +1,110 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\altera\FPGA-Projects\Projects\lcd_controller_test\simulation\modelsim
+Elcd_controller
+Z1 w1413366163
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dD:\altera\FPGA-Projects\Projects\lcd_controller_test\simulation\modelsim
+Z5 8D:/altera/FPGA-Projects/Projects/lcd_controller_test/lcd_controller.vhd
+Z6 FD:/altera/FPGA-Projects/Projects/lcd_controller_test/lcd_controller.vhd
+l0
+L51
+VgZb[9GjgOSH]m=K<]:8U<3
+Z7 OV;C;10.1e;51
+31
+Z8 !s108 1413504434.289000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/altera/FPGA-Projects/Projects/lcd_controller_test/lcd_controller.vhd|
+Z10 !s107 D:/altera/FPGA-Projects/Projects/lcd_controller_test/lcd_controller.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 ^LCjFjoX6A8QJFW[7DIV71
+!i10b 1
+Acontroller
+R2
+R3
+DEx4 work 14 lcd_controller 0 22 gZb[9GjgOSH]m=K<]:8U<3
+l66
+L62
+Vc9k7`_4I18lMn5i6<dnhM1
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 l`3RIT0Q^;<NSDSame`g[1
+!i10b 1
+Elcd_controller_test
+Z13 w1413504179
+R2
+R3
+R4
+Z14 8D:/altera/FPGA-Projects/Projects/lcd_controller_test/lcd_controller_test.vhd
+Z15 FD:/altera/FPGA-Projects/Projects/lcd_controller_test/lcd_controller_test.vhd
+l0
+L29
+V;0UPMzD@c9CmG9kTI=]R72
+R7
+31
+Z16 !s108 1413504434.209000
+Z17 !s90 -reportprogress|300|-93|-work|work|D:/altera/FPGA-Projects/Projects/lcd_controller_test/lcd_controller_test.vhd|
+Z18 !s107 D:/altera/FPGA-Projects/Projects/lcd_controller_test/lcd_controller_test.vhd|
+R11
+R12
+!s100 Xk=ieV19FOD<Z>20WMNY?3
+!i10b 1
+Abehavior
+R2
+R3
+DEx4 work 19 lcd_controller_test 0 22 ;0UPMzD@c9CmG9kTI=]R72
+l73
+L42
+V:k5ZeW_8UmdV>enmQk3R_0
+R7
+31
+R16
+R17
+R18
+R11
+R12
+!s100 3gSFnUPJ0AG_U5Wj`HMAf2
+!i10b 1
+Equadraturedecoderports
+Z19 w1413493791
+R2
+R3
+R4
+Z20 8D:/altera/FPGA-Projects/Projects/lcd_controller_test/QuadratureDecoder.vhd
+Z21 FD:/altera/FPGA-Projects/Projects/lcd_controller_test/QuadratureDecoder.vhd
+l0
+L9
+VLi[Qzaf>KVgYbH9FCiVFn0
+!s100 H6:eEeB<i^V>^f`fa]a7h3
+R7
+31
+!i10b 1
+Z22 !s108 1413504434.350000
+Z23 !s90 -reportprogress|300|-93|-work|work|D:/altera/FPGA-Projects/Projects/lcd_controller_test/QuadratureDecoder.vhd|
+Z24 !s107 D:/altera/FPGA-Projects/Projects/lcd_controller_test/QuadratureDecoder.vhd|
+R11
+R12
+Aquadraturedecoder
+R2
+R3
+DEx4 work 22 quadraturedecoderports 0 22 Li[Qzaf>KVgYbH9FCiVFn0
+l55
+L20
+VeZ_SHMgLQMKRie8N8LCKh1
+!s100 NA[b7I;m?_9JcY];`AeXd0
+R7
+31
+!i10b 1
+R22
+R23
+R24
+R11
+R12

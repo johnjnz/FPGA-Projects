@@ -1,0 +1,52 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\altera\FPGA-Projects\Projects\UART\simulation\modelsim
+Euart
+Z1 w1414192245
+Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 CE7YSQM=5ad5d^n]:Q:9f3
+Z3 DPx10 cycloneive 21 cycloneive_components 0 22 JAkmF1XdfP?@oZmn1^fRY1
+Z4 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
+Z5 DPx6 altera 11 dffeas_pack 0 22 klZmljF1h?BL:ijbbhd9K3
+Z6 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
+Z7 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z8 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z9 DPx6 altera 28 altera_primitives_components 0 22 1>Z<UM25THDV12FN?5hLo0
+Z10 dD:\altera\FPGA-Projects\Projects\UART\simulation\modelsim
+Z11 8UART_7_1200mv_0c_slow.vho
+Z12 FUART_7_1200mv_0c_slow.vho
+l0
+L37
+VMnc>kk2mJha^6Vk3R;a;O2
+!s100 Kng]UmVUGeJIfbbDcYiQ;0
+Z13 OV;C;10.1e;51
+31
+!i10b 1
+Z14 !s108 1414193156.896000
+Z15 !s90 -reportprogress|300|-93|-work|work|UART_7_1200mv_0c_slow.vho|
+Z16 !s107 UART_7_1200mv_0c_slow.vho|
+Z17 o-93 -work work -O0
+Z18 tExplicit 1
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 4 uart 0 22 Mnc>kk2mJha^6Vk3R;a;O2
+l586
+L104
+V2KbTm7^ZYB[WA0TAN?h;V1
+!s100 J:AgBamih8^VC73eFV5al0
+R13
+31
+!i10b 1
+R14
+R15
+R16
+R17
+R18

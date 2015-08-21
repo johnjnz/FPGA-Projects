@@ -1,0 +1,51 @@
+# Reading D:/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do lcd_controller_test_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {D:/altera/FPGA-Projects/Projects/lcd_controller_test/lcd_controller_test.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity lcd_controller_test
+# -- Compiling architecture behavior of lcd_controller_test
+# vcom -93 -work work {D:/altera/FPGA-Projects/Projects/lcd_controller_test/lcd_controller.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity lcd_controller
+# -- Compiling architecture controller of lcd_controller
+# vcom -93 -work work {D:/altera/FPGA-Projects/Projects/lcd_controller_test/QuadratureDecoder.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity QuadratureDecoderPorts
+# -- Compiling architecture QuadratureDecoder of QuadratureDecoderPorts
+# 
+vsim work.lcd_controller_test
+# vsim work.lcd_controller_test 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.lcd_controller_test(behavior)
+# Loading work.lcd_controller(controller)
+# Loading work.quadraturedecoderports(quadraturedecoder)
+add wave -position insertpoint sim:/lcd_controller_test/*
+run 3us
+run 10us
+run 2s
+# Invalid time value: 2s
+run 2secs
+# Invalid time value: 2secs
+run 1000ms
+run 1000ms

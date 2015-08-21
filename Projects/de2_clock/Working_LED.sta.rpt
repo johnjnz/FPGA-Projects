@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Working_LED
-Wed Oct 15 18:09:54 2014
+Thu Aug 20 22:53:48 2015
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -9,91 +9,92 @@ Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
   1. Legal Notice
   2. TimeQuest Timing Analyzer Summary
   3. Parallel Compilation
-  4. Clocks
-  5. Slow 1200mV 85C Model Fmax Summary
-  6. Timing Closure Recommendations
-  7. Slow 1200mV 85C Model Setup Summary
-  8. Slow 1200mV 85C Model Hold Summary
-  9. Slow 1200mV 85C Model Recovery Summary
- 10. Slow 1200mV 85C Model Removal Summary
- 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
- 12. Slow 1200mV 85C Model Setup: 'clk_10Hz'
- 13. Slow 1200mV 85C Model Setup: 'clk_50Mhz'
- 14. Slow 1200mV 85C Model Setup: 'clk_400Hz'
- 15. Slow 1200mV 85C Model Hold: 'clk_50Mhz'
- 16. Slow 1200mV 85C Model Hold: 'clk_400Hz'
- 17. Slow 1200mV 85C Model Hold: 'clk_10Hz'
- 18. Slow 1200mV 85C Model Minimum Pulse Width: 'clk_50Mhz'
- 19. Slow 1200mV 85C Model Minimum Pulse Width: 'clk_10Hz'
- 20. Slow 1200mV 85C Model Minimum Pulse Width: 'clk_400Hz'
- 21. Setup Times
- 22. Hold Times
- 23. Clock to Output Times
- 24. Minimum Clock to Output Times
- 25. Propagation Delay
- 26. Minimum Propagation Delay
- 27. Slow 1200mV 85C Model Metastability Report
- 28. Slow 1200mV 0C Model Fmax Summary
- 29. Slow 1200mV 0C Model Setup Summary
- 30. Slow 1200mV 0C Model Hold Summary
- 31. Slow 1200mV 0C Model Recovery Summary
- 32. Slow 1200mV 0C Model Removal Summary
- 33. Slow 1200mV 0C Model Minimum Pulse Width Summary
- 34. Slow 1200mV 0C Model Setup: 'clk_10Hz'
- 35. Slow 1200mV 0C Model Setup: 'clk_50Mhz'
- 36. Slow 1200mV 0C Model Setup: 'clk_400Hz'
- 37. Slow 1200mV 0C Model Hold: 'clk_50Mhz'
- 38. Slow 1200mV 0C Model Hold: 'clk_400Hz'
- 39. Slow 1200mV 0C Model Hold: 'clk_10Hz'
- 40. Slow 1200mV 0C Model Minimum Pulse Width: 'clk_50Mhz'
- 41. Slow 1200mV 0C Model Minimum Pulse Width: 'clk_10Hz'
- 42. Slow 1200mV 0C Model Minimum Pulse Width: 'clk_400Hz'
- 43. Setup Times
- 44. Hold Times
- 45. Clock to Output Times
- 46. Minimum Clock to Output Times
- 47. Propagation Delay
- 48. Minimum Propagation Delay
- 49. Slow 1200mV 0C Model Metastability Report
- 50. Fast 1200mV 0C Model Setup Summary
- 51. Fast 1200mV 0C Model Hold Summary
- 52. Fast 1200mV 0C Model Recovery Summary
- 53. Fast 1200mV 0C Model Removal Summary
- 54. Fast 1200mV 0C Model Minimum Pulse Width Summary
- 55. Fast 1200mV 0C Model Setup: 'clk_10Hz'
- 56. Fast 1200mV 0C Model Setup: 'clk_50Mhz'
- 57. Fast 1200mV 0C Model Setup: 'clk_400Hz'
- 58. Fast 1200mV 0C Model Hold: 'clk_50Mhz'
- 59. Fast 1200mV 0C Model Hold: 'clk_400Hz'
- 60. Fast 1200mV 0C Model Hold: 'clk_10Hz'
- 61. Fast 1200mV 0C Model Minimum Pulse Width: 'clk_50Mhz'
- 62. Fast 1200mV 0C Model Minimum Pulse Width: 'clk_10Hz'
- 63. Fast 1200mV 0C Model Minimum Pulse Width: 'clk_400Hz'
- 64. Setup Times
- 65. Hold Times
- 66. Clock to Output Times
- 67. Minimum Clock to Output Times
- 68. Propagation Delay
- 69. Minimum Propagation Delay
- 70. Fast 1200mV 0C Model Metastability Report
- 71. Multicorner Timing Analysis Summary
- 72. Setup Times
- 73. Hold Times
- 74. Clock to Output Times
- 75. Minimum Clock to Output Times
- 76. Propagation Delay
- 77. Minimum Propagation Delay
- 78. Board Trace Model Assignments
- 79. Input Transition Times
- 80. Signal Integrity Metrics (Slow 1200mv 0c Model)
- 81. Signal Integrity Metrics (Slow 1200mv 85c Model)
- 82. Signal Integrity Metrics (Fast 1200mv 0c Model)
- 83. Setup Transfers
- 84. Hold Transfers
- 85. Report TCCS
- 86. Report RSKM
- 87. Unconstrained Paths
- 88. TimeQuest Timing Analyzer Messages
+  4. SDC File List
+  5. Clocks
+  6. Slow 1200mV 85C Model Fmax Summary
+  7. Timing Closure Recommendations
+  8. Slow 1200mV 85C Model Setup Summary
+  9. Slow 1200mV 85C Model Hold Summary
+ 10. Slow 1200mV 85C Model Recovery Summary
+ 11. Slow 1200mV 85C Model Removal Summary
+ 12. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 13. Slow 1200mV 85C Model Setup: 'clk_10Hz'
+ 14. Slow 1200mV 85C Model Setup: 'clk_50Mhz'
+ 15. Slow 1200mV 85C Model Setup: 'clk_400Hz'
+ 16. Slow 1200mV 85C Model Hold: 'clk_50Mhz'
+ 17. Slow 1200mV 85C Model Hold: 'clk_400Hz'
+ 18. Slow 1200mV 85C Model Hold: 'clk_10Hz'
+ 19. Slow 1200mV 85C Model Minimum Pulse Width: 'clk_50Mhz'
+ 20. Slow 1200mV 85C Model Minimum Pulse Width: 'clk_10Hz'
+ 21. Slow 1200mV 85C Model Minimum Pulse Width: 'clk_400Hz'
+ 22. Setup Times
+ 23. Hold Times
+ 24. Clock to Output Times
+ 25. Minimum Clock to Output Times
+ 26. Propagation Delay
+ 27. Minimum Propagation Delay
+ 28. Slow 1200mV 85C Model Metastability Report
+ 29. Slow 1200mV 0C Model Fmax Summary
+ 30. Slow 1200mV 0C Model Setup Summary
+ 31. Slow 1200mV 0C Model Hold Summary
+ 32. Slow 1200mV 0C Model Recovery Summary
+ 33. Slow 1200mV 0C Model Removal Summary
+ 34. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 35. Slow 1200mV 0C Model Setup: 'clk_10Hz'
+ 36. Slow 1200mV 0C Model Setup: 'clk_50Mhz'
+ 37. Slow 1200mV 0C Model Setup: 'clk_400Hz'
+ 38. Slow 1200mV 0C Model Hold: 'clk_50Mhz'
+ 39. Slow 1200mV 0C Model Hold: 'clk_400Hz'
+ 40. Slow 1200mV 0C Model Hold: 'clk_10Hz'
+ 41. Slow 1200mV 0C Model Minimum Pulse Width: 'clk_50Mhz'
+ 42. Slow 1200mV 0C Model Minimum Pulse Width: 'clk_10Hz'
+ 43. Slow 1200mV 0C Model Minimum Pulse Width: 'clk_400Hz'
+ 44. Setup Times
+ 45. Hold Times
+ 46. Clock to Output Times
+ 47. Minimum Clock to Output Times
+ 48. Propagation Delay
+ 49. Minimum Propagation Delay
+ 50. Slow 1200mV 0C Model Metastability Report
+ 51. Fast 1200mV 0C Model Setup Summary
+ 52. Fast 1200mV 0C Model Hold Summary
+ 53. Fast 1200mV 0C Model Recovery Summary
+ 54. Fast 1200mV 0C Model Removal Summary
+ 55. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 56. Fast 1200mV 0C Model Setup: 'clk_10Hz'
+ 57. Fast 1200mV 0C Model Setup: 'clk_50Mhz'
+ 58. Fast 1200mV 0C Model Setup: 'clk_400Hz'
+ 59. Fast 1200mV 0C Model Hold: 'clk_50Mhz'
+ 60. Fast 1200mV 0C Model Hold: 'clk_400Hz'
+ 61. Fast 1200mV 0C Model Hold: 'clk_10Hz'
+ 62. Fast 1200mV 0C Model Minimum Pulse Width: 'clk_50Mhz'
+ 63. Fast 1200mV 0C Model Minimum Pulse Width: 'clk_10Hz'
+ 64. Fast 1200mV 0C Model Minimum Pulse Width: 'clk_400Hz'
+ 65. Setup Times
+ 66. Hold Times
+ 67. Clock to Output Times
+ 68. Minimum Clock to Output Times
+ 69. Propagation Delay
+ 70. Minimum Propagation Delay
+ 71. Fast 1200mV 0C Model Metastability Report
+ 72. Multicorner Timing Analysis Summary
+ 73. Setup Times
+ 74. Hold Times
+ 75. Clock to Output Times
+ 76. Minimum Clock to Output Times
+ 77. Propagation Delay
+ 78. Minimum Propagation Delay
+ 79. Board Trace Model Assignments
+ 80. Input Transition Times
+ 81. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 82. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 83. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 84. Setup Transfers
+ 85. Hold Transfers
+ 86. Report TCCS
+ 87. Report RSKM
+ 88. Unconstrained Paths
+ 89. TimeQuest Timing Analyzer Messages
 
 
 
@@ -146,6 +147,15 @@ agreement for further details.
 ;     Processors 2-4         ; < 0.1%      ;
 ;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++---------------------------------------------------------+
+; SDC File List                                           ;
++---------------------+--------+--------------------------+
+; SDC File Path       ; Status ; Read at                  ;
++---------------------+--------+--------------------------+
+; Working_LED.out.sdc ; OK     ; Thu Aug 20 22:53:46 2015 ;
++---------------------+--------+--------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4535,20 +4545,13 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Wed Oct 15 18:09:51 2014
+    Info: Processing started: Thu Aug 20 22:53:45 2015
 Info: Command: quartus_sta DE2_Clock -c Working_LED
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Critical Warning (332012): Synopsys Design Constraints File file not found: 'Working_LED.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
-Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name clk_50Mhz clk_50Mhz
-    Info (332105): create_clock -period 1.000 -name clk_400Hz clk_400Hz
-    Info (332105): create_clock -period 1.000 -name clk_10Hz clk_10Hz
-Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info (332104): Reading SDC File: 'Working_LED.out.sdc'
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
@@ -4576,7 +4579,6 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
 Info (332146): Worst-case setup slack is -2.756
@@ -4600,7 +4602,6 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):    -1.285             -96.375 clk_10Hz 
     Info (332119):    -1.285             -73.245 clk_400Hz 
 Info: Analyzing Fast 1200mV 0C Model
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
 Info (332146): Worst-case setup slack is -1.006
@@ -4625,9 +4626,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):    -1.000             -57.000 clk_400Hz 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 631 megabytes
-    Info: Processing ended: Wed Oct 15 18:09:54 2014
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 633 megabytes
+    Info: Processing ended: Thu Aug 20 22:53:48 2015
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 

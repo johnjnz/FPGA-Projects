@@ -1,0 +1,138 @@
+# Reading D:/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do UART_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {D:/altera/FPGA-Projects/Projects/UART/lcd_controller.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity lcd_controller
+# -- Compiling architecture MAIN of lcd_controller
+# vcom -93 -work work {D:/altera/FPGA-Projects/Projects/UART/TX.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TX
+# -- Compiling architecture MAIN of TX
+# vcom -93 -work work {D:/altera/FPGA-Projects/Projects/UART/UART.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity UART
+# -- Compiling architecture main of UART
+# vcom -93 -work work {D:/altera/FPGA-Projects/Projects/UART/RX.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RX
+# -- Compiling architecture MAIN of RX
+# 
+vsim work.lcd_controller(main)
+# vsim work.lcd_controller(main) 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.lcd_controller(main)
+vsim work.lcd_controller(main)
+# vsim work.lcd_controller(main) 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.lcd_controller(main)
+vcom -reportprogress 300 -work work D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/lcd_contoller_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity lcd_controller_tb
+# -- Compiling architecture behavior of lcd_controller_tb
+# -- Loading entity lcd_controller
+# ** Warning: [4] D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/lcd_contoller_tb.vhd(48): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Error: D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/lcd_contoller_tb.vhd(48): (vcom-1136) Unknown identifier "lk".
+# 
+# ** Error: D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/lcd_contoller_tb.vhd(48): No feasible entries for infix operator "=".
+# ** Error: D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/lcd_contoller_tb.vhd(48): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Warning: [2] D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/lcd_contoller_tb.vhd(48): Wait statement has no sensitivity list or time out clause.
+# ** Error: D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/lcd_contoller_tb.vhd(51): VHDL Compiler exiting
+vcom -reportprogress 300 -work work D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/lcd_contoller_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity lcd_controller_tb
+# -- Compiling architecture behavior of lcd_controller_tb
+# -- Loading entity lcd_controller
+# -- Compiling configuration lcd_controller_tb_behavior_cfg
+# -- Loading entity lcd_controller_tb
+# -- Loading architecture behavior of lcd_controller_tb
+vcom -reportprogress 300 -work work D:/altera/FPGA-Projects/Projects/UART/simulation/modelsim/lcd_contoller_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1e Compiler 2013.06 Jun 12 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity lcd_controller_tb
+# -- Compiling architecture behavior of lcd_controller_tb
+# -- Loading entity lcd_controller
+# -- Compiling configuration lcd_controller_tb_behavior_cfg
+# -- Loading entity lcd_controller_tb
+# -- Loading architecture behavior of lcd_controller_tb
+vsim rtl_work.lcd_controller_tb
+# vsim rtl_work.lcd_controller_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading rtl_work.lcd_controller_tb(behavior)
+# Loading rtl_work.lcd_controller(main)
+run 3us;
+add wave -position insertpoint  \
+sim:/lcd_controller_tb/clk
+add wave -position insertpoint  \
+sim:/lcd_controller_tb/clk \
+sim:/lcd_controller_tb/reset_n \
+sim:/lcd_controller_tb/lcd_enable \
+sim:/lcd_controller_tb/lcd_bus \
+sim:/lcd_controller_tb/busy \
+sim:/lcd_controller_tb/rw \
+sim:/lcd_controller_tb/rs \
+sim:/lcd_controller_tb/e \
+sim:/lcd_controller_tb/lcd_data
+# WARNING: No extended dataflow license exists
+restart
+run
+vsim rtl_work.lcd_controller_tb
+# vsim rtl_work.lcd_controller_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading rtl_work.lcd_controller_tb(behavior)
+# Loading rtl_work.lcd_controller(main)
+run 2us;
+add wave -position insertpoint  \
+sim:/lcd_controller_tb/clk
+
+run 2us;
+add wave -position insertpoint  \
+sim:/lcd_controller_tb/clk \
+sim:/lcd_controller_tb/reset_n \
+sim:/lcd_controller_tb/lcd_enable \
+sim:/lcd_controller_tb/lcd_bus \
+sim:/lcd_controller_tb/busy \
+sim:/lcd_controller_tb/rw \
+sim:/lcd_controller_tb/rs \
+sim:/lcd_controller_tb/e \
+sim:/lcd_controller_tb/lcd_data

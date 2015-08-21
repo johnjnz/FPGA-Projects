@@ -1,0 +1,15 @@
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=D:\altera\FPGA-Projects\Projects\lcd_controller_test --output-directory=D:\altera\FPGA-Projects\Projects\lcd_controller_test\cbc\synthesis --file-set=QUARTUS_SYNTH --report-file=html:D:\altera\FPGA-Projects\Projects\lcd_controller_test\cbc\cbc.html --report-file=sopcinfo:D:\altera\FPGA-Projects\Projects\lcd_controller_test\cbc.sopcinfo --report-file=cmp:D:\altera\FPGA-Projects\Projects\lcd_controller_test\cbc\cbc.cmp --report-file=qip:D:\altera\FPGA-Projects\Projects\lcd_controller_test\cbc\synthesis\cbc.qip --report-file=svd:D:\altera\FPGA-Projects\Projects\lcd_controller_test\cbc\synthesis\cbc.svd --report-file=regmap:D:\altera\FPGA-Projects\Projects\lcd_controller_test\cbc\synthesis\cbc.regmap --report-file=xml:D:\altera\FPGA-Projects\Projects\lcd_controller_test\cbc\cbc.xml --report-file=debuginfo:D:\altera\FPGA-Projects\Projects\lcd_controller_test\cbc\synthesis\cbc.debuginfo --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE115F29C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=D:\altera\FPGA-Projects\Projects\lcd_controller_test\cbc.qsys --language=VHDL
+Progress: Loading lcd_controller_test/cbc.qsys
+Progress: Reading input file
+Progress: Adding spislave_0 [spislave 14.0]
+Progress: Parameterizing module spislave_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: cbc: Generating cbc "cbc" for QUARTUS_SYNTH
+Info: spislave_0: "cbc" instantiated spislave "spislave_0"
+Info: cbc: Done "cbc" with 2 modules, 2 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
