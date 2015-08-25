@@ -1,0 +1,138 @@
+# Reading C:/altera/15.0/modelsim_ase/tcl/vsim/pref.tcl
+# do I2C_TEST_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {D:/altera/FPGA-Projects/Projects/I2C_TEST/I2C_TEST.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:38:57 on Aug 22,2015
+# vcom -reportprogress 300 -93 -work work D:/altera/FPGA-Projects/Projects/I2C_TEST/I2C_TEST.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity I2C_TEST
+# -- Compiling architecture RTL of I2C_TEST
+# End time: 15:38:57 on Aug 22,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/altera/FPGA-Projects/Projects/I2C_TEST/TXT_UTIL.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:38:57 on Aug 22,2015
+# vcom -reportprogress 300 -93 -work work D:/altera/FPGA-Projects/Projects/I2C_TEST/TXT_UTIL.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package TXT_UTIL
+# -- Compiling package body TXT_UTIL
+# -- Loading package TXT_UTIL
+# End time: 15:38:57 on Aug 22,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/altera/FPGA-Projects/Projects/I2C_TEST/I2C_SLAVE.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:38:58 on Aug 22,2015
+# vcom -reportprogress 300 -93 -work work D:/altera/FPGA-Projects/Projects/I2C_TEST/I2C_SLAVE.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TXT_UTIL
+# -- Compiling entity I2C_SLAVE
+# -- Compiling architecture arch of I2C_SLAVE
+# End time: 15:38:58 on Aug 22,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+cd D:/altera/FPGA-Projects/Projects/I2C_TEST/simulation/modelsim
+# reading modelsim.ini
+vcom -reportprogress 300 -work work D:/altera/FPGA-Projects/Projects/I2C_TEST/simulation/modelsim/I2C_SLAVE_TB.vhd
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:39:41 on Aug 22,2015
+# vcom -reportprogress 300 -work work D:/altera/FPGA-Projects/Projects/I2C_TEST/simulation/modelsim/I2C_SLAVE_TB.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package TXT_UTIL
+# -- Compiling entity I2C_slave_TB
+# -- Compiling architecture Testbench of I2C_slave_TB
+# -- Loading entity I2C_SLAVE
+# End time: 15:39:41 on Aug 22,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.i2c_slave_tb
+# vsim -gui "+altera" -l msim_transcript -do "I2C_TEST_run_msim_rtl_vhdl.do" 
+# Start time: 15:39:46 on Aug 22,2015
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.txt_util(body)
+# Loading work.i2c_slave_tb(testbench)
+# Loading work.i2c_slave(arch)
+add wave -position insertpoint  \
+sim:/i2c_slave_tb/scl_test \
+sim:/i2c_slave_tb/sda_test \
+sim:/i2c_slave_tb/clk_test \
+sim:/i2c_slave_tb/rst_test
+add wave -position insertpoint  \
+sim:/i2c_slave_tb/received_data
+run
+run
+run
+restart
+run all
+# Invalid time value: all
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: I2C: slave address: 0000011, requested address: 1000011
+#    Time: 4556410 ns  Iteration: 1  Instance: /i2c_slave_tb/DUV
+# ** Note: No ACK received: expected '0'
+#    Time: 4556790 ns  Iteration: 1  Instance: /i2c_slave_tb
+# ** Note: I2C: slave address: 0000011, requested address: 0000001
+#    Time: 4566290 ns  Iteration: 1  Instance: /i2c_slave_tb/DUV
+# ** Note: No ACK received: expected '0'
+#    Time: 4566670 ns  Iteration: 1  Instance: /i2c_slave_tb
+# ** Note: I2C: slave address: 0000011, requested address: 0000010
+#    Time: 4576170 ns  Iteration: 1  Instance: /i2c_slave_tb/DUV
+# ** Note: No ACK received: expected '0'
+#    Time: 4576550 ns  Iteration: 1  Instance: /i2c_slave_tb
+# quick write
+# ** Failure: simulation completed successfully
+#    Time: 4647050 ns  Iteration: 1  Process: /i2c_slave_tb/TESTS File: D:/altera/FPGA-Projects/Projects/I2C_TEST/simulation/modelsim/I2C_SLAVE_TB.vhd
+# Break in Process TESTS at D:/altera/FPGA-Projects/Projects/I2C_TEST/simulation/modelsim/I2C_SLAVE_TB.vhd line 480
+add wave -position insertpoint  \
+sim:/i2c_slave_tb/data_to_master
+add wave -position insertpoint  \
+sim:/i2c_slave_tb/data_from_master
+restart
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: I2C: slave address: 0000011, requested address: 1000011
+#    Time: 4556410 ns  Iteration: 1  Instance: /i2c_slave_tb/DUV
+# ** Note: No ACK received: expected '0'
+#    Time: 4556790 ns  Iteration: 1  Instance: /i2c_slave_tb
+# ** Note: I2C: slave address: 0000011, requested address: 0000001
+#    Time: 4566290 ns  Iteration: 1  Instance: /i2c_slave_tb/DUV
+# ** Note: No ACK received: expected '0'
+#    Time: 4566670 ns  Iteration: 1  Instance: /i2c_slave_tb
+# ** Note: I2C: slave address: 0000011, requested address: 0000010
+#    Time: 4576170 ns  Iteration: 1  Instance: /i2c_slave_tb/DUV
+# ** Note: No ACK received: expected '0'
+#    Time: 4576550 ns  Iteration: 1  Instance: /i2c_slave_tb
+# quick write
+# ** Failure: simulation completed successfully
+#    Time: 4647050 ns  Iteration: 1  Process: /i2c_slave_tb/TESTS File: D:/altera/FPGA-Projects/Projects/I2C_TEST/simulation/modelsim/I2C_SLAVE_TB.vhd
+# Break in Process TESTS at D:/altera/FPGA-Projects/Projects/I2C_TEST/simulation/modelsim/I2C_SLAVE_TB.vhd line 480
+# End time: 16:50:16 on Aug 22,2015, Elapsed time: 1:10:30
+# Errors: 1, Warnings: 0

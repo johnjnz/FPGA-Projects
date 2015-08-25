@@ -1,0 +1,159 @@
+# Reading C:/altera/15.0/modelsim_ase/tcl/vsim/pref.tcl
+# do counter_3bit_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work gate_work 
+# Copying C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {counter_3bit_7_1200mv_85c_slow.vho}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:15:58 on Aug 22,2015
+# vcom -reportprogress 300 -93 -work work counter_3bit_7_1200mv_85c_slow.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Compiling entity counter_3bit
+# -- Compiling architecture structure of counter_3bit
+# End time: 15:15:58 on Aug 22,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+cd D:/altera/FPGA-Projects/Projects/counter_3bit/simulation/modelsim
+# reading modelsim.ini
+vcom -reportprogress 300 -work work D:/altera/FPGA-Projects/Projects/counter_3bit/simulation/modelsim/test_counter_3bit.vhd
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:16:35 on Aug 22,2015
+# vcom -reportprogress 300 -work work D:/altera/FPGA-Projects/Projects/counter_3bit/simulation/modelsim/test_counter_3bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxii_atom_pack
+# -- Loading package maxii_components
+# -- Compiling entity test_counter_3bit
+# -- Compiling architecture testbench1 of test_counter_3bit
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Loading entity counter_3bit
+# End time: 15:16:35 on Aug 22,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work D:/altera/FPGA-Projects/Projects/counter_3bit/simulation/modelsim/test_counter_3bit.vhd
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:16:39 on Aug 22,2015
+# vcom -reportprogress 300 -work work D:/altera/FPGA-Projects/Projects/counter_3bit/simulation/modelsim/test_counter_3bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxii_atom_pack
+# -- Loading package maxii_components
+# -- Compiling entity test_counter_3bit
+# -- Compiling architecture testbench1 of test_counter_3bit
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Loading entity counter_3bit
+# End time: 15:16:39 on Aug 22,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.test_counter_3bit
+# vsim -gui "+altera" -l msim_transcript -do "counter_3bit_run_msim_gate_vhdl.do" 
+# Start time: 15:16:50 on Aug 22,2015
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading maxii.maxii_atom_pack(body)
+# Loading maxii.maxii_components
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
+# Loading cycloneive.cycloneive_atom_pack(body)
+# Loading cycloneive.cycloneive_components
+# Loading work.test_counter_3bit(testbench1)
+# Loading work.counter_3bit(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneive.cycloneive_io_obuf(arch)
+# Loading cycloneive.cycloneive_io_ibuf(arch)
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+# Loading altera.dffeas(vital_dffeas)
+add wave -position insertpoint  \
+sim:/test_counter_3bit/button1 \
+sim:/test_counter_3bit/button2 \
+sim:/test_counter_3bit/led1 \
+sim:/test_counter_3bit/led2 \
+sim:/test_counter_3bit/led3 \
+sim:/test_counter_3bit/vcc
+run
+run
+vcom -reportprogress 300 -work work D:/altera/FPGA-Projects/Projects/counter_3bit/simulation/modelsim/test_counter_3bit.vhd
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:20:55 on Aug 22,2015
+# vcom -reportprogress 300 -work work D:/altera/FPGA-Projects/Projects/counter_3bit/simulation/modelsim/test_counter_3bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxii_atom_pack
+# -- Loading package maxii_components
+# -- Compiling entity test_counter_3bit
+# -- Compiling architecture testbench1 of test_counter_3bit
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Loading entity counter_3bit
+# ** Error: D:/altera/FPGA-Projects/Projects/counter_3bit/simulation/modelsim/test_counter_3bit.vhd(46): near "'": expecting ';'
+# ** Error: D:/altera/FPGA-Projects/Projects/counter_3bit/simulation/modelsim/test_counter_3bit.vhd(49): VHDL Compiler exiting
+# End time: 15:20:55 on Aug 22,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+vcom -reportprogress 300 -work work D:/altera/FPGA-Projects/Projects/counter_3bit/simulation/modelsim/test_counter_3bit.vhd
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:21:11 on Aug 22,2015
+# vcom -reportprogress 300 -work work D:/altera/FPGA-Projects/Projects/counter_3bit/simulation/modelsim/test_counter_3bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxii_atom_pack
+# -- Loading package maxii_components
+# -- Compiling entity test_counter_3bit
+# -- Compiling architecture testbench1 of test_counter_3bit
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Loading entity counter_3bit
+# End time: 15:21:12 on Aug 22,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+run
+run
+run
+restart
+# Loading work.test_counter_3bit(testbench1)
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+run
+# End time: 15:22:30 on Aug 22,2015, Elapsed time: 0:05:40
+# Errors: 2, Warnings: 0

@@ -1,0 +1,6 @@
+            
+            --if data_valid = '1' then
+            --    data_to_master <= STD_LOGIC_VECTOR(unsigned(data_from_master) + 1);
+            --    led_status <= data_from_master;
+            --end if;
+            

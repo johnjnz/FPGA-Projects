@@ -2,25 +2,25 @@ library ieee;
     use ieee.std_logic_1164.all;
     use ieee.numeric_std.all;
     use work.txt_util.all;
-    
+
 entity I2C_SLAVE is
     generic (
-        SLAVE_ADDR : std_logic_vector(6 downto 0)
+        SLAVE_ADDR : STD_LOGIC_VECTOR(6 downto 0)
     );
     port (
-        scl              : inout std_logic;
-        sda              : inout std_logic;
-        clk              : in    std_logic;
-        rst              : in    std_logic;
+        scl                 : inout STD_LOGIC;
+        sda                 : inout STD_LOGIC;
+        clk                 : in    STD_LOGIC;
+        rst                 : in    STD_LOGIC;
     
-        -- User interface
-        read_req         : out   std_logic;
-        data_to_master   : in    std_logic_vector(7 downto 0);
-        data_valid       : out   std_logic;
-        data_from_master : out   std_logic_vector(7 downto 0)
+        read_req            : out   STD_LOGIC;
+        data_to_master      : in    STD_LOGIC_VECTOR(7 downto 0);
+        data_valid          : out   STD_LOGIC;
+        data_from_master    : out   STD_LOGIC_VECTOR(7 downto 0)
+
     );
 end entity I2C_SLAVE;
-
+ 
 architecture arch of I2C_SLAVE is
   
     type STATE_T is (
@@ -36,40 +36,40 @@ architecture arch of I2C_SLAVE is
   
     -- I2C state management
     signal state_reg          : STATE_T                       := I2C_IDLE;
-    signal cmd_reg            : std_logic                     := '0';
+    signal cmd_reg            : STD_LOGIC                     := '0';
     signal bits_processed_reg : integer range 0 to 8          := 0;
-    signal continue_reg       : std_logic                     := '0';
+    signal continue_reg       : STD_LOGIC                     := '0';
 
     -- Helpers to figure out next state
-    signal start_reg          : std_logic                     := '0';
-    signal stop_reg           : std_logic                     := '0';
-    signal scl_rising_reg     : std_logic                     := '0';
-    signal scl_falling_reg    : std_logic                     := '0';
+    signal start_reg          : STD_LOGIC                     := '0';
+    signal stop_reg           : STD_LOGIC                     := '0';
+    signal scl_rising_reg     : STD_LOGIC                     := '0';
+    signal scl_falling_reg    : STD_LOGIC                     := '0';
 
     -- Address and data received from master
-    signal addr_reg           : std_logic_vector(6 downto 0)  := (others => '0');
-    signal data_reg           : std_logic_vector(7 downto 0)  := (others => '0');
+    signal addr_reg           : STD_LOGIC_VECTOR(6 downto 0)  := (others => '0');
+    signal data_reg           : STD_LOGIC_VECTOR(7 downto 0)  := (others => '0');
 
     -- Delayed SCL (by 1 clock cycle, and by 2 clock cycles)
-    signal scl_reg            : std_logic                     := '1';
-    signal scl_prev_reg       : std_logic                     := '1';
+    signal scl_reg            : STD_LOGIC                     := '1';
+    signal scl_prev_reg       : STD_LOGIC                     := '1';
   
     -- Slave writes on scl
-    signal scl_wen_reg        : std_logic                     := '0';
-    signal scl_o_reg          : std_logic                     := '0';
+    signal scl_wen_reg        : STD_LOGIC                     := '0';
+    signal scl_o_reg          : STD_LOGIC                     := '0';
     
     -- Delayed SDA (1 clock cycle, and 2 clock cycles)
-    signal sda_reg            : std_logic                     := '1';
-    signal sda_prev_reg       : std_logic                     := '1';
+    signal sda_reg            : STD_LOGIC                     := '1';
+    signal sda_prev_reg       : STD_LOGIC                     := '1';
   
     -- Slave writes on sda
-    signal sda_wen_reg        : std_logic                     := '0';
-    signal sda_o_reg          : std_logic                     := '0';
+    signal sda_wen_reg        : STD_LOGIC                     := '0';
+    signal sda_o_reg          : STD_LOGIC                     := '0';
 
     -- User interface
-    signal data_valid_reg     : std_logic                     := '0';
-    signal read_req_reg       : std_logic                     := '0';
-    signal data_to_master_reg : std_logic_vector(7 downto 0)  := (others => '0');
+    signal data_valid_reg     : STD_LOGIC                     := '0';
+    signal read_req_reg       : STD_LOGIC                     := '0';
+    signal data_to_master_reg : STD_LOGIC_VECTOR(7 downto 0)  := (others => '0');
   
 begin
 

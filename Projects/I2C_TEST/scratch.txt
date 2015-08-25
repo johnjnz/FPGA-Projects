@@ -1,0 +1,253 @@
+library ieee;
+	use ieee.std_logic_1164.all;
+	use ieee.numeric_std.all;
+	use std.textio.all;
+	use work.txt_util.all;
+
+entity knightRider is	
+    port (
+        scl              	: inout 	std_logic;								-- I2C clock
+        sda              	: inout 	std_logic;								-- I2C data
+        clk              	: in    	std_logic;								-- main clock (50MHz onboard)
+        rst              	: in    	std_logic;								-- reset signal from MCU
+        ext_clk				: in		std_logic;								-- clock used to when manipulating LEDs. From MCU.
+        busy				: out  	    std_logic;								-- busy HIGH when we are not ready for I2C cmd.
+        ledArray			: out	  	std_logic_vector(31 downto 0)		-- output device is 32 LEDs
+    );
+end knightRider;
+
+architecture RTL of knightRider is
+
+-- cmd_xxxx maps to the command being sent via I2C
+constant cmd_load			: integer								:= 0;
+constant cmd_sll			: integer								:= 1;
+constant cmd_slr			: integer								:= 2;
+constant cmd_rol			: integer								:= 3;
+constant cmd_ror			: integer								:= 4;
+
+type 		state_t 			is (													-- various states of the Finite State Machine
+									get_cmd, 										--		ready to get next I2C command
+									get_data, 										--    get 1st byte for load or the only byte for other commands
+									get_data2, 										--		get 2nd byte for load
+									get_data3, 										-- 	get 3rd byte for load
+									get_data4, 										--		get 4th byte for load
+									decode_cmd, 									--    decode cmd to determine next state
+									exe_load, 										--		execute load command
+									exe_sll, 										--		xeq shift logical left
+									exe_slr, 										--		xeq shift logical right
+									exe_rol, 										--		xeq rotate left
+									exe_ror											--		xeq rotate right
+									);
+
+-- signals used by the I2CSlave module
+signal data_from_master	: std_logic_vector (7 downto 0) 	:= X"00";	-- byte received from I2C master
+signal data_to_master	: std_logic_vector (7 downto 0) 	:= X"00";	-- byte ready to xmit to I2C master
+signal data_valid			: std_logic								:= '0';		-- data_from_master is valid
+signal read_req			: std_logic								:= '0';		-- I2C Master is making read request
+
+signal bit_count			: std_logic_vector (7 downto 0);					-- number of bits left to shift/rotate
+signal cmd					: integer range 0 to 15;							-- command requested by I2C Master (see cmd_xxxx constants)
+signal data_reg			: std_logic_vector (31 downto 0);				-- register used to assemble 32 bit buffer from bytes coming from I2Cmaster
+signal ext_clk_rising	: boolean								:= false;	-- true when external clock (from MCU) has started to rise
+signal last_ext_clk		: std_logic								:= '0';		-- value of ext_clk on last clk tick
+signal main_reg			: std_logic_vector (31 downto 0)	:= x"00000000";
+signal state_reg			: state_t								:= get_cmd;	--	current state of finite state machine
+
+component I2C_slave is																-- interface to the I2CSlave component
+  generic (
+    SLAVE_ADDR 			: std_logic_vector(6 downto 0) 	:= "0000000"	 
+	 );
+  port (
+    scl              	: inout std_logic;
+    sda              	: inout std_logic;
+    clk              	: in    std_logic;
+    rst              	: in    std_logic;
+    -- User interface
+    read_req         	: out   std_logic;
+    data_to_master   	: in    std_logic_vector(7 downto 0);
+    data_valid       	: out   std_logic;
+    data_from_master 	: out   std_logic_vector(7 downto 0));
+end component I2C_slave;
+
+begin
+
+i2cSlave: I2C_slave 														-- map local signals to I2CSlave signals
+	generic map (
+		SLAVE_ADDR => "0000011"
+		)
+	port map(
+		scl              	=> scl,
+		sda              	=> sda,
+		clk              	=> clk,
+		rst              	=> rst,
+		-- User interface
+		read_req         	=> read_req,
+		data_to_master		=> data_to_master,
+		data_valid			=> data_valid,
+		data_from_master 	=> data_from_master
+		);
+
+-- This process syncs the external clock with the internal clock. When internal clock 
+-- cycle occurs, it looks at external clock's current and prev values and sets
+-- ext_clk_rising accordingly.
+
+checkExtClk: process (clk)
+
+begin
+
+if rising_edge(clk) then
+	if ext_clk = last_ext_clk then
+		ext_clk_rising <= false;
+	else
+		if ext_clk = '1' then
+			ext_clk_rising <= true;
+		else
+			ext_clk_rising <= false;
+			end if;
+		last_ext_clk <= ext_clk;
+		end if;
+	end if;
+
+end process checkExtClk;
+
+
+-- implements the finite state machine that processes I2C commands from the MCU		
+cmdProc: process (clk)
+
+begin
+
+if rising_edge(clk) then
+
+case state_reg is
+	when get_cmd =>														-- ready to get next I2C command
+		busy <= '0';														-- clear busy signal
+		if data_valid = '1' then										-- if we have data from I2C it is the next cmd to xeq
+			print( "get cmd");
+			cmd 			<= to_integer(unsigned(data_from_master));
+			data_reg 	<= X"00000000";								-- clear tmp data reg as it is assembled byte by byte
+			state_reg 	<= get_data;									-- next we wait for data from I2CMaster
+			end if;
+			
+	when get_data =>														-- ready to receive data byte. Load cmd will require 4 bytes. Everything else needs only 1.
+		if data_valid = '1' then										-- is data ready?
+			print("get data");
+			-- interestingly, it takes less logic to keep these 2 assignments outside of the following if statement
+			data_reg(31 downto 24) 	<= data_from_master;			-- xfer data to tmp reg
+			bit_count 					<= data_from_master;			-- xfer data to bit count 
+			if cmd = cmd_load then										-- determine if we need more data or we are ready to decode
+				state_reg 				<= get_data2; 					-- load takes all 32bits
+			else 
+				state_reg 				<= decode_cmd; 				-- other cmds take only 8 bits
+				end if;
+			end if;
+		
+	when get_data2 =>														-- load 2nd byte from I2Cmaster into data_reg
+		if data_valid = '1' then
+			print("get data2");
+			data_reg(23 downto 16) 	<= data_from_master;
+			state_reg 					<= get_data3;
+			end if;
+
+	when get_data3 =>														-- load 3rd byte from I2Cmaster into data_reg
+		if data_valid = '1' then
+			print("get data3");
+			data_reg(15 downto 08) 	<= data_from_master;
+			state_reg 					<= get_data4;
+			end if;
+
+	when get_data4 =>														-- load 4th byte from I2Cmaster into data_reg
+		if data_valid = '1' then
+			print("get data4");
+			data_reg(07 downto 0) 	<= data_from_master;
+			state_reg 					<= decode_cmd;
+			end if;
+
+	when decode_cmd => 													-- determine next state based on cmd given by I2CMaster
+		print("decode cmd");
+		busy <= '1';
+		case cmd is
+			when cmd_load =>
+				state_reg <= exe_load;
+			when cmd_sll =>
+				state_reg <= exe_sll;
+			when cmd_slr =>
+				state_reg <= exe_slr;
+			when cmd_rol =>
+				state_reg <= exe_rol;
+			when cmd_ror =>
+				state_reg <= exe_ror;
+			when others =>
+				assert false	
+					report "Unexected cmd"
+						severity note;
+				null;
+			end case;
+			
+	when exe_load =>														-- load cmd: xfer data_reg to main_reg and wait for another cmd
+		print("exe load");
+		main_reg 	<= data_reg;
+		state_reg 	<= get_cmd;
+		report "main_reg = " & hstr(main_reg);
+		
+	when exe_sll =>														-- sll cmd: shift left 1 bit, decr shift count. if shift count = 0, we are done
+		if ext_clk_rising then											-- we wait for the EXTERNAL clock before doing this
+			print("exe sll");
+			if bit_count = X"00" then
+				state_reg 	<= get_cmd;
+			else
+				main_reg 	<= std_logic_vector(shift_left(unsigned(main_reg), 1));
+				bit_count 	<= std_logic_vector(unsigned(bit_count) - 1);
+				report "bit_count: " &hstr(bit_count);
+				end if;
+			end if;
+		
+	when exe_slr =>														-- slr cmd: shift right 1 bit, decr shift count. if shift count = 0, we are done
+		if ext_clk_rising then											-- we wait for the EXTERNAL clock before doing this
+			print("exe slr");
+			if bit_count = X"00" then
+				state_reg 	<= get_cmd;
+			else
+				main_reg 	<= std_logic_vector(shift_right(unsigned(main_reg), 1));
+				bit_count 	<= std_logic_vector(unsigned(bit_count) - 1);
+				report "bit_count: " &hstr(bit_count);
+				end if;
+			end if;
+		
+	when exe_rol =>														-- rol cmd: rotate left 1 bit, decr shift count. if shift count = 0, we are done
+		if ext_clk_rising then											-- we wait for the EXTERNAL clock before doing this
+			print("exe rol");
+			if bit_count 	= X"00" then
+				state_reg <= get_cmd;
+			else
+				main_reg 	<= std_logic_vector(rotate_left(unsigned(main_reg), 1));
+				bit_count 	<= std_logic_vector(unsigned(bit_count) - 1);
+				report "bit_count: " &hstr(bit_count);
+				end if;
+			end if;
+		
+	when exe_ror =>														-- ror cmd: rotate right 1 bit, decr shift count. if shift count = 0, we are done
+		if ext_clk_rising then
+			print("exe ror");
+			if bit_count = X"00" then
+				state_reg 	<= get_cmd;
+			else
+				main_reg 	<= std_logic_vector(rotate_right(unsigned(main_reg), 1));
+				bit_count 	<= std_logic_vector(unsigned(bit_count) - 1);
+				report "bit_count: " &hstr(bit_count);
+				end if;
+			end if;
+		
+	when others =>
+		assert false	
+			report "Unexected state"
+				severity note;
+		null;
+	end case;
+
+	end if;
+	
+end process cmdProc;
+
+ledArray <= main_reg;													-- make sure the LED array reflects the current value of the main register
+	 
+end architecture rtl;
