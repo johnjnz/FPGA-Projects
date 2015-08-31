@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="63" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <library
+   expandedCategories="Library/Interface Protocols/Serial,Library/University Program,Library/University Program/Generic IO,Library/Interface Protocols,Library/University Program/Clock,Library/University Program/Memory,Library/University Program/Communications,Library/Qsys Interconnect,Library,Project,Library/Interface Protocols/RapidIO" />
+ <window width="1339" height="949" x="0" y="0" />
+ <generation
+   synthesis="VHDL"
+   greybox="1"
+   block_symbol_file="0"
+   path="C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/test_qsys"
+   simulation="VHDL" />
+</preferences>

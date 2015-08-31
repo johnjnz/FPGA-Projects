@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 15.0.2 Build 153 07/15/2015 SJ Web Edition"
 
--- DATE "08/25/2015 22:23:54"
+-- DATE "08/26/2015 16:45:03"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780

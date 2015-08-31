@@ -26,6 +26,7 @@ architecture RTL of I2C_TEST is
 
     constant CMD_LED            : integer                           := 0;
     constant CMD_LED_RESET      : integer                           := 1;
+    
 
     type STATE_T is (	
         GET_CMD,

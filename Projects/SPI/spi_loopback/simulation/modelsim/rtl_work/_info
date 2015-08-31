@@ -1,0 +1,185 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim
+Espi_loopback
+Z1 w1440833608
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_loopback.vhdl
+Z5 FC:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_loopback.vhdl
+l0
+L28
+Vz8lh93Gne0=T;dh^z<oWB3
+!s100 3C82`52;=kVifzUBgaeL@1
+Z6 OV;C;10.3d;59
+31
+Z7 !s110 1440891096
+!i10b 1
+Z8 !s108 1440891096.262000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_loopback.vhdl|
+Z10 !s107 C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_loopback.vhdl|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1
+Astructural
+Z13 DEx4 work 9 spi_slave 0 22 cT@B95dz7TP<gzjVXdW<M2
+Z14 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z15 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z16 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z17 DEx4 work 10 spi_master 0 22 3?LC41fAIA^RZ52V80^4?1
+R2
+R3
+DEx4 work 12 spi_loopback 0 22 z8lh93Gne0=T;dh^z<oWB3
+l80
+L79
+Vc9bk[g@c31h?=`YH]P=AG1
+!s100 jeiLS=lBNmg37MXG8A9P^2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Espi_loopback_test
+Z18 w1440918284
+R16
+R2
+R3
+R0
+Z19 8C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim/spi_loopback_test.vhdl
+Z20 FC:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim/spi_loopback_test.vhdl
+l0
+L45
+VenFWJWJ`IARo?Y956Gz[52
+!s100 M<RUaE?FM]]NWRQNGRQL_3
+R6
+32
+Z21 !s110 1440918295
+!i10b 1
+Z22 !s108 1440918295.305000
+Z23 !s90 -reportprogress|300|-work|work|C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim/spi_loopback_test.vhdl|
+Z24 !s107 C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim/spi_loopback_test.vhdl|
+!i113 1
+Z25 o-work work
+R12
+Abehavior
+R16
+R2
+R3
+Z26 DEx4 work 17 spi_loopback_test 0 22 enFWJWJ`IARo?Y956Gz[52
+l154
+L54
+V`R:ZETaX[bLAAXodgHJjf1
+!s100 2^NVh;TJMJma4@Wg7V`gS3
+R6
+32
+R21
+!i10b 1
+R22
+R23
+R24
+!i113 1
+R25
+R12
+Espi_master
+Z27 w1440833522
+R14
+R15
+R16
+R2
+R3
+R0
+Z28 8C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_master.vhdl
+Z29 FC:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_master.vhdl
+l0
+L173
+V3?LC41fAIA^RZ52V80^4?1
+!s100 [l]KlKoZA]c5h8cQ1KoMF0
+R6
+31
+Z30 !s110 1440891095
+!i10b 1
+Z31 !s108 1440891095.840000
+Z32 !s90 -reportprogress|300|-93|-work|work|C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_master.vhdl|
+Z33 !s107 C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_master.vhdl|
+!i113 1
+R11
+R12
+Artl
+R14
+R15
+R16
+R2
+R3
+R17
+l282
+L215
+V[b5k5IZ@77^74DPAXjc^62
+!s100 O;oF1aR17KJif<0^WeP0<3
+R6
+31
+R30
+!i10b 1
+R31
+R32
+R33
+!i113 1
+R11
+R12
+Espi_slave
+Z34 w1440833641
+R14
+R15
+R16
+R2
+R3
+R0
+Z35 8C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_slave.vhdl
+Z36 FC:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_slave.vhdl
+l0
+L143
+VcT@B95dz7TP<gzjVXdW<M2
+!s100 ;D1RDNh>oRb;<`12N^N?R2
+R6
+31
+R30
+!i10b 1
+Z37 !s108 1440891095.419000
+Z38 !s90 -reportprogress|300|-93|-work|work|C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_slave.vhdl|
+Z39 !s107 C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_slave.vhdl|
+!i113 1
+R11
+R12
+Artl
+R14
+R15
+R16
+R2
+R3
+R13
+l237
+L182
+VncC=cl[k]XB7VFRVmPhig0
+!s100 ojc10CN^e;?@Zem`eF@7=3
+R6
+31
+R30
+!i10b 1
+R37
+R38
+R39
+!i113 1
+R11
+R12

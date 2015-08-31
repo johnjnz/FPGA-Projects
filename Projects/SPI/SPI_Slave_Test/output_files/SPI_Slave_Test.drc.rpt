@@ -1,0 +1,786 @@
+Design Assistant report for SPI_Slave_Test
+Sat Aug 29 17:13:48 2015
+Quartus II 64-Bit Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant Summary
+  3. Design Assistant Settings
+  4. High Violations
+  5. Medium Violations
+  6. Information only Violations
+  7. Design Assistant Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Design Assistant Summary                                                ;
++-----------------------------------+-------------------------------------+
+; Design Assistant Status           ; Analyzed - Sat Aug 29 17:13:48 2015 ;
+; Revision Name                     ; SPI_Slave_Test                      ;
+; Top-level Entity Name             ; SPI_Slave_Test                      ;
+; Family                            ; Cyclone IV E                        ;
+; Total Critical Violations         ; 0                                   ;
+; Total High Violations             ; 133                                 ;
+; - Rule A108                       ; 51                                  ;
+; - Rule C105                       ; 1                                   ;
+; - Rule R101                       ; 3                                   ;
+; - Rule S102                       ; 25                                  ;
+; - Rule D101                       ; 28                                  ;
+; - Rule D103                       ; 25                                  ;
+; Total Medium Violations           ; 3                                   ;
+; - Rule C106                       ; 1                                   ;
+; - Rule R102                       ; 1                                   ;
+; - Rule D102                       ; 1                                   ;
+; Total Information only Violations ; 53                                  ;
+; - Rule T101                       ; 3                                   ;
+; - Rule T102                       ; 50                                  ;
++-----------------------------------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant Settings                                                                                                                                                                ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+----+
+; Option                                                                                                                                                               ; Setting      ; To ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+----+
+; Design Assistant mode                                                                                                                                                ; Post-Fitting ;    ;
+; Threshold value for clock net not mapped to clock spines rule                                                                                                        ; 25           ;    ;
+; Minimum number of clock port feed by gated clocks                                                                                                                    ; 30           ;    ;
+; Minimum number of node fan-out                                                                                                                                       ; 30           ;    ;
+; Maximum number of nodes to report                                                                                                                                    ; 50           ;    ;
+; Rule C101: Gated clock should be implemented according to the Altera standard scheme                                                                                 ; On           ;    ;
+; Rule C102: Logic cell should not be used to generate an inverted clock signal                                                                                        ; On           ;    ;
+; Rule C103: Gated clock does not feed at least a pre-defined number of clock ports to effectively save power                                                          ; On           ;    ;
+; Rule C104: Clock signal source should drive only clock input ports                                                                                                   ; On           ;    ;
+; Rule C105: Clock signal should be a global signal                                                                                                                    ; On           ;    ;
+; Rule C106: Clock signal source should not drive registers triggered by different clock edges                                                                         ; On           ;    ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                                                                         ; On           ;    ;
+; Rule R102: External reset signals should be synchronized using two cascaded registers                                                                                ; On           ;    ;
+; Rule R103: External reset signal should be correctly synchronized                                                                                                    ; On           ;    ;
+; Rule R104: The reset signal that is generated in one clock domain and used in another clock domain should be correctly synchronized                                  ; On           ;    ;
+; Rule R105: The reset signal that is generated in one clock domain and used in another clock domain should be synchronized                                            ; On           ;    ;
+; Rule T101: Nodes with more than the specified number of fan-outs                                                                                                     ; On           ;    ;
+; Rule T102: Top nodes with the highest number of fan-outs                                                                                                             ; On           ;    ;
+; Rule A101: Design should not contain combinational loops                                                                                                             ; On           ;    ;
+; Rule A102: Register output should not drive its own control signal directly or through combinational logic                                                           ; On           ;    ;
+; Rule A103: Design should not contain delay chains                                                                                                                    ; On           ;    ;
+; Rule A104: Design should not contain ripple clock structures                                                                                                         ; On           ;    ;
+; Rule A105: Pulses should not be implemented asynchronously                                                                                                           ; On           ;    ;
+; Rule A106: Multiple pulses should not be generated in design                                                                                                         ; On           ;    ;
+; Rule A107: Design should not contain SR latches                                                                                                                      ; On           ;    ;
+; Rule A108: Design should not contain latches                                                                                                                         ; On           ;    ;
+; Rule S101: Output enable and input of the same tri-state node should not be driven by same signal source                                                             ; On           ;    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source                                                ; On           ;    ;
+; Rule S103: More than one asynchronous port of a register should not be driven by the same signal source                                                              ; On           ;    ;
+; Rule S104: Clock port and any other port of a register should not be driven by the same signal source                                                                ; On           ;    ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains                                                                        ; On           ;    ;
+; Rule D102: Multiple data bits that are transferred across asynchronous clock domains are synchronized, but not all bits may be aligned in the receiving clock domain ; On           ;    ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains                                                              ; On           ;    ;
+; Rule M101: Data bits are not synchronized when transferred to the state machine of asynchronous clock domains                                                        ; Off          ;    ;
+; Rule M102: No reset signal defined to initialize the state machine                                                                                                   ; Off          ;    ;
+; Rule M103: State machine should not contain an unreachable state                                                                                                     ; Off          ;    ;
+; Rule M104: State machine should not contain a deadlock state                                                                                                         ; Off          ;    ;
+; Rule M105: State machine should not contain a dead transition                                                                                                        ; Off          ;    ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+----+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; High Violations                                                                                                                                                     ;
++------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+; Rule name                                                                                                              ; Name                                       ;
++------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+; Rule A108: Design should not contain latches - Latch 1                                                                 ;                                            ;
+;  Latch 1                                                                                                               ; spi_slave:spi_slave_0|tx_buf[24]~1         ;
+; Rule A108: Design should not contain latches - Latch 2                                                                 ;                                            ;
+;  Latch 2                                                                                                               ; spi_slave:spi_slave_0|tx_buf[23]~6         ;
+; Rule A108: Design should not contain latches - Latch 3                                                                 ;                                            ;
+;  Latch 3                                                                                                               ; spi_slave:spi_slave_0|rx_data[23]          ;
+; Rule A108: Design should not contain latches - Latch 4                                                                 ;                                            ;
+;  Latch 4                                                                                                               ; spi_slave:spi_slave_0|tx_buf[21]~16        ;
+; Rule A108: Design should not contain latches - Latch 5                                                                 ;                                            ;
+;  Latch 5                                                                                                               ; spi_slave:spi_slave_0|rx_data[21]          ;
+; Rule A108: Design should not contain latches - Latch 6                                                                 ;                                            ;
+;  Latch 6                                                                                                               ; spi_slave:spi_slave_0|tx_buf[20]~21        ;
+; Rule A108: Design should not contain latches - Latch 7                                                                 ;                                            ;
+;  Latch 7                                                                                                               ; spi_slave:spi_slave_0|rx_data[20]          ;
+; Rule A108: Design should not contain latches - Latch 8                                                                 ;                                            ;
+;  Latch 8                                                                                                               ; spi_slave:spi_slave_0|rx_data[19]          ;
+; Rule A108: Design should not contain latches - Latch 9                                                                 ;                                            ;
+;  Latch 9                                                                                                               ; spi_slave:spi_slave_0|tx_buf[19]~26        ;
+; Rule A108: Design should not contain latches - Latch 10                                                                ;                                            ;
+;  Latch 10                                                                                                              ; spi_slave:spi_slave_0|tx_buf[18]~31        ;
+; Rule A108: Design should not contain latches - Latch 11                                                                ;                                            ;
+;  Latch 11                                                                                                              ; spi_slave:spi_slave_0|rx_data[18]          ;
+; Rule A108: Design should not contain latches - Latch 12                                                                ;                                            ;
+;  Latch 12                                                                                                              ; spi_slave:spi_slave_0|tx_buf[17]~36        ;
+; Rule A108: Design should not contain latches - Latch 13                                                                ;                                            ;
+;  Latch 13                                                                                                              ; spi_slave:spi_slave_0|rx_data[17]          ;
+; Rule A108: Design should not contain latches - Latch 14                                                                ;                                            ;
+;  Latch 14                                                                                                              ; spi_slave:spi_slave_0|tx_buf[16]~41        ;
+; Rule A108: Design should not contain latches - Latch 15                                                                ;                                            ;
+;  Latch 15                                                                                                              ; spi_slave:spi_slave_0|rx_data[16]          ;
+; Rule A108: Design should not contain latches - Latch 16                                                                ;                                            ;
+;  Latch 16                                                                                                              ; spi_slave:spi_slave_0|tx_buf[15]~46        ;
+; Rule A108: Design should not contain latches - Latch 17                                                                ;                                            ;
+;  Latch 17                                                                                                              ; spi_slave:spi_slave_0|rx_data[15]          ;
+; Rule A108: Design should not contain latches - Latch 18                                                                ;                                            ;
+;  Latch 18                                                                                                              ; spi_slave:spi_slave_0|tx_buf[14]~51        ;
+; Rule A108: Design should not contain latches - Latch 19                                                                ;                                            ;
+;  Latch 19                                                                                                              ; spi_slave:spi_slave_0|rx_data[14]          ;
+; Rule A108: Design should not contain latches - Latch 20                                                                ;                                            ;
+;  Latch 20                                                                                                              ; spi_slave:spi_slave_0|tx_buf[13]~56        ;
+; Rule A108: Design should not contain latches - Latch 21                                                                ;                                            ;
+;  Latch 21                                                                                                              ; spi_slave:spi_slave_0|rx_data[13]          ;
+; Rule A108: Design should not contain latches - Latch 22                                                                ;                                            ;
+;  Latch 22                                                                                                              ; spi_slave:spi_slave_0|tx_buf[12]~61        ;
+; Rule A108: Design should not contain latches - Latch 23                                                                ;                                            ;
+;  Latch 23                                                                                                              ; spi_slave:spi_slave_0|rx_data[12]          ;
+; Rule A108: Design should not contain latches - Latch 24                                                                ;                                            ;
+;  Latch 24                                                                                                              ; spi_slave:spi_slave_0|tx_buf[11]~66        ;
+; Rule A108: Design should not contain latches - Latch 25                                                                ;                                            ;
+;  Latch 25                                                                                                              ; spi_slave:spi_slave_0|rx_data[11]          ;
+; Rule A108: Design should not contain latches - Latch 26                                                                ;                                            ;
+;  Latch 26                                                                                                              ; spi_slave:spi_slave_0|tx_buf[10]~71        ;
+; Rule A108: Design should not contain latches - Latch 27                                                                ;                                            ;
+;  Latch 27                                                                                                              ; spi_slave:spi_slave_0|rx_data[10]          ;
+; Rule A108: Design should not contain latches - Latch 28                                                                ;                                            ;
+;  Latch 28                                                                                                              ; spi_slave:spi_slave_0|tx_buf[9]~76         ;
+; Rule A108: Design should not contain latches - Latch 29                                                                ;                                            ;
+;  Latch 29                                                                                                              ; spi_slave:spi_slave_0|rx_data[9]           ;
+; Rule A108: Design should not contain latches - Latch 30                                                                ;                                            ;
+;  Latch 30                                                                                                              ; spi_slave:spi_slave_0|tx_buf[8]~81         ;
+; Rule A108: Design should not contain latches - Latch 31                                                                ;                                            ;
+;  Latch 31                                                                                                              ; spi_slave:spi_slave_0|rx_data[8]           ;
+; Rule A108: Design should not contain latches - Latch 32                                                                ;                                            ;
+;  Latch 32                                                                                                              ; spi_slave:spi_slave_0|tx_buf[7]~86         ;
+; Rule A108: Design should not contain latches - Latch 33                                                                ;                                            ;
+;  Latch 33                                                                                                              ; spi_slave:spi_slave_0|rx_data[7]           ;
+; Rule A108: Design should not contain latches - Latch 34                                                                ;                                            ;
+;  Latch 34                                                                                                              ; spi_slave:spi_slave_0|tx_buf[6]~91         ;
+; Rule A108: Design should not contain latches - Latch 35                                                                ;                                            ;
+;  Latch 35                                                                                                              ; spi_slave:spi_slave_0|rx_data[6]           ;
+; Rule A108: Design should not contain latches - Latch 36                                                                ;                                            ;
+;  Latch 36                                                                                                              ; spi_slave:spi_slave_0|tx_buf[5]~96         ;
+; Rule A108: Design should not contain latches - Latch 37                                                                ;                                            ;
+;  Latch 37                                                                                                              ; spi_slave:spi_slave_0|rx_data[5]           ;
+; Rule A108: Design should not contain latches - Latch 38                                                                ;                                            ;
+;  Latch 38                                                                                                              ; spi_slave:spi_slave_0|tx_buf[4]~101        ;
+; Rule A108: Design should not contain latches - Latch 39                                                                ;                                            ;
+;  Latch 39                                                                                                              ; spi_slave:spi_slave_0|rx_data[4]           ;
+; Rule A108: Design should not contain latches - Latch 40                                                                ;                                            ;
+;  Latch 40                                                                                                              ; spi_slave:spi_slave_0|tx_buf[3]~106        ;
+; Rule A108: Design should not contain latches - Latch 41                                                                ;                                            ;
+;  Latch 41                                                                                                              ; spi_slave:spi_slave_0|rx_data[3]           ;
+; Rule A108: Design should not contain latches - Latch 42                                                                ;                                            ;
+;  Latch 42                                                                                                              ; spi_slave:spi_slave_0|tx_buf[2]~111        ;
+; Rule A108: Design should not contain latches - Latch 43                                                                ;                                            ;
+;  Latch 43                                                                                                              ; spi_slave:spi_slave_0|rx_data[2]           ;
+; Rule A108: Design should not contain latches - Latch 44                                                                ;                                            ;
+;  Latch 44                                                                                                              ; spi_slave:spi_slave_0|tx_buf[1]~116        ;
+; Rule A108: Design should not contain latches - Latch 45                                                                ;                                            ;
+;  Latch 45                                                                                                              ; spi_slave:spi_slave_0|rx_data[1]           ;
+; Rule A108: Design should not contain latches - Latch 46                                                                ;                                            ;
+;  Latch 46                                                                                                              ; spi_slave:spi_slave_0|tx_buf[0]~121        ;
+; Rule A108: Design should not contain latches - Latch 47                                                                ;                                            ;
+;  Latch 47                                                                                                              ; spi_slave:spi_slave_0|rx_data[0]           ;
+; Rule A108: Design should not contain latches - Latch 48                                                                ;                                            ;
+;  Latch 48                                                                                                              ; spi_slave:spi_slave_0|tx_buf[22]~11        ;
+; Rule A108: Design should not contain latches - Latch 49                                                                ;                                            ;
+;  Latch 49                                                                                                              ; spi_slave:spi_slave_0|rx_data[22]          ;
+; Rule A108: Design should not contain latches - Latch 50                                                                ;                                            ;
+;  Latch 50                                                                                                              ; spi_slave:spi_slave_0|trdy~1               ;
+; Rule A108: Design should not contain latches - Latch 51                                                                ;                                            ;
+;  Latch 51                                                                                                              ; spi_slave:spi_slave_0|rx_data[24]          ;
+; Rule C105: Clock signal should be a global signal                                                                      ; sclk                                       ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                           ; spi_slave:spi_slave_0|process_0~0          ;
+;  Reset signal destination node(s) list                                                                                 ; spi_slave:spi_slave_0|miso~en              ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                           ; spi_slave:spi_slave_0|process_1~3          ;
+;  Reset signal destination node(s) list                                                                                 ; spi_slave:spi_slave_0|rrdy                 ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                           ; spi_slave:spi_slave_0|trdy~0               ;
+;  Reset signal destination node(s) list                                                                                 ; spi_slave:spi_slave_0|trdy~_emulated       ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[24]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[23]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[22]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[21]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[20]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[19]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[18]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[17]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[16]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[15]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[14]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[13]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[12]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[11]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[10]~_emulated ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[9]~_emulated  ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[8]~_emulated  ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[7]~_emulated  ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[6]~_emulated  ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[5]~_emulated  ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[4]~_emulated  ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[3]~_emulated  ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[2]~_emulated  ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[1]~_emulated  ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source  ; spi_slave:spi_slave_0|tx_buf[0]~_emulated  ;
+;  Synchronous and reset port source node(s) list                                                                        ; reset_n                                    ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 1            ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rrdy                 ;
+;  Destination node(s) from clock "clk"                                                                                  ; state.ready                                ;
+;  Destination node(s) from clock "clk"                                                                                  ; spi_rx_req                                 ;
+;  Destination node(s) from clock "clk"                                                                                  ; state.spi_rx                               ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 2            ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[24]           ;
+;  Destination node(s) from clock "clk"                                                                                  ; state.ready                                ;
+;  Destination node(s) from clock "clk"                                                                                  ; state.spi_load_tx                          ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 3            ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_ena                                 ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|trdy~_emulated       ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[2]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[3]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[4]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[5]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[6]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[7]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[8]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[9]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[10]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 4            ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[24]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[24]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[0]~_emulated  ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 5            ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[23]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[23]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[24]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 6            ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[21]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[22]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[21]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 7            ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[20]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[20]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[21]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 8            ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[19]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[19]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[20]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 9            ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[18]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[19]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[18]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 10           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[17]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[17]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[18]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 11           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[16]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[16]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[17]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 12           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[15]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[15]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[16]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 13           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[14]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[14]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[15]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 14           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[13]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[13]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[14]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 15           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[12]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[12]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[13]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 16           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[11]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[11]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[12]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 17           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[10]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[10]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[11]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 18           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[9]                             ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[9]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[10]~_emulated ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 19           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[8]                             ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[8]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[9]~_emulated  ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 20           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[7]                             ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[7]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[8]~_emulated  ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 21           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[6]                             ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[6]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[7]~_emulated  ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 22           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[5]                             ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[5]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[6]~_emulated  ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 23           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[4]                             ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[4]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[5]~_emulated  ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 24           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[3]                             ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[3]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[4]~_emulated  ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 25           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[2]                             ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[2]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[3]~_emulated  ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 26           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[1]                             ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[2]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[1]~_emulated  ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 27           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[0]                             ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[0]~_emulated  ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[1]~_emulated  ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 28           ;                                            ;
+;  Source node(s) from clock "clk"                                                                                       ; spi_tx_data[22]                            ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[22]~_emulated ;
+;  Destination node(s) from clock "sclk"                                                                                 ; spi_slave:spi_slave_0|tx_buf[23]~_emulated ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 1  ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[24]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[24]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[24]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 2  ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[23]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[23]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[23]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 3  ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[21]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[21]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[21]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 4  ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[20]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[20]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[20]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 5  ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[19]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[19]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[19]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 6  ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[18]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[18]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[18]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 7  ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[17]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[17]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[17]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 8  ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[16]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[16]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[16]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 9  ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[15]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[15]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[15]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 10 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[14]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[14]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[14]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 11 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[13]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[13]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[13]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 12 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[12]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[12]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[12]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 13 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[11]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[11]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[11]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 14 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[10]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[10]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[10]                            ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 15 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[9]            ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[9]                                 ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[9]                             ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 16 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[8]            ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[8]                                 ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[8]                             ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 17 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[7]            ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[7]                                 ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[7]                             ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 18 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[6]            ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[6]                                 ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[6]                             ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 19 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[5]            ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[5]                                 ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[5]                             ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 20 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[4]            ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[4]                                 ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[4]                             ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 21 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[3]            ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[3]                                 ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[3]                             ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 22 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[2]            ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[2]                                 ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[2]                             ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 23 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[1]            ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[1]                                 ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[1]                             ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 24 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[0]            ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[0]                                 ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[0]                             ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains - Structure 25 ;                                            ;
+;  Source node(s) from clock "sclk"                                                                                      ; spi_slave:spi_slave_0|rx_buf[22]           ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; message[22]                                ;
+;  Synchronizer node(s) from clock "clk"                                                                                 ; spi_tx_data[22]                            ;
++------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Medium Violations                                                                                                                                                                                                         ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+
+; Rule name                                                                                                                                                                          ; Name                                 ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+
+; Rule C106: Clock signal source should not drive registers triggered by different clock edges                                                                                       ; sclk                                 ;
+;  Positive edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|rd_add         ;
+;  Positive edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|wr_add         ;
+;  Positive edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|rrdy           ;
+;  Positive edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|roe            ;
+;  Positive edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|trdy~_emulated ;
+;  Positive edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|rx_buf[0]      ;
+;  Positive edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|rx_buf[1]      ;
+;  Positive edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|rx_buf[2]      ;
+;  Positive edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|rx_buf[3]      ;
+;  Positive edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|rx_buf[4]      ;
+;  Negative edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|miso~reg0      ;
+;  Negative edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|bit_cnt[2]     ;
+;  Negative edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|bit_cnt[1]     ;
+;  Negative edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|bit_cnt[33]    ;
+;  Negative edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|bit_cnt[32]    ;
+;  Negative edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|bit_cnt[31]    ;
+;  Negative edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|bit_cnt[30]    ;
+;  Negative edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|bit_cnt[29]    ;
+;  Negative edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|bit_cnt[28]    ;
+;  Negative edge destination node(s) list                                                                                                                                            ; spi_slave:spi_slave_0|bit_cnt[27]    ;
+; Rule R102: External reset signals should be synchronized using two cascaded registers                                                                                              ; reset_n                              ;
+;  Reset signal destination node(s) list                                                                                                                                             ; spi_slave:spi_slave_0|roe            ;
+;  Reset signal destination node(s) list                                                                                                                                             ; spi_rx_req                           ;
+;  Reset signal destination node(s) list                                                                                                                                             ; state.ready                          ;
+;  Reset signal destination node(s) list                                                                                                                                             ; spi_slave:spi_slave_0|rx_buf[24]     ;
+;  Reset signal destination node(s) list                                                                                                                                             ; state.spi_rx                         ;
+;  Reset signal destination node(s) list                                                                                                                                             ; state.spi_load_tx                    ;
+;  Reset signal destination node(s) list                                                                                                                                             ; spi_tx_ena                           ;
+;  Reset signal destination node(s) list                                                                                                                                             ; spi_slave:spi_slave_0|rx_buf[23]     ;
+;  Reset signal destination node(s) list                                                                                                                                             ; spi_slave:spi_slave_0|rx_buf[21]     ;
+;  Reset signal destination node(s) list                                                                                                                                             ; spi_slave:spi_slave_0|rx_buf[20]     ;
+; Rule D102: Multiple data bits that are transferred across asynchronous clock domains are synchronized, but not all bits may be aligned in the receiving clock domain - Structure 1 ;                                      ;
+;  Source node(s) from clock "sclk" - (Bus)                                                                                                                                          ; spi_slave:spi_slave_0|rx_buf         ;
+;  Synchronizer node(s) from clock "clk" - (Bus)                                                                                                                                     ; message                              ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Information only Violations                                                                                           ;
++------------------------------------------------------------------+------------------------------------------+---------+
+; Rule name                                                        ; Name                                     ; Fan-Out ;
++------------------------------------------------------------------+------------------------------------------+---------+
+; Rule T101: Nodes with more than the specified number of fan-outs ; spi_slave:spi_slave_0|process_0~0        ; 34      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; spi_slave:spi_slave_0|wr_add             ; 31      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; clk~inputclkctrl                         ; 53      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; clk~inputclkctrl                         ; 53      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|process_0~0        ; 34      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|wr_add             ; 31      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|trdy~7             ; 29      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|trdy~0             ; 26      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|trdy~7clkctrl      ; 25      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|process_1~4        ; 25      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_tx_data[24]~0                        ; 25      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|process_1~5clkctrl ; 25      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; message[24]~0                            ; 25      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|rd_add             ; 6       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; state.spi_load_tx                        ; 6       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|bit_cnt[33]        ; 5       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|bit_cnt[9]         ; 5       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; state.spi_rx                             ; 5       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|rrdy               ; 5       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|bit_cnt[8]         ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|bit_cnt[10]        ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|rx_data[24]        ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[5]~96       ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|bit_cnt[2]         ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[16]~41      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[21]~16      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[22]~11      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|bit_cnt[1]         ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[14]~51      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[23]~6       ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[18]~31      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[4]~101      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[8]~81       ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[6]~91       ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[11]~66      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[17]~36      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[1]~116      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|bit_cnt[11]        ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[10]~71      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[3]~106      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[0]~121      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[9]~76       ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[15]~46      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[2]~111      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[20]~21      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[12]~61      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[19]~26      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_rx_req                               ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|trdy~1             ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[13]~56      ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[24]~1       ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|trdy~2             ; 3       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; spi_slave:spi_slave_0|tx_buf[7]~86       ; 3       ;
++------------------------------------------------------------------+------------------------------------------+---------+
+
+
++---------------------------+
+; Design Assistant Messages ;
++---------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Design Assistant
+    Info: Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
+    Info: Processing started: Sat Aug 29 17:13:47 2015
+Info: Command: quartus_drc --read_settings_files=off --write_settings_files=off SPI_Slave_Test -c SPI_Slave_Test
+Warning (335093): TimeQuest Timing Analyzer is analyzing 51 combinational loops as latches.
+Info (332104): Reading SDC File: 'SPI_Slave_Test.out.sdc'
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From sclk (Rise) to sclk (Rise) (setup and hold)
+    Critical Warning (332169): From sclk (Fall) to sclk (Rise) (setup and hold)
+    Critical Warning (332169): From sclk (Rise) to sclk (Fall) (setup and hold)
+    Critical Warning (332169): From sclk (Fall) to sclk (Fall) (setup and hold)
+Critical Warning (308055): (High) Rule A108: Design should not contain latches. Found 51 latch(es) related to this rule.
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[24]~1"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[23]~6"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[23]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[21]~16"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[21]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[20]~21"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[20]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[19]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[19]~26"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[18]~31"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[18]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[17]~36"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[17]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[16]~41"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[16]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[15]~46"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[15]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[14]~51"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[14]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[13]~56"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[13]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[12]~61"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[12]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[11]~66"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[11]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[10]~71"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[10]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[9]~76"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_data[9]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[8]~81"
+    Info (308002): Truncated list of Design Assistant messages to 30 messages. Go to sections under Design Assistant section of Compilation Report for complete lists of Design Assistant messages generated.
+Critical Warning (308042): (High) Rule C105: Clock signal should be a global signal. (Reporting threshold:25). Found 1 node(s) related to this rule.
+    Info (308076): The following clocks all contain more than 25 fanouts. You can either change the following clock signals to global signals, or adjust the reporting threshold in the Design Assistant Settings page.
+    Critical Warning (308012): Node  "sclk"
+Critical Warning (308024): (High) Rule R101: Combinational logic used as a reset signal should be synchronized. Found 3 node(s) related to this rule.
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|process_0~0"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|process_1~3"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|trdy~0"
+Critical Warning (308074): (High) Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source. Found 25 node(s) related to this rule.
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[24]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[23]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[22]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[21]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[20]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[19]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[18]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[17]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[16]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[15]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[14]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[13]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[12]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[11]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[10]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[9]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[8]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[7]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[6]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[5]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[4]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[3]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[2]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[1]~_emulated"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|tx_buf[0]~_emulated"
+Critical Warning (308060): (High) Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains. (Value defined:2). Found 28 asynchronous clock domain interface structure(s) related to this rule.
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rrdy"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[24]"
+    Critical Warning (308012): Node  "spi_tx_ena"
+    Critical Warning (308012): Node  "spi_tx_data[24]"
+    Critical Warning (308012): Node  "spi_tx_data[23]"
+    Critical Warning (308012): Node  "spi_tx_data[21]"
+    Critical Warning (308012): Node  "spi_tx_data[20]"
+    Critical Warning (308012): Node  "spi_tx_data[19]"
+    Critical Warning (308012): Node  "spi_tx_data[18]"
+    Critical Warning (308012): Node  "spi_tx_data[17]"
+    Critical Warning (308012): Node  "spi_tx_data[16]"
+    Critical Warning (308012): Node  "spi_tx_data[15]"
+    Critical Warning (308012): Node  "spi_tx_data[14]"
+    Critical Warning (308012): Node  "spi_tx_data[13]"
+    Critical Warning (308012): Node  "spi_tx_data[12]"
+    Critical Warning (308012): Node  "spi_tx_data[11]"
+    Critical Warning (308012): Node  "spi_tx_data[10]"
+    Critical Warning (308012): Node  "spi_tx_data[9]"
+    Critical Warning (308012): Node  "spi_tx_data[8]"
+    Critical Warning (308012): Node  "spi_tx_data[7]"
+    Critical Warning (308012): Node  "spi_tx_data[6]"
+    Critical Warning (308012): Node  "spi_tx_data[5]"
+    Critical Warning (308012): Node  "spi_tx_data[4]"
+    Critical Warning (308012): Node  "spi_tx_data[3]"
+    Critical Warning (308012): Node  "spi_tx_data[2]"
+    Critical Warning (308012): Node  "spi_tx_data[1]"
+    Critical Warning (308012): Node  "spi_tx_data[0]"
+    Critical Warning (308012): Node  "spi_tx_data[22]"
+Critical Warning (308067): (High) Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains. (Value defined:2). Found 25 asynchronous clock domain interface structure(s) related to this rule.
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[24]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[23]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[21]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[20]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[19]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[18]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[17]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[16]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[15]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[14]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[13]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[12]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[11]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[10]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[9]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[8]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[7]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[6]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[5]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[4]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[3]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[2]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[1]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[0]"
+    Critical Warning (308012): Node  "spi_slave:spi_slave_0|rx_buf[22]"
+Warning (308022): (Medium) Rule C106: Clock signal source should not drive registers triggered by different clock edges. Found 1 node(s) related to this rule.
+    Warning (308010): Node  "sclk"
+Warning (308023): (Medium) Rule R102: External reset signals should be synchronized using two cascaded registers. Found 1 node(s) related to this rule.
+    Warning (308010): Node  "reset_n"
+Warning (308071): (Medium) Rule D102: Multiple data bits that are transferred across asynchronous clock domains are synchronized, but not all bits may be aligned in the receiving clock domain. (Value defined:2). Found 1 asynchronous clock domain interface structure(s) related to this rule.
+    Warning (308010): Node  "spi_slave:spi_slave_0|rx_buf (Bus)"
+Info (308046): (Information) Rule T101: Nodes with more than the specified number of fan-outs. (Value defined:30). Found 3 node(s) with highest fan-out.
+    Info (308011): Node  "spi_slave:spi_slave_0|process_0~0"
+    Info (308011): Node  "spi_slave:spi_slave_0|wr_add"
+    Info (308011): Node  "clk~inputclkctrl"
+Info (308044): (Information) Rule T102: Top nodes with the highest number of fan-outs. (Value defined:50). Found 50 node(s) with highest fan-out.
+    Info (308011): Node  "clk~inputclkctrl"
+    Info (308011): Node  "spi_slave:spi_slave_0|process_0~0"
+    Info (308011): Node  "spi_slave:spi_slave_0|wr_add"
+    Info (308011): Node  "spi_slave:spi_slave_0|trdy~7"
+    Info (308011): Node  "spi_slave:spi_slave_0|trdy~0"
+    Info (308011): Node  "spi_slave:spi_slave_0|trdy~7clkctrl"
+    Info (308011): Node  "spi_slave:spi_slave_0|process_1~4"
+    Info (308011): Node  "spi_tx_data[24]~0"
+    Info (308011): Node  "spi_slave:spi_slave_0|process_1~5clkctrl"
+    Info (308011): Node  "message[24]~0"
+    Info (308011): Node  "spi_slave:spi_slave_0|rd_add"
+    Info (308011): Node  "state.spi_load_tx"
+    Info (308011): Node  "spi_slave:spi_slave_0|bit_cnt[33]"
+    Info (308011): Node  "spi_slave:spi_slave_0|bit_cnt[9]"
+    Info (308011): Node  "state.spi_rx"
+    Info (308011): Node  "spi_slave:spi_slave_0|rrdy"
+    Info (308011): Node  "spi_slave:spi_slave_0|bit_cnt[8]"
+    Info (308011): Node  "spi_slave:spi_slave_0|bit_cnt[10]"
+    Info (308011): Node  "spi_slave:spi_slave_0|rx_data[24]"
+    Info (308011): Node  "spi_slave:spi_slave_0|tx_buf[5]~96"
+    Info (308011): Node  "spi_slave:spi_slave_0|bit_cnt[2]"
+    Info (308011): Node  "spi_slave:spi_slave_0|tx_buf[16]~41"
+    Info (308011): Node  "spi_slave:spi_slave_0|tx_buf[21]~16"
+    Info (308011): Node  "spi_slave:spi_slave_0|tx_buf[22]~11"
+    Info (308011): Node  "spi_slave:spi_slave_0|bit_cnt[1]"
+    Info (308011): Node  "spi_slave:spi_slave_0|tx_buf[14]~51"
+    Info (308011): Node  "spi_slave:spi_slave_0|tx_buf[23]~6"
+    Info (308011): Node  "spi_slave:spi_slave_0|tx_buf[18]~31"
+    Info (308011): Node  "spi_slave:spi_slave_0|tx_buf[4]~101"
+    Info (308011): Node  "spi_slave:spi_slave_0|tx_buf[8]~81"
+    Info (308002): Truncated list of Design Assistant messages to 30 messages. Go to sections under Design Assistant section of Compilation Report for complete lists of Design Assistant messages generated.
+Info (308007): Design Assistant information: finished post-fitting analysis of current design -- generated 53 information messages and 136 warning messages
+Info: Quartus II 64-Bit Design Assistant was successful. 0 errors, 130 warnings
+    Info: Peak virtual memory: 605 megabytes
+    Info: Processing ended: Sat Aug 29 17:13:48 2015
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

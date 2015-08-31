@@ -1,0 +1,31 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/spi_loopback/simulation/modelsim
+vspi_loopback
+!s110 1440843799
+!i10b 1
+!s100 bN5Z0LoiL75^;lQYliNdN0
+IG[VVcig5T51>BSkcIVT@W0
+V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1440841677
+8spi_loopback_7_1200mv_85c_slow.vo
+Fspi_loopback_7_1200mv_85c_slow.vo
+L0 32
+OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1440843798.909000
+!s107 spi_loopback_7_1200mv_85c_slow.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|spi_loopback_7_1200mv_85c_slow.vo|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+.

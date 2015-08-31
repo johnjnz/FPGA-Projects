@@ -1,0 +1,333 @@
+# Reading C:/altera/15.0/modelsim_ase/tcl/vsim/pref.tcl
+# do spi_loopback_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_slave.vhdl}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:31:35 on Aug 30,2015
+# vcom -reportprogress 300 -93 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_slave.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity spi_slave
+# -- Compiling architecture rtl of spi_slave
+# ** Warning: C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_slave.vhdl(361): Choice in CASE statement alternative must be locally static.
+# ** Warning: C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_slave.vhdl(369): Choice in CASE statement alternative must be locally static.
+# ** Warning: C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_slave.vhdl(378): Choice in CASE statement alternative must be locally static.
+# End time: 11:31:35 on Aug 30,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
+# vcom -93 -work work {C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_master.vhdl}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:31:35 on Aug 30,2015
+# vcom -reportprogress 300 -93 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_master.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity spi_master
+# -- Compiling architecture rtl of spi_master
+# ** Warning: C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_master.vhdl(505): Choice in CASE statement alternative must be locally static.
+# ** Warning: C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_master.vhdl(513): Choice in CASE statement alternative must be locally static.
+# ** Warning: C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_master.vhdl(521): Choice in CASE statement alternative must be locally static.
+# ** Warning: C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_master.vhdl(530): Choice in CASE statement alternative must be locally static.
+# End time: 11:31:36 on Aug 30,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 4
+# vcom -93 -work work {C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_loopback.vhdl}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:31:36 on Aug 30,2015
+# vcom -reportprogress 300 -93 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/spi_loopback.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity spi_loopback
+# -- Compiling architecture Structural of spi_loopback
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading entity spi_master
+# -- Loading entity spi_slave
+# End time: 11:31:36 on Aug 30,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim/spi_loopback_test.vhdl
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:31:49 on Aug 30,2015
+# vcom -reportprogress 300 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim/spi_loopback_test.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity spi_loopback_test
+# -- Compiling architecture behavior of spi_loopback_test
+# End time: 11:31:49 on Aug 30,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.spi_loopback_test
+# vsim -gui "+altera" -l msim_transcript -do "spi_loopback_run_msim_rtl_vhdl.do" 
+# Start time: 11:31:57 on Aug 30,2015
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.spi_loopback_test(behavior)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.spi_loopback(structural)
+# Loading work.spi_master(rtl)
+# Loading work.spi_slave(rtl)
+add wave -position insertpoint  \
+sim:/spi_loopback_test/m_clk \
+sim:/spi_loopback_test/s_clk \
+sim:/spi_loopback_test/rst \
+sim:/spi_loopback_test/spi_sck \
+sim:/spi_loopback_test/spi_ssel \
+sim:/spi_loopback_test/spi_miso \
+sim:/spi_loopback_test/spi_mosi \
+sim:/spi_loopback_test/di_m \
+sim:/spi_loopback_test/do_m \
+sim:/spi_loopback_test/di_s \
+sim:/spi_loopback_test/do_s
+run
+add wave -position insertpoint  \
+sim:/spi_loopback_test/do_valid_s \
+sim:/spi_loopback_test/do_transfer_s \
+sim:/spi_loopback_test/di_req_s \
+sim:/spi_loopback_test/wren_s \
+sim:/spi_loopback_test/wren_o_s \
+sim:/spi_loopback_test/wren_ack_o_s \
+sim:/spi_loopback_test/rx_bit_reg_s
+restart
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+restart
+add wave -position insertpoint  \
+sim:/spi_loopback_test/m_clk \
+sim:/spi_loopback_test/s_clk \
+sim:/spi_loopback_test/rst \
+sim:/spi_loopback_test/spi_sck \
+sim:/spi_loopback_test/spi_ssel \
+sim:/spi_loopback_test/spi_miso \
+sim:/spi_loopback_test/spi_mosi \
+sim:/spi_loopback_test/di_m \
+sim:/spi_loopback_test/do_m \
+sim:/spi_loopback_test/do_valid_m \
+sim:/spi_loopback_test/do_transfer_m \
+sim:/spi_loopback_test/di_req_m \
+sim:/spi_loopback_test/wren_m \
+sim:/spi_loopback_test/wren_o_m \
+sim:/spi_loopback_test/wren_ack_o_m \
+sim:/spi_loopback_test/rx_bit_reg_m \
+sim:/spi_loopback_test/state_m \
+sim:/spi_loopback_test/core_clk_o_m \
+sim:/spi_loopback_test/core_n_clk_o_m \
+sim:/spi_loopback_test/sh_reg_m \
+sim:/spi_loopback_test/di_s \
+sim:/spi_loopback_test/do_s \
+sim:/spi_loopback_test/do_valid_s \
+sim:/spi_loopback_test/do_transfer_s \
+sim:/spi_loopback_test/di_req_s \
+sim:/spi_loopback_test/wren_s \
+sim:/spi_loopback_test/wren_o_s \
+sim:/spi_loopback_test/wren_ack_o_s \
+sim:/spi_loopback_test/rx_bit_reg_s \
+sim:/spi_loopback_test/state_s
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+restart
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Warning: Unable to determine driver(s) for "sim:/spi_loopback_test/wren_s"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+restart
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Break in Process slave_tx_fifo_proc at C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim/spi_loopback_test.vhdl line 286
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -out
+step -out
+step -out
+step
+step
+step
+# Break in Process slave_tx_fifo_proc at C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim/spi_loopback_test.vhdl line 288
+step
+step
+step
+# Break in Process slave_tx_fifo_proc at C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim/spi_loopback_test.vhdl line 292
+step
+# Break in Process slave_tx_fifo_proc at C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim/spi_loopback_test.vhdl line 294
+step
+step
+step
+# Next activity is in 50 ns.
+# Break in ForLoop loop at C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim/spi_loopback_test.vhdl line 297
+run
+restart
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+restart
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+vcom -reportprogress 300 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim/spi_loopback_test.vhdl
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 19:04:55 on Aug 30,2015
+# vcom -reportprogress 300 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/spi_loopback/simulation/modelsim/spi_loopback_test.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity spi_loopback_test
+# -- Compiling architecture behavior of spi_loopback_test
+# End time: 19:04:55 on Aug 30,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# Loading work.spi_loopback_test(behavior)
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
