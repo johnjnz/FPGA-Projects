@@ -19,13 +19,15 @@
 #
 # Quartus II 64-Bit
 # Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
-# Date created = 10:35:40  August 30, 2015
+# Date created = 21:26:53  September 01, 2015
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "15.0"
-DATE = "10:35:40  August 30, 2015"
+DATE = "21:26:53  September 01, 2015"
 
 # Revisions
 
+PROJECT_REVISION = "led_control"
 PROJECT_REVISION = "SPI_Comms"
+PROJECT_REVISION = "Add_slave_tx"

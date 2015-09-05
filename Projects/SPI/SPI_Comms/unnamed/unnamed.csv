@@ -1,0 +1,17 @@
+# system info unnamed on 2015.09.02.23:15:44
+system_info:
+name,value
+DEVICE,EP4CE115F29C7
+DEVICE_FAMILY,Cyclone IV E
+GENERATION_ID,1441192544
+#
+#
+# Files generated for unnamed on 2015.09.02.23:15:44
+files:
+filepath,kind,attributes,module,is_top
+simulation/unnamed.vhd,VHDL,,unnamed,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+unnamed.sram_0,unnamed_sram_0

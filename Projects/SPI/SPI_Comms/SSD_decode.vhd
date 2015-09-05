@@ -36,6 +36,7 @@ package body SSD is
             when x"e"	=> temp := "0000110";
             when x"f"	=> temp := "0001110";
             when x"0"	=> temp := "1000000";
+            when others => temp:= "1111111";
         end case;
 		
         segment <= temp;

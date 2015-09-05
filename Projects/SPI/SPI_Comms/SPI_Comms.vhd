@@ -1,5 +1,6 @@
 library ieee;
     use ieee.std_logic_1164.all;
+    use ieee.numeric_std.all;
 
 use work.SSD.all;
 
@@ -7,22 +8,23 @@ use work.SSD.all;
 
 entity SPI_Comms is
     Generic (   
-        N               : positive  := 16;                                         -- 32bit serial word length is default
-        CPOL            : std_logic := '0';                                    -- SPI mode selection (mode 0 default)
-        CPHA            : std_logic := '0';                                    -- CPOL = clock polarity, CPHA = clock phase.
-        PREFETCH        : positive  := 1                                   -- prefetch lookahead cycles
+        N                   :       positive  := 32;                                  -- Serial word length
+        CPOL                :       std_logic := '0';                                    
+        CPHA                :       std_logic := '0';                                    
+        PREFETCH            :       positive  := 3  
         );                                  
     Port(
-        s_clk_i         : IN std_logic;
-        s_spi_ssel_i    : IN std_logic;
-        s_spi_sck_i     : IN std_logic;
-        s_spi_mosi_i    : IN std_logic;
-        s_spi_miso_o    : OUT std_logic;
+        s_clk_i             : IN    std_logic;
+        s_spi_ssel_i        : IN    std_logic;
+        s_spi_sck_i         : IN    std_logic;
+        s_spi_mosi_i        : IN    std_logic;
+        s_spi_miso_o        : OUT   std_logic;
  
-        ssd_hex0            : out	STD_LOGIC_VECTOR(6 downto 0)    := (others => '0');
-		ssd_hex1            : out	STD_LOGIC_VECTOR(6 downto 0)    := (others => '0');
-        ssd_hex2            : out	STD_LOGIC_VECTOR(6 downto 0)    := (others => '0');
-        ssd_hex3            : out	STD_LOGIC_VECTOR(6 downto 0)    := (others => '0')
+        ssd_hex0            : OUT	STD_LOGIC_VECTOR(6 downto 0)    := (others => 'X');
+		ssd_hex1            : OUT	STD_LOGIC_VECTOR(6 downto 0)    := (others => 'X');
+        ssd_hex2            : OUT	STD_LOGIC_VECTOR(6 downto 0)    := (others => 'X');
+        ssd_hex3            : OUT	STD_LOGIC_VECTOR(6 downto 0)    := (others => 'X');
+        leds                : OUT   STD_LOGIC_VECTOR(25 downto 0)   := (others => '0')
         );
 end SPI_Comms;
 
@@ -30,44 +32,49 @@ architecture Structural of SPI_Comms is
 
     component spi_slave is
     Generic (    
-        N                   : positive := 16;                                              -- 32bit serial word length is default
-        CPOL                : std_logic := '0';                                        -- SPI mode selection (mode 0 default)
-        CPHA                : std_logic := '0';                                        -- CPOL = clock polarity, CPHA = clock phase.
-        PREFETCH            : positive := 1);                                      -- prefetch lookahead cycles
+        N                   :       positive    := 32;  
+        CPOL                :       std_logic   := '0'; 
+        CPHA                :       std_logic   := '0'; 
+        PREFETCH            :       positive    := 3);
     Port (  
-        clk_i               : in std_logic := 'X';                                    -- internal interface clock (clocks di/do registers)
-        spi_ssel_i          : in std_logic := 'X';                               -- spi bus slave select line
-        spi_sck_i           : in std_logic := 'X';                                -- spi bus sck clock (clocks the shift register core)
-        spi_mosi_i          : in std_logic := 'X';                               -- spi bus mosi input
-        spi_miso_o          : out std_logic := 'X';                              -- spi bus spi_miso_o output
-        di_req_o            : out std_logic;                                       -- preload lookahead data request line
-        di_i                : in  std_logic_vector (N-1 downto 0) := (others => 'X');  -- parallel load data in (clocked in on rising edge of clk_i)
-        wren_i              : in std_logic := 'X';                                   -- user data write enable
-        wr_ack_o            : out std_logic;                                       -- write acknowledge
-        do_valid_o          : out std_logic;                                     -- do_o data valid strobe, valid during one clk_i rising edge.
-        do_o                : out  std_logic_vector (N-1 downto 0)                     -- parallel output (clocked out on falling clk_i)
+        clk_i               : IN    std_logic := 'X';  
+        spi_ssel_i          : IN    std_logic := 'X'; 
+        spi_sck_i           : IN    std_logic := 'X'; 
+        spi_mosi_i          : IN    std_logic := 'X';
+        spi_miso_o          : OUT   std_logic := 'X';
+        di_req_o            : OUT   std_logic;
+        di_i                : IN    std_logic_vector (N-1 downto 0) := (others => 'X'); 
+        wren_i              : IN    std_logic := 'X';                                   
+        wr_ack_o            : OUT   std_logic;                                       
+        do_valid_o          : OUT   std_logic;                                     
+        do_o                : OUT   std_logic_vector (N-1 downto 0)                     
     );          
     end component spi_slave;
-
+    
     type STATE_T is (	
         IDLE,
         LOAD_DATA,
         SEND_DATA
     );
-
     
-    signal s_di_i           : std_logic_vector (N-1 downto 0) := (others => 'X');     -- parallel load data in (clocked in on rising edge of clk_i)
-    signal s_wren_i         : std_logic := 'X';                                     -- user data write enable
-    signal s_di_req_o       : std_logic;                                         -- preload lookahead data request line
-    signal s_do_valid_o     : std_logic;                                       -- do_o data valid strobe, valid during one clk_i rising edge.    
-    signal s_do_o           : std_logic_vector (N-1 downto 0);
-   
-    signal current_state    : STATE_T;
-    signal next_state       : STATE_T;
-                            
+    signal all_zeros        :       std_logic_vector(3 downto 0)    :=(others => '0');
+    
+    signal led_cmd          :       STD_LOGIC_VECTOR(5 downto 0)    := (others => '0');
+
+    signal current_state    :       STATE_T := IDLE;
+    signal next_state       :       STATE_T := IDLE;
+    
+    signal s_di_i           :       std_logic_vector (N-1 downto 0) := (others => 'X');     
+    signal s_wren_i         :       std_logic := 'X';                                     
+    signal s_di_req_o       :       std_logic;                                         
+    signal s_do_valid_o     :       std_logic;
+    signal s_do_o           :       std_logic_vector (N-1 downto 0);
+    signal valid_data       :       std_logic_vector (N-1 downto 0);
+
+                 
 begin
 
-    Inst_spi_slave: spi_slave
+    instance_spi_slave: spi_slave
     generic map (
         N           => N, 
         CPOL        => CPOL, 
@@ -88,31 +95,78 @@ begin
     );
 
  
+    --=============================================================================================
+    --  FSM state
+    --=============================================================================================
+    fsm_state: process( s_clk_i)
+    begin
+        if rising_edge(s_clk_i) then
+        
+            current_state <= next_state;
+            
+        end if;
+    end process fsm_state;
+ 
+ 
+ 
+    --=============================================================================================
+    --  Process RX data
+    --=============================================================================================
     slave_rx: process (s_clk_i, s_do_valid_o)
     begin
         
-        if s_clk_i'event and s_clk_i = '1' then
+        if rising_edge(s_clk_i) then
         
             if s_do_valid_o = '1' then
-
-                -- show on SSD
-                SSD_decode(s_do_o(15 downto 12), ssd_hex3);
-                SSD_decode(s_do_o(11 downto 8), ssd_hex2);
-                SSD_decode(s_do_o(7 downto 4), ssd_hex1);
-                SSD_decode(s_do_o(3 downto 0), ssd_hex0);
+            
+                SSD_decode(all_zeros, ssd_hex3);
+                SSD_decode(all_zeros, ssd_hex2);
+                SSD_decode(all_zeros, ssd_hex1);
                 
+                
+                leds(25 downto 0) <= s_do_o(25 downto 0);
+                led_cmd(5 downto 0) <= s_do_o(31 downto 26);
+                
+                SSD_decode(s_do_o(29 downto 26), ssd_hex0);
+               
             end if;
         end if;
         
      end process slave_rx;
      
-    slave_tx: process (s_clk_i, s_do_valid_o)
+    --=============================================================================================
+    --  Process TX data
+    --=============================================================================================
+    slave_tx: process (s_clk_i, s_do_valid_o, current_state)
     begin
         
-        if s_clk_i'event and s_clk_i = '1' then
+        if rising_edge(s_clk_i) then
+
+            case current_state is
+                when IDLE =>
+                    s_wren_i <= '0';
+                    s_di_i <= (others => 'X');
+                    
+                    if s_do_valid_o = '1' then
+                        s_di_i <= s_do_o;
+                        next_state <= SEND_DATA;
+                    else
+                        next_state <= IDLE;
+                    end if;
+
+                when SEND_DATA =>
+                    s_wren_i <= '1';
+                    next_state <= IDLE;
+                    
+                when others =>
+                    next_state <= IDLE;
+                    
+            end case;
+            
+        end if;
         
-            if s_do_valid_o = '1' then
-                s_di_i <= s_do_o;
+    end process slave_tx;
+                
                 
 
         
