@@ -1,0 +1,474 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus II License Agreement,
+# the Altera MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Altera and sold by Altera or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
+# Date created = 18:31:58  September 09, 2015
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		sram_test_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY sram_test
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 15.0.2
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:31:58  SEPTEMBER 09, 2015"
+set_global_assignment -name LAST_QUARTUS_VERSION 15.0.2
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_T8 -to sram_addr[19]
+set_location_assignment PIN_AB8 -to sram_addr[18]
+set_location_assignment PIN_AB9 -to sram_addr[17]
+set_location_assignment PIN_AC11 -to sram_addr[16]
+set_location_assignment PIN_AB11 -to sram_addr[15]
+set_location_assignment PIN_AA4 -to sram_addr[14]
+set_location_assignment PIN_AC3 -to sram_addr[13]
+set_location_assignment PIN_AB4 -to sram_addr[12]
+set_location_assignment PIN_AD3 -to sram_addr[11]
+set_location_assignment PIN_AF2 -to sram_addr[10]
+set_location_assignment PIN_T7 -to sram_addr[9]
+set_location_assignment PIN_AF5 -to sram_addr[8]
+set_location_assignment PIN_AC5 -to sram_addr[7]
+set_location_assignment PIN_AB5 -to sram_addr[6]
+set_location_assignment PIN_AE6 -to sram_addr[5]
+set_location_assignment PIN_AB6 -to sram_addr[4]
+set_location_assignment PIN_AC7 -to sram_addr[3]
+set_location_assignment PIN_AE7 -to sram_addr[2]
+set_location_assignment PIN_AD7 -to sram_addr[1]
+set_location_assignment PIN_AB7 -to sram_addr[0]
+set_location_assignment PIN_AF8 -to sram_ce
+set_location_assignment PIN_AG3 -to sram_data[15]
+set_location_assignment PIN_AF3 -to sram_data[14]
+set_location_assignment PIN_AE4 -to sram_data[13]
+set_location_assignment PIN_AE3 -to sram_data[12]
+set_location_assignment PIN_AE1 -to sram_data[11]
+set_location_assignment PIN_AE2 -to sram_data[10]
+set_location_assignment PIN_AD2 -to sram_data[9]
+set_location_assignment PIN_AD1 -to sram_data[8]
+set_location_assignment PIN_AF7 -to sram_data[7]
+set_location_assignment PIN_AH6 -to sram_data[6]
+set_location_assignment PIN_AG6 -to sram_data[5]
+set_location_assignment PIN_AF6 -to sram_data[4]
+set_location_assignment PIN_AH4 -to sram_data[3]
+set_location_assignment PIN_AG4 -to sram_data[2]
+set_location_assignment PIN_AF4 -to sram_data[1]
+set_location_assignment PIN_AH3 -to sram_data[0]
+set_location_assignment PIN_AD4 -to sram_lb
+set_location_assignment PIN_AD5 -to sram_oe
+set_location_assignment PIN_AC4 -to sram_ub
+set_location_assignment PIN_AE8 -to sram_we
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[19]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[18]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_ce
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_data[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_lb
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_oe
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_ub
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_we
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sram_addr[10]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[19]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[18]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[17]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[16]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[15]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[14]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[13]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[12]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[11]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[10]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[9]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[8]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_addr[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_ce
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[15]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[14]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[13]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[12]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[11]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[10]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[9]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[8]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_data[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_lb
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_oe
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_ub
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to sram_we
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[19]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[18]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[17]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[16]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[15]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[14]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[13]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[12]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[11]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[10]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[9]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[8]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[7]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[6]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[5]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[4]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[3]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[2]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[1]
+set_instance_assignment -name SLEW_RATE 2 -to sram_addr[0]
+set_instance_assignment -name SLEW_RATE 2 -to sram_ce
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[15]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[14]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[13]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[12]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[11]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[10]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[9]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[8]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[7]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[6]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[5]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[4]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[3]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[2]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[1]
+set_instance_assignment -name SLEW_RATE 2 -to sram_data[0]
+set_instance_assignment -name SLEW_RATE 2 -to sram_lb
+set_instance_assignment -name SLEW_RATE 2 -to sram_oe
+set_instance_assignment -name SLEW_RATE 2 -to sram_ub
+set_instance_assignment -name SLEW_RATE 2 -to sram_we
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 8
+set_location_assignment PIN_AB26 -to switch[7]
+set_location_assignment PIN_AD26 -to switch[6]
+set_location_assignment PIN_AC26 -to switch[5]
+set_location_assignment PIN_AB27 -to switch[4]
+set_location_assignment PIN_AD27 -to switch[3]
+set_location_assignment PIN_AC27 -to switch[2]
+set_location_assignment PIN_AC28 -to switch[1]
+set_location_assignment PIN_AB28 -to switch[0]
+set_location_assignment PIN_H22 -to ssd0[6]
+set_location_assignment PIN_J22 -to ssd0[5]
+set_location_assignment PIN_L25 -to ssd0[4]
+set_location_assignment PIN_L26 -to ssd0[3]
+set_location_assignment PIN_E17 -to ssd0[2]
+set_location_assignment PIN_F22 -to ssd0[1]
+set_location_assignment PIN_G18 -to ssd0[0]
+set_location_assignment PIN_U24 -to ssd1[6]
+set_location_assignment PIN_U23 -to ssd1[5]
+set_location_assignment PIN_W25 -to ssd1[4]
+set_location_assignment PIN_W22 -to ssd1[3]
+set_location_assignment PIN_W21 -to ssd1[2]
+set_location_assignment PIN_Y22 -to ssd1[1]
+set_location_assignment PIN_M24 -to ssd1[0]
+set_location_assignment PIN_W28 -to ssd2[6]
+set_location_assignment PIN_W27 -to ssd2[5]
+set_location_assignment PIN_Y26 -to ssd2[4]
+set_location_assignment PIN_W26 -to ssd2[3]
+set_location_assignment PIN_Y25 -to ssd2[2]
+set_location_assignment PIN_AA26 -to ssd2[1]
+set_location_assignment PIN_AA25 -to ssd2[0]
+set_location_assignment PIN_Y19 -to ssd3[6]
+set_location_assignment PIN_AF23 -to ssd3[5]
+set_location_assignment PIN_AD24 -to ssd3[4]
+set_location_assignment PIN_AA21 -to ssd3[3]
+set_location_assignment PIN_AB20 -to ssd3[2]
+set_location_assignment PIN_U21 -to ssd3[1]
+set_location_assignment PIN_V21 -to ssd3[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd0[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd0[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd0[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd0[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd0[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd0[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd0[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd1[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd1[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd1[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd1[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd1[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd1[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd1[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd2[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd2[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd2[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd2[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd2[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd2[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd2[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd3[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd3[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd3[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd3[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd3[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd3[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd3[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd0[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd0[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd0[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd0[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd0[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd0[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd0[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd1[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd1[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd1[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd1[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd1[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd1[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd1[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd2[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd2[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd2[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd2[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd2[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd2[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd2[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd3[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd3[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd3[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd3[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd3[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd3[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd3[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[0]
+set_instance_assignment -name SLEW_RATE 2 -to ssd0[6]
+set_instance_assignment -name SLEW_RATE 2 -to ssd0[5]
+set_instance_assignment -name SLEW_RATE 2 -to ssd0[4]
+set_instance_assignment -name SLEW_RATE 2 -to ssd0[3]
+set_instance_assignment -name SLEW_RATE 2 -to ssd0[2]
+set_instance_assignment -name SLEW_RATE 2 -to ssd0[1]
+set_instance_assignment -name SLEW_RATE 2 -to ssd0[0]
+set_instance_assignment -name SLEW_RATE 2 -to ssd1[6]
+set_instance_assignment -name SLEW_RATE 2 -to ssd1[5]
+set_instance_assignment -name SLEW_RATE 2 -to ssd1[4]
+set_instance_assignment -name SLEW_RATE 2 -to ssd1[3]
+set_instance_assignment -name SLEW_RATE 2 -to ssd1[2]
+set_instance_assignment -name SLEW_RATE 2 -to ssd1[1]
+set_instance_assignment -name SLEW_RATE 2 -to ssd1[0]
+set_instance_assignment -name SLEW_RATE 2 -to ssd2[6]
+set_instance_assignment -name SLEW_RATE 2 -to ssd2[5]
+set_instance_assignment -name SLEW_RATE 2 -to ssd2[4]
+set_instance_assignment -name SLEW_RATE 2 -to ssd2[3]
+set_instance_assignment -name SLEW_RATE 2 -to ssd2[2]
+set_instance_assignment -name SLEW_RATE 2 -to ssd2[1]
+set_instance_assignment -name SLEW_RATE 2 -to ssd2[0]
+set_instance_assignment -name SLEW_RATE 2 -to ssd3[6]
+set_instance_assignment -name SLEW_RATE 2 -to ssd3[5]
+set_instance_assignment -name SLEW_RATE 2 -to ssd3[4]
+set_instance_assignment -name SLEW_RATE 2 -to ssd3[3]
+set_instance_assignment -name SLEW_RATE 2 -to ssd3[2]
+set_instance_assignment -name SLEW_RATE 2 -to ssd3[1]
+set_instance_assignment -name SLEW_RATE 2 -to ssd3[0]
+set_location_assignment PIN_F17 -to heartbeat_led
+set_location_assignment PIN_Y2 -to clk_50mhz
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk_50mhz
+set_instance_assignment -name IO_STANDARD "2.5 V" -to heartbeat_led
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to clk_50mhz
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to heartbeat_led
+set_instance_assignment -name SLEW_RATE 2 -to heartbeat_led
+set_location_assignment PIN_R24 -to keys[3]
+set_location_assignment PIN_N21 -to keys[2]
+set_location_assignment PIN_M21 -to keys[1]
+set_location_assignment PIN_M23 -to keys[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to keys[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to keys[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to keys[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to keys[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to keys[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to keys[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to keys[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to keys[0]
+set_location_assignment PIN_G15 -to leds[15]
+set_location_assignment PIN_F15 -to leds[14]
+set_location_assignment PIN_H17 -to leds[13]
+set_location_assignment PIN_J16 -to leds[12]
+set_location_assignment PIN_H16 -to leds[11]
+set_location_assignment PIN_J15 -to leds[10]
+set_location_assignment PIN_G17 -to leds[9]
+set_location_assignment PIN_J17 -to leds[8]
+set_location_assignment PIN_H19 -to leds[7]
+set_location_assignment PIN_J19 -to leds[6]
+set_location_assignment PIN_E18 -to leds[5]
+set_location_assignment PIN_F18 -to leds[4]
+set_location_assignment PIN_F21 -to leds[3]
+set_location_assignment PIN_E19 -to leds[2]
+set_location_assignment PIN_F19 -to leds[1]
+set_location_assignment PIN_G19 -to leds[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[15]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[14]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[13]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[12]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[11]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[10]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[9]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to leds[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[15]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[14]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[13]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[12]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[11]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[10]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[9]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[8]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[0]
+set_instance_assignment -name SLEW_RATE 2 -to leds[15]
+set_instance_assignment -name SLEW_RATE 2 -to leds[14]
+set_instance_assignment -name SLEW_RATE 2 -to leds[13]
+set_instance_assignment -name SLEW_RATE 2 -to leds[12]
+set_instance_assignment -name SLEW_RATE 2 -to leds[11]
+set_instance_assignment -name SLEW_RATE 2 -to leds[10]
+set_instance_assignment -name SLEW_RATE 2 -to leds[9]
+set_instance_assignment -name SLEW_RATE 2 -to leds[8]
+set_instance_assignment -name SLEW_RATE 2 -to leds[7]
+set_instance_assignment -name SLEW_RATE 2 -to leds[6]
+set_instance_assignment -name SLEW_RATE 2 -to leds[5]
+set_instance_assignment -name SLEW_RATE 2 -to leds[4]
+set_instance_assignment -name SLEW_RATE 2 -to leds[3]
+set_instance_assignment -name SLEW_RATE 2 -to leds[2]
+set_instance_assignment -name SLEW_RATE 2 -to leds[1]
+set_instance_assignment -name SLEW_RATE 2 -to leds[0]
+set_location_assignment PIN_AA22 -to switch[15]
+set_location_assignment PIN_AA23 -to switch[14]
+set_location_assignment PIN_AA24 -to switch[13]
+set_location_assignment PIN_AB23 -to switch[12]
+set_location_assignment PIN_AB24 -to switch[11]
+set_location_assignment PIN_AC24 -to switch[10]
+set_location_assignment PIN_AB25 -to switch[9]
+set_location_assignment PIN_AC25 -to switch[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to switch[8]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[15]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[14]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[13]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[12]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[11]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[10]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[9]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to switch[8]
+set_global_assignment -name VHDL_FILE SSD_decode.vhd
+set_global_assignment -name SDC_FILE sram_test.out.sdc
+set_global_assignment -name VHDL_FILE sram_test.vhd
+set_global_assignment -name CDF_FILE Chain1.cdf
+set_global_assignment -name VHDL_FILE group_debounce.vhd
+set_global_assignment -name VHDL_FILE single_port_ram.vhd
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

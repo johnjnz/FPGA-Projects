@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Sep 15 18:59:41 2015
+Quartus II 64-Bit Version : 15.0.2 Build 153 07/15/2015 SJ Web Edition
+Revision Name : sram_test
+Top-level Entity Name : sram_test
+Family : Cyclone IV E
+Total logic elements : 162
+    Total combinational functions : 107
+    Dedicated logic registers : 127
+Total registers : 127
+Total pins : 84
+Total virtual pins : 0
+Total memory bits : 8,192
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -50,7 +50,7 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
@@ -75,13 +75,6 @@ set_location_assignment PIN_L26 -to ssd_hex0[3]
 set_location_assignment PIN_E17 -to ssd_hex0[2]
 set_location_assignment PIN_F22 -to ssd_hex0[1]
 set_location_assignment PIN_G18 -to ssd_hex0[0]
-set_location_assignment PIN_U24 -to ssd_hex1[6]
-set_location_assignment PIN_U23 -to ssd_hex1[5]
-set_location_assignment PIN_W25 -to ssd_hex1[4]
-set_location_assignment PIN_W22 -to ssd_hex1[3]
-set_location_assignment PIN_W21 -to ssd_hex1[2]
-set_location_assignment PIN_Y22 -to ssd_hex1[1]
-set_location_assignment PIN_M24 -to ssd_hex1[0]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex0[6]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex0[5]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex0[4]
@@ -89,13 +82,6 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex0[3]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex0[2]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex0[1]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex0[0]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex1[6]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex1[5]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex1[4]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex1[3]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex1[2]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex1[1]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex1[0]
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to s_spi_ssel_i
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex0[6]
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex0[5]
@@ -104,13 +90,6 @@ set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex0[3]
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex0[2]
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex0[1]
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex0[0]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex1[6]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex1[5]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex1[4]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex1[3]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex1[2]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex1[1]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex1[0]
 set_instance_assignment -name SLEW_RATE 2 -to ssd_hex0[6]
 set_instance_assignment -name SLEW_RATE 2 -to ssd_hex0[5]
 set_instance_assignment -name SLEW_RATE 2 -to ssd_hex0[4]
@@ -118,72 +97,8 @@ set_instance_assignment -name SLEW_RATE 2 -to ssd_hex0[3]
 set_instance_assignment -name SLEW_RATE 2 -to ssd_hex0[2]
 set_instance_assignment -name SLEW_RATE 2 -to ssd_hex0[1]
 set_instance_assignment -name SLEW_RATE 2 -to ssd_hex0[0]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex1[6]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex1[5]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex1[4]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex1[3]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex1[2]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex1[1]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex1[0]
 set_global_assignment -name ENABLE_SIGNALTAP OFF
 set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp1.stp
-set_location_assignment PIN_W28 -to ssd_hex2[6]
-set_location_assignment PIN_W27 -to ssd_hex2[5]
-set_location_assignment PIN_Y26 -to ssd_hex2[4]
-set_location_assignment PIN_W26 -to ssd_hex2[3]
-set_location_assignment PIN_Y25 -to ssd_hex2[2]
-set_location_assignment PIN_AA26 -to ssd_hex2[1]
-set_location_assignment PIN_AA25 -to ssd_hex2[0]
-set_location_assignment PIN_Y19 -to ssd_hex3[6]
-set_location_assignment PIN_AF23 -to ssd_hex3[5]
-set_location_assignment PIN_AD24 -to ssd_hex3[4]
-set_location_assignment PIN_AA21 -to ssd_hex3[3]
-set_location_assignment PIN_AB20 -to ssd_hex3[2]
-set_location_assignment PIN_U21 -to ssd_hex3[1]
-set_location_assignment PIN_V21 -to ssd_hex3[0]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex2[6]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex2[5]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex2[4]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex2[3]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex2[2]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex2[1]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex2[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd_hex3[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd_hex3[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd_hex3[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd_hex3[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ssd_hex3[2]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex3[1]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ssd_hex3[0]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex2[6]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex2[5]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex2[4]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex2[3]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex2[2]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex2[1]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex2[0]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex3[6]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex3[5]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex3[4]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex3[3]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex3[2]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex3[1]
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ssd_hex3[0]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex2[6]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex2[5]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex2[4]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex2[3]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex2[2]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex2[1]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex2[0]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex3[6]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex3[5]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex3[4]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex3[3]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex3[2]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex3[1]
-set_instance_assignment -name SLEW_RATE 2 -to ssd_hex3[0]
-set_location_assignment PIN_Y2 -to s_clk_i
 set_location_assignment PIN_H15 -to leds[25]
 set_location_assignment PIN_G16 -to leds[24]
 set_location_assignment PIN_G15 -to leds[23]
@@ -212,9 +127,107 @@ set_location_assignment PIN_E22 -to leds[1]
 set_location_assignment PIN_E21 -to leds[0]
 set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS 8
+set_global_assignment -name VHDL_FILE lcd16x2_ctrl.vhd
 set_global_assignment -name SDC_FILE led_control.out.sdc
 set_global_assignment -name VHDL_FILE SSD_decode.vhd
 set_global_assignment -name VHDL_FILE spi_slave.vhdl
 set_global_assignment -name VHDL_FILE SPI_Comms.vhd
 set_global_assignment -name CDF_FILE Chain3.cdf
+set_location_assignment PIN_Y2 -to clk50
+set_location_assignment PIN_M5 -to lcd_db[7]
+set_location_assignment PIN_M3 -to lcd_db[6]
+set_location_assignment PIN_K2 -to lcd_db[5]
+set_location_assignment PIN_K1 -to lcd_db[4]
+set_location_assignment PIN_L4 -to lcd_e
+set_location_assignment PIN_M2 -to lcd_rs
+set_location_assignment PIN_M1 -to lcd_rw
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to lcd_db[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to lcd_db[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to lcd_db[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to lcd_rw
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to lcd_rs
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to lcd_db[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to lcd_e
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to clk50
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to lcd_db[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to lcd_db[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to lcd_db[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to lcd_db[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to lcd_e
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to lcd_rs
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to lcd_rw
+set_instance_assignment -name SLEW_RATE 2 -to lcd_db[7]
+set_instance_assignment -name SLEW_RATE 2 -to lcd_db[6]
+set_instance_assignment -name SLEW_RATE 2 -to lcd_db[5]
+set_instance_assignment -name SLEW_RATE 2 -to lcd_db[4]
+set_instance_assignment -name SLEW_RATE 2 -to lcd_e
+set_instance_assignment -name SLEW_RATE 2 -to lcd_rs
+set_instance_assignment -name SLEW_RATE 2 -to lcd_rw
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[25]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[24]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[23]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[22]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[21]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[20]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[19]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[18]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[17]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[16]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[15]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[14]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[13]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[12]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[11]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[10]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[9]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[8]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to leds[0]
+set_instance_assignment -name SLEW_RATE 2 -to leds[25]
+set_instance_assignment -name SLEW_RATE 2 -to leds[24]
+set_instance_assignment -name SLEW_RATE 2 -to leds[23]
+set_instance_assignment -name SLEW_RATE 2 -to leds[22]
+set_instance_assignment -name SLEW_RATE 2 -to leds[21]
+set_instance_assignment -name SLEW_RATE 2 -to leds[20]
+set_instance_assignment -name SLEW_RATE 2 -to leds[19]
+set_instance_assignment -name SLEW_RATE 2 -to leds[18]
+set_instance_assignment -name SLEW_RATE 2 -to leds[17]
+set_instance_assignment -name SLEW_RATE 2 -to leds[16]
+set_instance_assignment -name SLEW_RATE 2 -to leds[15]
+set_instance_assignment -name SLEW_RATE 2 -to leds[14]
+set_instance_assignment -name SLEW_RATE 2 -to leds[13]
+set_instance_assignment -name SLEW_RATE 2 -to leds[12]
+set_instance_assignment -name SLEW_RATE 2 -to leds[11]
+set_instance_assignment -name SLEW_RATE 2 -to leds[10]
+set_instance_assignment -name SLEW_RATE 2 -to leds[9]
+set_instance_assignment -name SLEW_RATE 2 -to leds[8]
+set_instance_assignment -name SLEW_RATE 2 -to leds[7]
+set_instance_assignment -name SLEW_RATE 2 -to leds[6]
+set_instance_assignment -name SLEW_RATE 2 -to leds[5]
+set_instance_assignment -name SLEW_RATE 2 -to leds[4]
+set_instance_assignment -name SLEW_RATE 2 -to leds[3]
+set_instance_assignment -name SLEW_RATE 2 -to leds[2]
+set_instance_assignment -name SLEW_RATE 2 -to leds[1]
+set_instance_assignment -name SLEW_RATE 2 -to leds[0]
+set_global_assignment -name SAVE_DISK_SPACE OFF
+set_global_assignment -name FLOW_ENABLE_RTL_VIEWER ON
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name PROJECT_IP_REGENERATION_POLICY ALWAYS_REGENERATE_IP
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
+set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name CDF_FILE Chain1.cdf
+set_location_assignment PIN_M23 -to reset_key
+set_location_assignment PIN_F17 -to led_hb
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led_hb
+set_instance_assignment -name IO_STANDARD "2.5 V" -to reset_key
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to reset_key
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to led_hb
+set_instance_assignment -name SLEW_RATE 2 -to led_hb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

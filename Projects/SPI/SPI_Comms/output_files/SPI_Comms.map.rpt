@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SPI_Comms
-Mon Aug 31 21:05:24 2015
+Tue Sep 08 13:58:11 2015
 Quartus II 64-Bit Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
 
 
@@ -13,16 +13,26 @@ Quartus II 64-Bit Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |SPI_Comms
- 12. Parameter Settings for User Entity Instance: spi_slave:Inst_spi_slave
- 13. Port Connectivity Checks: "spi_slave:Inst_spi_slave"
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
- 17. Analysis & Synthesis Suppressed Messages
+  8. State Machine - |SPI_Comms|spi_next_state
+  9. State Machine - |SPI_Comms|lcd_next_state
+ 10. State Machine - |SPI_Comms|lcd_curr_state
+ 11. State Machine - |SPI_Comms|spi_curr_state
+ 12. State Machine - |SPI_Comms|lcd16x2_ctrl:instance_lcd16x2|op_state
+ 13. State Machine - |SPI_Comms|lcd16x2_ctrl:instance_lcd16x2|next_op_state
+ 14. State Machine - |SPI_Comms|lcd16x2_ctrl:instance_lcd16x2|state
+ 15. State Machine - |SPI_Comms|lcd16x2_ctrl:instance_lcd16x2|next_state
+ 16. Registers Removed During Synthesis
+ 17. Removed Registers Triggering Further Register Optimizations
+ 18. General Register Statistics
+ 19. Inverted Register Statistics
+ 20. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 21. Parameter Settings for User Entity Instance: Top-level Entity: |SPI_Comms
+ 22. Parameter Settings for User Entity Instance: spi_slave:instance_spi_slave
+ 23. Parameter Settings for User Entity Instance: lcd16x2_ctrl:instance_lcd16x2
+ 24. Port Connectivity Checks: "spi_slave:instance_spi_slave"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -49,16 +59,16 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Aug 31 21:05:24 2015      ;
+; Analysis & Synthesis Status        ; Successful - Tue Sep 08 13:58:11 2015      ;
 ; Quartus II 64-Bit Version          ; 15.0.2 Build 153 07/15/2015 SJ Web Edition ;
 ; Revision Name                      ; SPI_Comms                                  ;
 ; Top-level Entity Name              ; SPI_Comms                                  ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 87                                         ;
-;     Total combinational functions  ; 65                                         ;
-;     Dedicated logic registers      ; 73                                         ;
-; Total registers                    ; 73                                         ;
-; Total pins                         ; 33                                         ;
+; Total logic elements               ; 529                                        ;
+;     Total combinational functions  ; 373                                        ;
+;     Dedicated logic registers      ; 361                                        ;
+; Total registers                    ; 361                                        ;
+; Total pins                         ; 47                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -170,69 +180,268 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                  ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
-; SSD_decode.vhd                   ; yes             ; User VHDL File  ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/SPI_Comms/SSD_decode.vhd ;         ;
-; spi_slave.vhdl                   ; yes             ; User VHDL File  ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/SPI_Comms/spi_slave.vhdl ;         ;
-; SPI_Comms.vhd                    ; yes             ; User VHDL File  ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/SPI_Comms/SPI_Comms.vhd  ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
++----------------------------------+-----------------+-----------------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                                    ; Library ;
++----------------------------------+-----------------+-----------------------+-------------------------------------------------------------------------------------------------+---------+
+; SSD_decode.vhd                   ; yes             ; User VHDL File        ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/SPI_Comms/SSD_decode.vhd   ;         ;
+; spi_slave.vhdl                   ; yes             ; User VHDL File        ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/SPI_Comms/spi_slave.vhdl   ;         ;
+; SPI_Comms.vhd                    ; yes             ; User VHDL File        ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/SPI_Comms/SPI_Comms.vhd    ;         ;
+; lcd16x2_ctrl.vhd                 ; yes             ; Auto-Found VHDL File  ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/SPI_Comms/lcd16x2_ctrl.vhd ;         ;
++----------------------------------+-----------------+-----------------------+-------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                     ;
-+---------------------------------------------+-------------------+
-; Resource                                    ; Usage             ;
-+---------------------------------------------+-------------------+
-; Estimated Total logic elements              ; 87                ;
-;                                             ;                   ;
-; Total combinational functions               ; 65                ;
-; Logic element usage by number of LUT inputs ;                   ;
-;     -- 4 input functions                    ; 37                ;
-;     -- 3 input functions                    ; 6                 ;
-;     -- <=2 input functions                  ; 22                ;
-;                                             ;                   ;
-; Logic elements by mode                      ;                   ;
-;     -- normal mode                          ; 61                ;
-;     -- arithmetic mode                      ; 4                 ;
-;                                             ;                   ;
-; Total registers                             ; 73                ;
-;     -- Dedicated logic registers            ; 73                ;
-;     -- I/O registers                        ; 0                 ;
-;                                             ;                   ;
-; I/O pins                                    ; 33                ;
-;                                             ;                   ;
-; Embedded Multiplier 9-bit elements          ; 0                 ;
-;                                             ;                   ;
-; Maximum fan-out node                        ; s_spi_sck_i~input ;
-; Maximum fan-out                             ; 40                ;
-; Total fan-out                               ; 466               ;
-; Average fan-out                             ; 2.28              ;
-+---------------------------------------------+-------------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 529         ;
+;                                             ;             ;
+; Total combinational functions               ; 373         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 184         ;
+;     -- 3 input functions                    ; 35          ;
+;     -- <=2 input functions                  ; 154         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 291         ;
+;     -- arithmetic mode                      ; 82          ;
+;                                             ;             ;
+; Total registers                             ; 361         ;
+;     -- Dedicated logic registers            ; 361         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 47          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clk50~input ;
+; Maximum fan-out                             ; 287         ;
+; Total fan-out                               ; 2141        ;
+; Average fan-out                             ; 2.59        ;
++---------------------------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                            ;
-+-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
-; Compilation Hierarchy Node    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Library Name ;
-+-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
-; |SPI_Comms                    ; 65 (28)           ; 73 (28)      ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |SPI_Comms                          ; work         ;
-;    |spi_slave:Inst_spi_slave| ; 37 (37)           ; 45 (45)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SPI_Comms|spi_slave:Inst_spi_slave ; work         ;
-+-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
+; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Library Name ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
+; |SPI_Comms                         ; 373 (130)         ; 361 (144)    ; 0           ; 0            ; 0       ; 0         ; 47   ; 0            ; |SPI_Comms                               ; work         ;
+;    |lcd16x2_ctrl:instance_lcd16x2| ; 185 (185)         ; 105 (105)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SPI_Comms|lcd16x2_ctrl:instance_lcd16x2 ; work         ;
+;    |spi_slave:instance_spi_slave|  ; 58 (58)           ; 112 (112)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SPI_Comms|spi_slave:instance_spi_slave  ; work         ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                   ;
-+----------------------------------------+---------------------------------------------+
-; Register name                          ; Reason for Removal                          ;
-+----------------------------------------+---------------------------------------------+
-; spi_slave:Inst_spi_slave|di_reg[0..15] ; Stuck at GND due to stuck port clock_enable ;
-; spi_slave:Inst_spi_slave|wren          ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 17 ;                                             ;
-+----------------------------------------+---------------------------------------------+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |SPI_Comms|spi_next_state                                                                ;
++--------------------------+--------------------------+--------------------------+-------------------------+
+; Name                     ; spi_next_state.SEND_DATA ; spi_next_state.LOAD_DATA ; spi_next_state.SPI_IDLE ;
++--------------------------+--------------------------+--------------------------+-------------------------+
+; spi_next_state.SPI_IDLE  ; 0                        ; 0                        ; 0                       ;
+; spi_next_state.LOAD_DATA ; 0                        ; 1                        ; 1                       ;
+; spi_next_state.SEND_DATA ; 1                        ; 0                        ; 1                       ;
++--------------------------+--------------------------+--------------------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SPI_Comms|lcd_next_state                                                                                                       ;
++--------------------------------+-------------------------+---------------------------+--------------------------------+-------------------------+
+; Name                           ; lcd_next_state.RX_DELAY ; lcd_next_state.RX_MESSAGE ; lcd_next_state.WAITING_MESSAGE ; lcd_next_state.LCD_IDLE ;
++--------------------------------+-------------------------+---------------------------+--------------------------------+-------------------------+
+; lcd_next_state.LCD_IDLE        ; 0                       ; 0                         ; 0                              ; 0                       ;
+; lcd_next_state.WAITING_MESSAGE ; 0                       ; 0                         ; 1                              ; 1                       ;
+; lcd_next_state.RX_MESSAGE      ; 0                       ; 1                         ; 0                              ; 1                       ;
+; lcd_next_state.RX_DELAY        ; 1                       ; 0                         ; 0                              ; 1                       ;
++--------------------------------+-------------------------+---------------------------+--------------------------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SPI_Comms|lcd_curr_state                                                                                                       ;
++--------------------------------+-------------------------+---------------------------+--------------------------------+-------------------------+
+; Name                           ; lcd_curr_state.RX_DELAY ; lcd_curr_state.RX_MESSAGE ; lcd_curr_state.WAITING_MESSAGE ; lcd_curr_state.LCD_IDLE ;
++--------------------------------+-------------------------+---------------------------+--------------------------------+-------------------------+
+; lcd_curr_state.LCD_IDLE        ; 0                       ; 0                         ; 0                              ; 0                       ;
+; lcd_curr_state.WAITING_MESSAGE ; 0                       ; 0                         ; 1                              ; 1                       ;
+; lcd_curr_state.RX_MESSAGE      ; 0                       ; 1                         ; 0                              ; 1                       ;
+; lcd_curr_state.RX_DELAY        ; 1                       ; 0                         ; 0                              ; 1                       ;
++--------------------------------+-------------------------+---------------------------+--------------------------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |SPI_Comms|spi_curr_state                                                                ;
++--------------------------+--------------------------+--------------------------+-------------------------+
+; Name                     ; spi_curr_state.SEND_DATA ; spi_curr_state.LOAD_DATA ; spi_curr_state.SPI_IDLE ;
++--------------------------+--------------------------+--------------------------+-------------------------+
+; spi_curr_state.SPI_IDLE  ; 0                        ; 0                        ; 0                       ;
+; spi_curr_state.LOAD_DATA ; 0                        ; 1                        ; 1                       ;
+; spi_curr_state.SEND_DATA ; 1                        ; 0                        ; 1                       ;
++--------------------------+--------------------------+--------------------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SPI_Comms|lcd16x2_ctrl:instance_lcd16x2|op_state                                                                                                                                                                           ;
++-----------------------+---------------+-----------------------+----------------------+-------------------+-----------------------+-----------------------+----------------------+-------------------+-----------------------+---------------+
+; Name                  ; op_state.DONE ; op_state.WAIT_DELAY_L ; op_state.WAIT_HOLD_L ; op_state.ENABLE_L ; op_state.WAIT_SETUP_L ; op_state.WAIT_DELAY_H ; op_state.WAIT_HOLD_H ; op_state.ENABLE_H ; op_state.WAIT_SETUP_H ; op_state.IDLE ;
++-----------------------+---------------+-----------------------+----------------------+-------------------+-----------------------+-----------------------+----------------------+-------------------+-----------------------+---------------+
+; op_state.IDLE         ; 0             ; 0                     ; 0                    ; 0                 ; 0                     ; 0                     ; 0                    ; 0                 ; 0                     ; 0             ;
+; op_state.WAIT_SETUP_H ; 0             ; 0                     ; 0                    ; 0                 ; 0                     ; 0                     ; 0                    ; 0                 ; 1                     ; 1             ;
+; op_state.ENABLE_H     ; 0             ; 0                     ; 0                    ; 0                 ; 0                     ; 0                     ; 0                    ; 1                 ; 0                     ; 1             ;
+; op_state.WAIT_HOLD_H  ; 0             ; 0                     ; 0                    ; 0                 ; 0                     ; 0                     ; 1                    ; 0                 ; 0                     ; 1             ;
+; op_state.WAIT_DELAY_H ; 0             ; 0                     ; 0                    ; 0                 ; 0                     ; 1                     ; 0                    ; 0                 ; 0                     ; 1             ;
+; op_state.WAIT_SETUP_L ; 0             ; 0                     ; 0                    ; 0                 ; 1                     ; 0                     ; 0                    ; 0                 ; 0                     ; 1             ;
+; op_state.ENABLE_L     ; 0             ; 0                     ; 0                    ; 1                 ; 0                     ; 0                     ; 0                    ; 0                 ; 0                     ; 1             ;
+; op_state.WAIT_HOLD_L  ; 0             ; 0                     ; 1                    ; 0                 ; 0                     ; 0                     ; 0                    ; 0                 ; 0                     ; 1             ;
+; op_state.WAIT_DELAY_L ; 0             ; 1                     ; 0                    ; 0                 ; 0                     ; 0                     ; 0                    ; 0                 ; 0                     ; 1             ;
+; op_state.DONE         ; 1             ; 0                     ; 0                    ; 0                 ; 0                     ; 0                     ; 0                    ; 0                 ; 0                     ; 1             ;
++-----------------------+---------------+-----------------------+----------------------+-------------------+-----------------------+-----------------------+----------------------+-------------------+-----------------------+---------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SPI_Comms|lcd16x2_ctrl:instance_lcd16x2|next_op_state                                                                                                                                                                                                                             ;
++----------------------------+--------------------+----------------------------+---------------------------+------------------------+----------------------------+----------------------------+---------------------------+------------------------+----------------------------+--------------------+
+; Name                       ; next_op_state.DONE ; next_op_state.WAIT_DELAY_L ; next_op_state.WAIT_HOLD_L ; next_op_state.ENABLE_L ; next_op_state.WAIT_SETUP_L ; next_op_state.WAIT_DELAY_H ; next_op_state.WAIT_HOLD_H ; next_op_state.ENABLE_H ; next_op_state.WAIT_SETUP_H ; next_op_state.IDLE ;
++----------------------------+--------------------+----------------------------+---------------------------+------------------------+----------------------------+----------------------------+---------------------------+------------------------+----------------------------+--------------------+
+; next_op_state.IDLE         ; 0                  ; 0                          ; 0                         ; 0                      ; 0                          ; 0                          ; 0                         ; 0                      ; 0                          ; 0                  ;
+; next_op_state.WAIT_SETUP_H ; 0                  ; 0                          ; 0                         ; 0                      ; 0                          ; 0                          ; 0                         ; 0                      ; 1                          ; 1                  ;
+; next_op_state.ENABLE_H     ; 0                  ; 0                          ; 0                         ; 0                      ; 0                          ; 0                          ; 0                         ; 1                      ; 0                          ; 1                  ;
+; next_op_state.WAIT_HOLD_H  ; 0                  ; 0                          ; 0                         ; 0                      ; 0                          ; 0                          ; 1                         ; 0                      ; 0                          ; 1                  ;
+; next_op_state.WAIT_DELAY_H ; 0                  ; 0                          ; 0                         ; 0                      ; 0                          ; 1                          ; 0                         ; 0                      ; 0                          ; 1                  ;
+; next_op_state.WAIT_SETUP_L ; 0                  ; 0                          ; 0                         ; 0                      ; 1                          ; 0                          ; 0                         ; 0                      ; 0                          ; 1                  ;
+; next_op_state.ENABLE_L     ; 0                  ; 0                          ; 0                         ; 1                      ; 0                          ; 0                          ; 0                         ; 0                      ; 0                          ; 1                  ;
+; next_op_state.WAIT_HOLD_L  ; 0                  ; 0                          ; 1                         ; 0                      ; 0                          ; 0                          ; 0                         ; 0                      ; 0                          ; 1                  ;
+; next_op_state.WAIT_DELAY_L ; 0                  ; 1                          ; 0                         ; 0                      ; 0                          ; 0                          ; 0                         ; 0                      ; 0                          ; 1                  ;
+; next_op_state.DONE         ; 1                  ; 0                          ; 0                         ; 0                      ; 0                          ; 0                          ; 0                         ; 0                      ; 0                          ; 1                  ;
++----------------------------+--------------------+----------------------------+---------------------------+------------------------+----------------------------+----------------------------+---------------------------+------------------------+----------------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SPI_Comms|lcd16x2_ctrl:instance_lcd16x2|state                                                                    ;
++--------------------+-------------------+--------------------+-------------------+--------------------+--------------+-------------+
+; Name               ; state.WRITE_LINE2 ; state.SELECT_LINE2 ; state.WRITE_LINE1 ; state.SELECT_LINE1 ; state.CONFIG ; state.RESET ;
++--------------------+-------------------+--------------------+-------------------+--------------------+--------------+-------------+
+; state.RESET        ; 0                 ; 0                  ; 0                 ; 0                  ; 0            ; 0           ;
+; state.CONFIG       ; 0                 ; 0                  ; 0                 ; 0                  ; 1            ; 1           ;
+; state.SELECT_LINE1 ; 0                 ; 0                  ; 0                 ; 1                  ; 0            ; 1           ;
+; state.WRITE_LINE1  ; 0                 ; 0                  ; 1                 ; 0                  ; 0            ; 1           ;
+; state.SELECT_LINE2 ; 0                 ; 1                  ; 0                 ; 0                  ; 0            ; 1           ;
+; state.WRITE_LINE2  ; 1                 ; 0                  ; 0                 ; 0                  ; 0            ; 1           ;
++--------------------+-------------------+--------------------+-------------------+--------------------+--------------+-------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SPI_Comms|lcd16x2_ctrl:instance_lcd16x2|next_state                                                                                                  ;
++-------------------------+------------------------+-------------------------+------------------------+-------------------------+-------------------+------------------+
+; Name                    ; next_state.WRITE_LINE2 ; next_state.SELECT_LINE2 ; next_state.WRITE_LINE1 ; next_state.SELECT_LINE1 ; next_state.CONFIG ; next_state.RESET ;
++-------------------------+------------------------+-------------------------+------------------------+-------------------------+-------------------+------------------+
+; next_state.RESET        ; 0                      ; 0                       ; 0                      ; 0                       ; 0                 ; 0                ;
+; next_state.CONFIG       ; 0                      ; 0                       ; 0                      ; 0                       ; 1                 ; 1                ;
+; next_state.SELECT_LINE1 ; 0                      ; 0                       ; 0                      ; 1                       ; 0                 ; 1                ;
+; next_state.WRITE_LINE1  ; 0                      ; 0                       ; 1                      ; 0                       ; 0                 ; 1                ;
+; next_state.SELECT_LINE2 ; 0                      ; 1                       ; 0                      ; 0                       ; 0                 ; 1                ;
+; next_state.WRITE_LINE2  ; 1                      ; 0                       ; 0                      ; 0                       ; 0                 ; 1                ;
++-------------------------+------------------------+-------------------------+------------------------+-------------------------+-------------------+------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+; Register name                                                                                                                                                     ; Reason for Removal                                            ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+; line2_buffer[0..4,6..12,14..20,22..28,30..36,38..44,46..52,54..60,62..68,70..76,78..84,86..92,94..100,102..108,110..116,118..124,126,127]                         ; Stuck at GND due to stuck port data_in                        ;
+; line1_buffer[1..4,7,9,11,15,17,19,23,25,27,28,31..33,35,36,39,40,42,43,47,52,55,56,60,63,65,66,68,71,75,79,84,87,89,92,95,99,103,105,108,111,114,115,119,123,127] ; Stuck at GND due to stuck port data_in                        ;
+; lcd16x2_ctrl:instance_lcd16x2|this_op.delay_l[1..3,6,12,14,16,18..20]                                                                                             ; Stuck at GND due to stuck port data_in                        ;
+; lcd16x2_ctrl:instance_lcd16x2|this_op.delay_h[1,3,12,13,15,16,19,20]                                                                                              ; Stuck at GND due to stuck port data_in                        ;
+; line1_buffer[102]                                                                                                                                                 ; Merged with line2_buffer[5]                                   ;
+; line2_buffer[5]                                                                                                                                                   ; Merged with line1_buffer[118]                                 ;
+; line1_buffer[118]                                                                                                                                                 ; Merged with line1_buffer[110]                                 ;
+; line1_buffer[110]                                                                                                                                                 ; Merged with line1_buffer[109]                                 ;
+; line1_buffer[109]                                                                                                                                                 ; Merged with line1_buffer[104]                                 ;
+; line1_buffer[104]                                                                                                                                                 ; Merged with line1_buffer[85]                                  ;
+; line1_buffer[85]                                                                                                                                                  ; Merged with line1_buffer[101]                                 ;
+; line1_buffer[101]                                                                                                                                                 ; Merged with line1_buffer[94]                                  ;
+; line1_buffer[94]                                                                                                                                                  ; Merged with line1_buffer[93]                                  ;
+; line1_buffer[93]                                                                                                                                                  ; Merged with line1_buffer[88]                                  ;
+; line1_buffer[88]                                                                                                                                                  ; Merged with line1_buffer[86]                                  ;
+; line1_buffer[86]                                                                                                                                                  ; Merged with line2_buffer[13]                                  ;
+; line2_buffer[13]                                                                                                                                                  ; Merged with line1_buffer[83]                                  ;
+; line1_buffer[83]                                                                                                                                                  ; Merged with line1_buffer[78]                                  ;
+; line1_buffer[78]                                                                                                                                                  ; Merged with line1_buffer[77]                                  ;
+; line1_buffer[77]                                                                                                                                                  ; Merged with line1_buffer[74]                                  ;
+; line1_buffer[74]                                                                                                                                                  ; Merged with line1_buffer[73]                                  ;
+; line1_buffer[73]                                                                                                                                                  ; Merged with line1_buffer[69]                                  ;
+; line1_buffer[69]                                                                                                                                                  ; Merged with line1_buffer[62]                                  ;
+; line1_buffer[62]                                                                                                                                                  ; Merged with line1_buffer[61]                                  ;
+; line1_buffer[61]                                                                                                                                                  ; Merged with line1_buffer[58]                                  ;
+; line1_buffer[58]                                                                                                                                                  ; Merged with line1_buffer[57]                                  ;
+; line1_buffer[57]                                                                                                                                                  ; Merged with line1_buffer[54]                                  ;
+; line1_buffer[54]                                                                                                                                                  ; Merged with line1_buffer[53]                                  ;
+; line1_buffer[53]                                                                                                                                                  ; Merged with line1_buffer[50]                                  ;
+; line1_buffer[50]                                                                                                                                                  ; Merged with line1_buffer[49]                                  ;
+; line1_buffer[49]                                                                                                                                                  ; Merged with line1_buffer[48]                                  ;
+; line1_buffer[48]                                                                                                                                                  ; Merged with line1_buffer[45]                                  ;
+; line1_buffer[45]                                                                                                                                                  ; Merged with line1_buffer[37]                                  ;
+; line1_buffer[37]                                                                                                                                                  ; Merged with line1_buffer[30]                                  ;
+; line1_buffer[30]                                                                                                                                                  ; Merged with line1_buffer[29]                                  ;
+; line1_buffer[29]                                                                                                                                                  ; Merged with line1_buffer[22]                                  ;
+; line1_buffer[22]                                                                                                                                                  ; Merged with line1_buffer[21]                                  ;
+; line1_buffer[21]                                                                                                                                                  ; Merged with line1_buffer[14]                                  ;
+; line1_buffer[14]                                                                                                                                                  ; Merged with line1_buffer[13]                                  ;
+; line1_buffer[13]                                                                                                                                                  ; Merged with line1_buffer[5]                                   ;
+; line1_buffer[5]                                                                                                                                                   ; Merged with line2_buffer[125]                                 ;
+; line2_buffer[125]                                                                                                                                                 ; Merged with line2_buffer[117]                                 ;
+; line2_buffer[117]                                                                                                                                                 ; Merged with line2_buffer[109]                                 ;
+; line2_buffer[109]                                                                                                                                                 ; Merged with line2_buffer[101]                                 ;
+; line2_buffer[101]                                                                                                                                                 ; Merged with line2_buffer[93]                                  ;
+; line2_buffer[93]                                                                                                                                                  ; Merged with line2_buffer[85]                                  ;
+; line2_buffer[85]                                                                                                                                                  ; Merged with line2_buffer[77]                                  ;
+; line2_buffer[77]                                                                                                                                                  ; Merged with line2_buffer[69]                                  ;
+; line2_buffer[69]                                                                                                                                                  ; Merged with line2_buffer[61]                                  ;
+; line2_buffer[61]                                                                                                                                                  ; Merged with line2_buffer[53]                                  ;
+; line2_buffer[53]                                                                                                                                                  ; Merged with line2_buffer[45]                                  ;
+; line2_buffer[45]                                                                                                                                                  ; Merged with line2_buffer[37]                                  ;
+; line2_buffer[37]                                                                                                                                                  ; Merged with line2_buffer[29]                                  ;
+; line2_buffer[29]                                                                                                                                                  ; Merged with line2_buffer[21]                                  ;
+; lcd16x2_ctrl:instance_lcd16x2|this_op.delay_l[0]                                                                                                                  ; Merged with lcd16x2_ctrl:instance_lcd16x2|this_op.delay_h[0]  ;
+; lcd16x2_ctrl:instance_lcd16x2|this_op.delay_l[13]                                                                                                                 ; Merged with lcd16x2_ctrl:instance_lcd16x2|this_op.delay_l[4]  ;
+; lcd16x2_ctrl:instance_lcd16x2|this_op.delay_h[4,14,17,18]                                                                                                         ; Merged with lcd16x2_ctrl:instance_lcd16x2|this_op.delay_l[4]  ;
+; lcd16x2_ctrl:instance_lcd16x2|this_op.delay_l[7]                                                                                                                  ; Merged with lcd16x2_ctrl:instance_lcd16x2|this_op.delay_l[5]  ;
+; lcd16x2_ctrl:instance_lcd16x2|this_op.delay_h[5]                                                                                                                  ; Merged with lcd16x2_ctrl:instance_lcd16x2|this_op.delay_l[5]  ;
+; lcd16x2_ctrl:instance_lcd16x2|this_op.delay_l[9,10]                                                                                                               ; Merged with lcd16x2_ctrl:instance_lcd16x2|this_op.delay_l[8]  ;
+; lcd16x2_ctrl:instance_lcd16x2|this_op.delay_l[17]                                                                                                                 ; Merged with lcd16x2_ctrl:instance_lcd16x2|this_op.delay_l[15] ;
+; lcd16x2_ctrl:instance_lcd16x2|this_op.delay_h[6]                                                                                                                  ; Merged with lcd16x2_ctrl:instance_lcd16x2|this_op.delay_h[2]  ;
+; lcd16x2_ctrl:instance_lcd16x2|this_op.delay_h[8]                                                                                                                  ; Merged with lcd16x2_ctrl:instance_lcd16x2|this_op.delay_h[7]  ;
+; lcd16x2_ctrl:instance_lcd16x2|this_op.delay_h[10,11]                                                                                                              ; Merged with lcd16x2_ctrl:instance_lcd16x2|this_op.delay_h[9]  ;
+; line1_buffer[6,10,12,16,26,41,44,46,51,72,81,82,91,98,100,107,112,117,120..122,124,126]                                                                           ; Merged with line1_buffer[0]                                   ;
+; line1_buffer[8,18,20,24,34,38,59,64,67,70,76,80,90,96,97,113,116,125]                                                                                             ; Merged with line1_buffer[106]                                 ;
+; spi_next_state.LOAD_DATA                                                                                                                                          ; Stuck at GND due to stuck port data_in                        ;
+; spi_curr_state.LOAD_DATA                                                                                                                                          ; Stuck at GND due to stuck port data_in                        ;
+; lcd16x2_ctrl:instance_lcd16x2|this_op.delay_h[0]                                                                                                                  ; Merged with lcd16x2_ctrl:instance_lcd16x2|next_state.RESET    ;
+; spi_next_state.SEND_DATA                                                                                                                                          ; Merged with spi_next_state.SPI_IDLE                           ;
+; spi_curr_state.SEND_DATA                                                                                                                                          ; Merged with spi_curr_state.SPI_IDLE                           ;
+; Total Number of Removed Registers = 291                                                                                                                           ;                                                               ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                   ;
++--------------------------+---------------------------+----------------------------------------+
+; Register name            ; Reason for Removal        ; Registers Removed due to This Register ;
++--------------------------+---------------------------+----------------------------------------+
+; spi_next_state.LOAD_DATA ; Stuck at GND              ; spi_curr_state.LOAD_DATA               ;
+;                          ; due to stuck port data_in ;                                        ;
++--------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -240,24 +449,42 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 73    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 6     ;
+; Total registers                              ; 361   ;
+; Number of registers using Synchronous Clear  ; 2     ;
+; Number of registers using Synchronous Load   ; 4     ;
+; Number of registers using Asynchronous Clear ; 7     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 44    ;
+; Number of registers using Clock Enable       ; 182   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; spi_slave:Inst_spi_slave|preload_miso  ; 1       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; spi_slave:instance_spi_slave|preload_miso ; 1       ;
+; \heartbeat:count[0]                       ; 2       ;
+; \heartbeat:count[31]                      ; 2       ;
+; \lcd_message:count[0]                     ; 2       ;
+; \lcd_message:count[31]                    ; 2       ;
+; Total number of inverted registers = 5    ;         ;
++-------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |SPI_Comms|lcd16x2_ctrl:instance_lcd16x2|next_ptr[1]  ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |SPI_Comms|lcd16x2_ctrl:instance_lcd16x2|next_cnt[6]  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |SPI_Comms|lcd16x2_ctrl:instance_lcd16x2|next_cnt[13] ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |SPI_Comms|lcd16x2_ctrl:instance_lcd16x2|next_cnt[9]  ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |SPI_Comms|spi_slave:instance_spi_slave|Selector20    ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |SPI_Comms|Selector0                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------+
@@ -265,29 +492,39 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+--------------------------------------------------+
 ; Parameter Name ; Value ; Type                                             ;
 +----------------+-------+--------------------------------------------------+
-; N              ; 16    ; Signed Integer                                   ;
+; N              ; 32    ; Signed Integer                                   ;
 ; CPOL           ; '0'   ; Enumerated                                       ;
 ; CPHA           ; '0'   ; Enumerated                                       ;
-; PREFETCH       ; 1     ; Signed Integer                                   ;
+; PREFETCH       ; 3     ; Signed Integer                                   ;
 +----------------+-------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: spi_slave:Inst_spi_slave ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; n              ; 16    ; Signed Integer                               ;
-; cpol           ; '0'   ; Enumerated                                   ;
-; cpha           ; '0'   ; Enumerated                                   ;
-; prefetch       ; 1     ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: spi_slave:instance_spi_slave ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; n              ; 32    ; Signed Integer                                   ;
+; cpol           ; '0'   ; Enumerated                                       ;
+; cpha           ; '0'   ; Enumerated                                       ;
+; prefetch       ; 3     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcd16x2_ctrl:instance_lcd16x2 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; clk_period_ns  ; 10    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "spi_slave:Inst_spi_slave"                                                               ;
+; Port Connectivity Checks: "spi_slave:instance_spi_slave"                                                           ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port     ; Type   ; Severity ; Details                                                                             ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
@@ -301,22 +538,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 33                          ;
-; cycloneiii_ff         ; 73                          ;
-;     CLR               ; 6                           ;
-;     ENA               ; 44                          ;
-;     plain             ; 23                          ;
-; cycloneiii_lcell_comb ; 65                          ;
-;     arith             ; 4                           ;
-;         2 data inputs ; 4                           ;
-;     normal            ; 61                          ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 17                          ;
-;         3 data inputs ; 6                           ;
-;         4 data inputs ; 37                          ;
+; boundary_port         ; 47                          ;
+; cycloneiii_ff         ; 361                         ;
+;     CLR               ; 7                           ;
+;     ENA               ; 182                         ;
+;     SCLR              ; 2                           ;
+;     SLD               ; 4                           ;
+;     plain             ; 166                         ;
+; cycloneiii_lcell_comb ; 374                         ;
+;     arith             ; 82                          ;
+;         2 data inputs ; 82                          ;
+;     normal            ; 292                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 61                          ;
+;         3 data inputs ; 35                          ;
+;         4 data inputs ; 184                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.28                        ;
+; Max LUT depth         ; 5.10                        ;
+; Average LUT depth     ; 2.78                        ;
 +-----------------------+-----------------------------+
 
 
@@ -325,7 +565,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -335,7 +575,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
-    Info: Processing started: Mon Aug 31 21:05:14 2015
+    Info: Processing started: Tue Sep 08 13:58:00 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SPI_Comms -c SPI_Comms
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 0 entities, in source file ssd_decode.vhd
@@ -348,30 +588,28 @@ Info (12021): Found 2 design units, including 1 entities, in source file spi_com
     Info (12022): Found design unit 1: SPI_Comms-Structural
     Info (12023): Found entity 1: SPI_Comms
 Info (12127): Elaborating entity "SPI_Comms" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at SPI_Comms.vhd(53): used explicit default value for signal "s_di_i" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at SPI_Comms.vhd(54): used explicit default value for signal "s_wren_i" because signal was never assigned a value
-Warning (10036): Verilog HDL or VHDL warning at SPI_Comms.vhd(55): object "s_di_req_o" assigned a value but never read
-Info (12128): Elaborating entity "spi_slave" for hierarchy "spi_slave:Inst_spi_slave"
+Warning (10036): Verilog HDL or VHDL warning at SPI_Comms.vhd(93): object "led_cmd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at SPI_Comms.vhd(103): object "s_di_req_o" assigned a value but never read
+Info (12128): Elaborating entity "spi_slave" for hierarchy "spi_slave:instance_spi_slave"
+Warning (12125): Using design file lcd16x2_ctrl.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: lcd16x2_ctrl-rtl
+    Info (12023): Found entity 1: lcd16x2_ctrl
+Info (12128): Elaborating entity "lcd16x2_ctrl" for hierarchy "lcd16x2_ctrl:instance_lcd16x2"
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "lcd_rw" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/SPI_Comms/output_files/SPI_Comms.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 135 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 102 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 743 megabytes
-    Info: Processing ended: Mon Aug 31 21:05:24 2015
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:22
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/SPI_Comms/output_files/SPI_Comms.map.smsg.
+Info (21057): Implemented 614 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 567 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 748 megabytes
+    Info: Processing ended: Tue Sep 08 13:58:11 2015
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:23
 
 

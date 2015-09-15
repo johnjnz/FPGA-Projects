@@ -1,0 +1,143 @@
+# Reading C:/altera/15.0/modelsim_ase/tcl/vsim/pref.tcl
+# do sram_test_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/sram_test.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 21:30:54 on Sep 11,2015
+# vcom -reportprogress 300 -93 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/sram_test.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sram_test
+# -- Compiling architecture rtl of sram_test
+# End time: 21:30:54 on Sep 11,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/SRAM_controller.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 21:30:54 on Sep 11,2015
+# vcom -reportprogress 300 -93 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/SRAM_controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity SRAM_controller
+# -- Compiling architecture rtl of SRAM_controller
+# End time: 21:30:55 on Sep 11,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/simulation/modelsim/sram_controller_tb.vhdl
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 21:31:42 on Sep 11,2015
+# vcom -reportprogress 300 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/simulation/modelsim/sram_controller_tb.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sram_controller_tb
+# -- Compiling architecture behavior of sram_controller_tb
+# End time: 21:31:43 on Sep 11,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.sram_controller
+# vsim -gui "+altera" -l msim_transcript -do "sram_test_run_msim_rtl_vhdl.do" 
+# Start time: 21:32:01 on Sep 11,2015
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.sram_controller(rtl)
+vsim work.sram_controller_tb
+# vsim 
+# Start time: 21:32:08 on Sep 11,2015
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.sram_controller_tb(behavior)
+# Loading work.sram_controller(rtl)
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/sram_controller_tb/t_clk \
+sim:/sram_controller_tb/t_reset_n \
+sim:/sram_controller_tb/t_address \
+sim:/sram_controller_tb/t_data_write \
+sim:/sram_controller_tb/t_data_read \
+sim:/sram_controller_tb/t_write_en \
+sim:/sram_controller_tb/t_read_en \
+sim:/sram_controller_tb/t_sram_data \
+sim:/sram_controller_tb/t_sram_addr \
+sim:/sram_controller_tb/t_sram_ce \
+sim:/sram_controller_tb/t_sram_oe \
+sim:/sram_controller_tb/t_sram_we \
+sim:/sram_controller_tb/t_sram_ub \
+sim:/sram_controller_tb/t_sram_lb
+run
+# ** Failure: simulation completed successfully
+#    Time: 950 ns  Iteration: 1  Process: /sram_controller_tb/test File: C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/simulation/modelsim/sram_controller_tb.vhdl
+# Break in Process test at C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/simulation/modelsim/sram_controller_tb.vhdl line 163
+vcom -reportprogress 300 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/simulation/modelsim/sram_controller_tb.vhdl
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 21:36:30 on Sep 11,2015
+# vcom -reportprogress 300 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/simulation/modelsim/sram_controller_tb.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sram_controller_tb
+# -- Compiling architecture behavior of sram_controller_tb
+# End time: 21:36:30 on Sep 11,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/simulation/modelsim/sram_controller_tb.vhdl
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 21:36:39 on Sep 11,2015
+# vcom -reportprogress 300 -work work C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/simulation/modelsim/sram_controller_tb.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sram_controller_tb
+# -- Compiling architecture behavior of sram_controller_tb
+# End time: 21:36:39 on Sep 11,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.sram_controller_tb
+# vsim 
+# Start time: 21:36:46 on Sep 11,2015
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.sram_controller_tb(behavior)
+# Loading work.sram_controller(rtl)
+add wave -position insertpoint  \
+sim:/sram_controller_tb/t_clk \
+sim:/sram_controller_tb/t_reset_n \
+sim:/sram_controller_tb/t_address \
+sim:/sram_controller_tb/t_data_write \
+sim:/sram_controller_tb/t_data_read \
+sim:/sram_controller_tb/t_write_en \
+sim:/sram_controller_tb/t_read_en \
+sim:/sram_controller_tb/t_sram_data \
+sim:/sram_controller_tb/t_sram_addr \
+sim:/sram_controller_tb/t_sram_ce \
+sim:/sram_controller_tb/t_sram_oe \
+sim:/sram_controller_tb/t_sram_we \
+sim:/sram_controller_tb/t_sram_ub \
+sim:/sram_controller_tb/t_sram_lb
+run -all
+# ** Failure: simulation completed successfully
+#    Time: 450 ns  Iteration: 1  Process: /sram_controller_tb/test File: C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/simulation/modelsim/sram_controller_tb.vhdl
+# Break in Process test at C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/simulation/modelsim/sram_controller_tb.vhdl line 163
+# End time: 21:38:11 on Sep 11,2015, Elapsed time: 0:01:25
+# Errors: 0, Warnings: 0

@@ -267,7 +267,7 @@ begin
                                   do_valid_A, do_valid_B, do_valid_D, 
                                   di_req_o_A, di_req_o_B, di_req_o_D) is
     begin
-        if clk_i'event and clk_i = '1' then                     -- clock at parallel port clock
+        if rising_edge(clk_i) then                              -- clock at parallel port clock
             -- do_transfer_reg -> do_valid_o_reg
             do_valid_A <= do_transfer_reg;                      -- the input signal must be at least 2 clocks long
             do_valid_B <= do_valid_A;                           -- feed it to a ripple chain of FFDs
@@ -286,17 +286,19 @@ begin
         do_valid_next <= do_valid_A and do_valid_B and not do_valid_D;
         di_req_o_next <= di_req_o_A and di_req_o_B and not di_req_o_D;
     end process out_transfer_proc;
+    
+    
     -- parallel load input registers: data register and write enable
     in_transfer_proc: process (clk_i, wren_i, wr_ack_reg) is
     begin
         -- registered data input, input register with clock enable
-        if clk_i'event and clk_i = '1' then
+        if rising_edge(clk_i) then
             if wren_i = '1' then
                 di_reg <= di_i;                                 -- parallel data input buffer register
             end if;
         end  if;
         -- stretch wren pulse to be detected by spi fsm (ffd with sync preset and sync reset)
-        if clk_i'event and clk_i = '1' then
+        if rising_edge(clk_i) then
             if wren_i = '1' then                                -- wren_i is the sync preset for wren
                 wren <= '1';
             elsif wr_ack_reg = '1' then                         -- wr_ack is the sync reset for wren

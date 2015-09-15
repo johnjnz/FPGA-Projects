@@ -1,5 +1,5 @@
 EDA Netlist Writer report for led_control
-Sat Sep 05 21:51:26 2015
+Tue Sep 08 21:51:40 2015
 Quartus II 64-Bit Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat Sep 05 21:51:26 2015 ;
+; EDA Netlist Writer Status ; Successful - Tue Sep 08 21:51:40 2015 ;
 ; Revision Name             ; led_control                           ;
 ; Top-level Entity Name     ; SPI_Comms                             ;
 ; Family                    ; Cyclone IV E                          ;
@@ -89,7 +89,7 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
-    Info: Processing started: Sat Sep 05 21:51:25 2015
+    Info: Processing started: Tue Sep 08 21:51:39 2015
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off SPI_Comms -c led_control
 Info (204019): Generated file led_control_7_1200mv_85c_slow.vo in folder "C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/SPI_Comms/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file led_control_7_1200mv_0c_slow.vo in folder "C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/SPI_Comms/simulation/modelsim/" for EDA simulation tool
@@ -100,8 +100,8 @@ Info (204019): Generated file led_control_7_1200mv_0c_v_slow.sdo in folder "C:/U
 Info (204019): Generated file led_control_min_1200mv_0c_v_fast.sdo in folder "C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/SPI_Comms/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file led_control_v.sdo in folder "C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/SPI/SPI_Comms/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 607 megabytes
-    Info: Processing ended: Sat Sep 05 21:51:26 2015
+    Info: Peak virtual memory: 613 megabytes
+    Info: Processing ended: Tue Sep 08 21:51:40 2015
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
