@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Sep 08 21:51:12 2015
+Analysis & Synthesis Status : Successful - Wed Mar 23 21:42:52 2016
 Quartus II 64-Bit Version : 15.0.2 Build 153 07/15/2015 SJ Web Edition
 Revision Name : led_control
 Top-level Entity Name : SPI_Comms
 Family : Cyclone IV E
-Total logic elements : 541
-    Total combinational functions : 413
-    Dedicated logic registers : 365
-Total registers : 365
-Total pins : 47
+Total logic elements : 700
+    Total combinational functions : 518
+    Dedicated logic registers : 473
+Total registers : 473
+Total pins : 78
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

@@ -1,9 +1,8 @@
 Info: Start Nativelink Simulation process
-Info: NativeLink has detected VHDL design -- VHDL simulation models will be used
 
 ========= EDA Simulation Settings =====================
 
-Sim Mode              :  RTL
+Sim Mode              :  Gate
 Family                :  cycloneive
 Quartus root          :  c:/altera/15.0/quartus/bin64/
 Quartus sim root      :  c:/altera/15.0/quartus/eda/sim_lib
@@ -11,13 +10,99 @@ Simulation Tool       :  modelsim-altera
 Simulation Language   :  vhdl
 Version               :  93
 Simulation Mode       :  GUI
-Sim Output File       :  
-Sim SDF file          :  
+Sim Output File       :  sram_test.vho
+Sim SDF file          :  sram_test__vhdl.sdo
 Sim dir               :  simulation\modelsim
 
 =======================================================
 
 Info: Starting NativeLink simulation with ModelSim-Altera software
 Sourced NativeLink script c:/altera/15.0/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File sram_test_run_msim_rtl_vhdl.do already exists - backing up current file as sram_test_run_msim_rtl_vhdl.do.bak1
-Info: Spawning ModelSim-Altera Simulation software 
+Probing transcript
+ModelSim-Altera Info: # Reading C:/altera/15.0/modelsim_ase/tcl/vsim/pref.tcl
+ModelSim-Altera Info: # do sram_test_run_msim_gate_vhdl.do
+ModelSim-Altera Info: # if {[file exists gate_work]} {
+ModelSim-Altera Info: # 	vdel -lib gate_work -all
+ModelSim-Altera Info: # }
+ModelSim-Altera Info: # vlib gate_work
+ModelSim-Altera Info: # vmap work gate_work
+ModelSim-Altera Info: # Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+ModelSim-Altera Info: # vmap -modelsim_quiet work gate_work 
+ModelSim-Altera Info: # Copying C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+ModelSim-Altera Info: # Modifying modelsim.ini
+ModelSim-Altera Warning: # ** Warning: Copied C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+ModelSim-Altera Info: #          Updated modelsim.ini.
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vcom -93 -work work {sram_test.vho}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+ModelSim-Altera Info: # Start time: 21:15:29 on Sep 16,2015
+ModelSim-Altera Info: # vcom -reportprogress 300 -93 -work work sram_test.vho 
+ModelSim-Altera Info: # -- Loading package STANDARD
+ModelSim-Altera Info: # -- Loading package TEXTIO
+ModelSim-Altera Info: # -- Loading package std_logic_1164
+ModelSim-Altera Info: # -- Loading package VITAL_Timing
+ModelSim-Altera Info: # -- Loading package VITAL_Primitives
+ModelSim-Altera Info: # -- Loading package dffeas_pack
+ModelSim-Altera Info: # -- Loading package altera_primitives_components
+ModelSim-Altera Info: # -- Loading package cycloneive_atom_pack
+ModelSim-Altera Info: # -- Loading package cycloneive_components
+ModelSim-Altera Info: # -- Compiling entity sram_test
+ModelSim-Altera Info: # -- Compiling architecture structure of sram_test
+ModelSim-Altera Info: # End time: 21:15:29 on Sep 16,2015, Elapsed time: 0:00:00
+ModelSim-Altera Info: # Errors: 0, Warnings: 0
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: vsim work.sram_test
+ModelSim-Altera Info: # vsim -gui -l msim_transcript -do "sram_test_run_msim_gate_vhdl.do" 
+ModelSim-Altera Info: # Start time: 21:15:36 on Sep 16,2015
+ModelSim-Altera Info: # Loading std.standard
+ModelSim-Altera Info: # Loading std.textio(body)
+ModelSim-Altera Info: # Loading ieee.std_logic_1164(body)
+ModelSim-Altera Info: # Loading ieee.vital_timing(body)
+ModelSim-Altera Info: # Loading ieee.vital_primitives(body)
+ModelSim-Altera Info: # Loading altera.dffeas_pack
+ModelSim-Altera Info: # Loading altera.altera_primitives_components
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_atom_pack(body)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_components
+ModelSim-Altera Info: # Loading work.sram_test(structure)
+ModelSim-Altera Info: # Loading ieee.std_logic_arith(body)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_io_obuf(arch)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_io_ibuf(arch)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_clkctrl(vital_clkctrl)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_ena_reg(behave)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+ModelSim-Altera Info: # Loading altera.dffeas(vital_dffeas)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_ram_block(block_arch)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_ram_register(reg_arch)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_ram_pulse_generator(pgen_arch)
+ModelSim-Altera Warning: # ** Warning: Design size of 37089 statements exceeds ModelSim Altera Starter recommended capacity.
+ModelSim-Altera Info: # Expect performance to be adversely affected.
+ModelSim-Altera Info: restart
+ModelSim-Altera Info: vsim work.sram_test
+ModelSim-Altera Info: # vsim 
+ModelSim-Altera Info: # Start time: 21:16:06 on Sep 16,2015
+ModelSim-Altera Info: # Loading std.standard
+ModelSim-Altera Info: # Loading std.textio(body)
+ModelSim-Altera Info: # Loading ieee.std_logic_1164(body)
+ModelSim-Altera Info: # Loading ieee.vital_timing(body)
+ModelSim-Altera Info: # Loading ieee.vital_primitives(body)
+ModelSim-Altera Info: # Loading altera.dffeas_pack
+ModelSim-Altera Info: # Loading altera.altera_primitives_components
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_atom_pack(body)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_components
+ModelSim-Altera Info: # Loading work.sram_test(structure)
+ModelSim-Altera Info: # Loading ieee.std_logic_arith(body)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_io_obuf(arch)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_io_ibuf(arch)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_clkctrl(vital_clkctrl)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_ena_reg(behave)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+ModelSim-Altera Info: # Loading altera.dffeas(vital_dffeas)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_ram_block(block_arch)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_ram_register(reg_arch)
+ModelSim-Altera Info: # Loading cycloneive.cycloneive_ram_pulse_generator(pgen_arch)
+ModelSim-Altera Warning: # ** Warning: Design size of 37089 statements exceeds ModelSim Altera Starter recommended capacity.
+ModelSim-Altera Info: # Expect performance to be adversely affected.
+ModelSim-Altera Info: run -all
+ModelSim-Altera Info: # End time: 21:16:41 on Sep 16,2015, Elapsed time: 0:00:35
+ModelSim-Altera Info: # Errors: 0, Warnings: 1
+Info: NativeLink simulation flow was successful

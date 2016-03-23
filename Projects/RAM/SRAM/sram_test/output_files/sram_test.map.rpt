@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sram_test
-Tue Sep 15 18:59:41 2015
+Wed Sep 16 21:15:03 2015
 Quartus II 64-Bit Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
 
 
@@ -20,7 +20,7 @@ Quartus II 64-Bit Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
  12. Removed Registers Triggering Further Register Optimizations
  13. General Register Statistics
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for single_port_ram:instance_ram|altsyncram:ram_rtl_0|altsyncram_cf41:auto_generated
+ 15. Source assignments for single_port_ram:instance_ram|altsyncram:ram_rtl_0|altsyncram_ef41:auto_generated
  16. Parameter Settings for User Entity Instance: Top-level Entity: |sram_test
  17. Parameter Settings for User Entity Instance: single_port_ram:instance_ram
  18. Parameter Settings for User Entity Instance: group_debounce:instance_debounce
@@ -56,18 +56,18 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Sep 15 18:59:41 2015      ;
+; Analysis & Synthesis Status        ; Successful - Wed Sep 16 21:15:03 2015      ;
 ; Quartus II 64-Bit Version          ; 15.0.2 Build 153 07/15/2015 SJ Web Edition ;
 ; Revision Name                      ; sram_test                                  ;
 ; Top-level Entity Name              ; sram_test                                  ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 162                                        ;
+; Total logic elements               ; 146                                        ;
 ;     Total combinational functions  ; 107                                        ;
-;     Dedicated logic registers      ; 127                                        ;
-; Total registers                    ; 127                                        ;
-; Total pins                         ; 84                                         ;
+;     Dedicated logic registers      ; 111                                        ;
+; Total registers                    ; 111                                        ;
+; Total pins                         ; 52                                         ;
 ; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 8,192                                      ;
+; Total memory bits                  ; 4,096                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
 ; Total PLLs                         ; 0                                          ;
 +------------------------------------+--------------------------------------------+
@@ -81,8 +81,8 @@ agreement for further details.
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
 ; Top-level entity name                                                      ; sram_test          ; sram_test          ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; On                 ; Off                ;
 ; Maximum processors allowed for parallel compilation                        ; 8                  ;                    ;
-; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
 ; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
@@ -178,26 +178,26 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                               ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------+---------+
-; SSD_decode.vhd                   ; yes             ; User VHDL File               ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/SSD_decode.vhd         ;         ;
-; sram_test.vhd                    ; yes             ; User VHDL File               ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/sram_test.vhd          ;         ;
-; group_debounce.vhd               ; yes             ; User VHDL File               ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/group_debounce.vhd     ;         ;
-; single_port_ram.vhd              ; yes             ; User VHDL File               ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/single_port_ram.vhd    ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/altsyncram.tdf                                              ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/stratix_ram_block.inc                                       ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_mux.inc                                                 ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_decode.inc                                              ;         ;
-; aglobal150.inc                   ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/aglobal150.inc                                              ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/a_rdenreg.inc                                               ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/altrom.inc                                                  ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/altram.inc                                                  ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/altdpram.inc                                                ;         ;
-; db/altsyncram_cf41.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/db/altsyncram_cf41.tdf ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                            ;
++-------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path          ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                               ; Library ;
++-------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------+---------+
+; ../../../../Libraries/SSD_decode.vhd      ; yes             ; User VHDL File               ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Libraries/SSD_decode.vhd                           ;         ;
+; ../../../../Libraries/single_port_ram.vhd ; yes             ; User VHDL File               ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Libraries/single_port_ram.vhd                      ;         ;
+; ../../../../Libraries/group_debounce.vhd  ; yes             ; User VHDL File               ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Libraries/group_debounce.vhd                       ;         ;
+; sram_test.vhd                             ; yes             ; User VHDL File               ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/sram_test.vhd          ;         ;
+; altsyncram.tdf                            ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/altsyncram.tdf                                              ;         ;
+; stratix_ram_block.inc                     ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/stratix_ram_block.inc                                       ;         ;
+; lpm_mux.inc                               ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_mux.inc                                                 ;         ;
+; lpm_decode.inc                            ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_decode.inc                                              ;         ;
+; aglobal150.inc                            ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/aglobal150.inc                                              ;         ;
+; a_rdenreg.inc                             ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/a_rdenreg.inc                                               ;         ;
+; altrom.inc                                ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/altrom.inc                                                  ;         ;
+; altram.inc                                ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/altram.inc                                                  ;         ;
+; altdpram.inc                              ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/altdpram.inc                                                ;         ;
+; db/altsyncram_ef41.tdf                    ; yes             ; Auto-Generated Megafunction  ; C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/db/altsyncram_ef41.tdf ;         ;
++-------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------+
@@ -205,7 +205,7 @@ agreement for further details.
 +---------------------------------------------+-----------------+
 ; Resource                                    ; Usage           ;
 +---------------------------------------------+-----------------+
-; Estimated Total logic elements              ; 162             ;
+; Estimated Total logic elements              ; 146             ;
 ;                                             ;                 ;
 ; Total combinational functions               ; 107             ;
 ; Logic element usage by number of LUT inputs ;                 ;
@@ -217,19 +217,19 @@ agreement for further details.
 ;     -- normal mode                          ; 56              ;
 ;     -- arithmetic mode                      ; 51              ;
 ;                                             ;                 ;
-; Total registers                             ; 127             ;
-;     -- Dedicated logic registers            ; 127             ;
+; Total registers                             ; 111             ;
+;     -- Dedicated logic registers            ; 111             ;
 ;     -- I/O registers                        ; 0               ;
 ;                                             ;                 ;
-; I/O pins                                    ; 84              ;
-; Total memory bits                           ; 8192            ;
+; I/O pins                                    ; 52              ;
+; Total memory bits                           ; 4096            ;
 ;                                             ;                 ;
 ; Embedded Multiplier 9-bit elements          ; 0               ;
 ;                                             ;                 ;
 ; Maximum fan-out node                        ; clk_50mhz~input ;
-; Maximum fan-out                             ; 159             ;
-; Total fan-out                               ; 1084            ;
-; Average fan-out                             ; 2.50            ;
+; Maximum fan-out                             ; 127             ;
+; Total fan-out                               ; 812             ;
+; Average fan-out                             ; 2.40            ;
 +---------------------------------------------+-----------------+
 
 
@@ -238,11 +238,11 @@ agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                         ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+--------------+
-; |sram_test                                ; 107 (82)          ; 127 (100)    ; 8192        ; 0            ; 0       ; 0         ; 84   ; 0            ; |sram_test                                                                                  ; work         ;
+; |sram_test                                ; 107 (82)          ; 111 (84)     ; 4096        ; 0            ; 0       ; 0         ; 52   ; 0            ; |sram_test                                                                                  ; work         ;
 ;    |group_debounce:instance_debounce|     ; 25 (25)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_test|group_debounce:instance_debounce                                                 ; work         ;
-;    |single_port_ram:instance_ram|         ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_test|single_port_ram:instance_ram                                                     ; work         ;
-;       |altsyncram:ram_rtl_0|              ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_test|single_port_ram:instance_ram|altsyncram:ram_rtl_0                                ; work         ;
-;          |altsyncram_cf41:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_test|single_port_ram:instance_ram|altsyncram:ram_rtl_0|altsyncram_cf41:auto_generated ; work         ;
+;    |single_port_ram:instance_ram|         ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_test|single_port_ram:instance_ram                                                     ; work         ;
+;       |altsyncram:ram_rtl_0|              ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_test|single_port_ram:instance_ram|altsyncram:ram_rtl_0                                ; work         ;
+;          |altsyncram_ef41:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_test|single_port_ram:instance_ram|altsyncram:ram_rtl_0|altsyncram_ef41:auto_generated ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -252,7 +252,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
 ; Name                                                                                        ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
 +---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
-; single_port_ram:instance_ram|altsyncram:ram_rtl_0|altsyncram_cf41:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 32           ; --           ; --           ; 8192 ; None ;
+; single_port_ram:instance_ram|altsyncram:ram_rtl_0|altsyncram_ef41:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 16           ; --           ; --           ; 4096 ; None ;
 +---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
 
 
@@ -313,12 +313,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 127   ;
+; Total registers                              ; 111   ;
 ; Number of registers using Synchronous Clear  ; 14    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 44    ;
+; Number of registers using Clock Enable       ; 28    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -334,7 +334,7 @@ Encoding Type:  One-Hot
 
 
 +---------------------------------------------------------------------------------------------------------+
-; Source assignments for single_port_ram:instance_ram|altsyncram:ram_rtl_0|altsyncram_cf41:auto_generated ;
+; Source assignments for single_port_ram:instance_ram|altsyncram:ram_rtl_0|altsyncram_ef41:auto_generated ;
 +---------------------------------+--------------------+------+-------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                        ;
 +---------------------------------+--------------------+------+-------------------------------------------+
@@ -348,7 +348,7 @@ Encoding Type:  One-Hot
 ; Parameter Name ; Value ; Type                                             ;
 +----------------+-------+--------------------------------------------------+
 ; ADDR_WIDTH     ; 8     ; Signed Integer                                   ;
-; DATA_WIDTH     ; 32    ; Signed Integer                                   ;
+; DATA_WIDTH     ; 16    ; Signed Integer                                   ;
 ; INPUTS         ; 4     ; Signed Integer                                   ;
 ; PERIOD         ; 10000 ; Signed Integer                                   ;
 +----------------+-------+--------------------------------------------------+
@@ -360,7 +360,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------------+
 ; Parameter Name ; Value ; Type                                             ;
 +----------------+-------+--------------------------------------------------+
-; data_width     ; 32    ; Signed Integer                                   ;
+; data_width     ; 16    ; Signed Integer                                   ;
 ; addr_width     ; 8     ; Signed Integer                                   ;
 +----------------+-------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -389,7 +389,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                         ;
 ; WIDTH_BYTEENA                      ; 1                    ; Untyped                                ;
 ; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                ;
-; WIDTH_A                            ; 32                   ; Untyped                                ;
+; WIDTH_A                            ; 16                   ; Untyped                                ;
 ; WIDTHAD_A                          ; 8                    ; Untyped                                ;
 ; NUMWORDS_A                         ; 256                  ; Untyped                                ;
 ; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                ;
@@ -433,7 +433,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                ;
 ; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                ;
-; CBXI_PARAMETER                     ; altsyncram_cf41      ; Untyped                                ;
+; CBXI_PARAMETER                     ; altsyncram_ef41      ; Untyped                                ;
 +------------------------------------+----------------------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -446,7 +446,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Number of entity instances                ; 1                                                 ;
 ; Entity Instance                           ; single_port_ram:instance_ram|altsyncram:ram_rtl_0 ;
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                                       ;
-;     -- WIDTH_A                            ; 32                                                ;
+;     -- WIDTH_A                            ; 16                                                ;
 ;     -- NUMWORDS_A                         ; 256                                               ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                                      ;
 ;     -- WIDTH_B                            ; 1                                                 ;
@@ -463,9 +463,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 84                          ;
-; cycloneiii_ff         ; 127                         ;
-;     ENA               ; 44                          ;
+; boundary_port         ; 52                          ;
+; cycloneiii_ff         ; 111                         ;
+;     ENA               ; 28                          ;
 ;     SCLR              ; 14                          ;
 ;     plain             ; 69                          ;
 ; cycloneiii_lcell_comb ; 107                         ;
@@ -477,10 +477,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         2 data inputs ; 17                          ;
 ;         3 data inputs ; 3                           ;
 ;         4 data inputs ; 34                          ;
-; cycloneiii_ram_block  ; 32                          ;
+; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.40                        ;
-; Average LUT depth     ; 1.89                        ;
+; Average LUT depth     ; 2.18                        ;
 +-----------------------+-----------------------------+
 
 
@@ -489,7 +489,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -499,28 +499,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
-    Info: Processing started: Tue Sep 15 18:59:30 2015
+    Info: Processing started: Wed Sep 16 21:14:52 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sram_test -c sram_test
 Info (20032): Parallel compilation is enabled and will use up to 8 processors
-Info (12021): Found 2 design units, including 0 entities, in source file ssd_decode.vhd
+Info (12021): Found 2 design units, including 0 entities, in source file /users/johnj/documents/development/fpga/fpga-projects/libraries/ssd_decode.vhd
     Info (12022): Found design unit 1: SSD
     Info (12022): Found design unit 2: SSD-body
+Info (12021): Found 2 design units, including 1 entities, in source file /users/johnj/documents/development/fpga/fpga-projects/libraries/single_port_ram.vhd
+    Info (12022): Found design unit 1: single_port_ram-rtl
+    Info (12023): Found entity 1: single_port_ram
+Info (12021): Found 2 design units, including 1 entities, in source file /users/johnj/documents/development/fpga/fpga-projects/libraries/group_debounce.vhd
+    Info (12022): Found design unit 1: group_debounce-rtl
+    Info (12023): Found entity 1: group_debounce
 Info (12021): Found 2 design units, including 1 entities, in source file sram_test.vhd
     Info (12022): Found design unit 1: sram_test-rtl
     Info (12023): Found entity 1: sram_test
-Info (12021): Found 2 design units, including 1 entities, in source file group_debounce.vhd
-    Info (12022): Found design unit 1: group_debounce-rtl
-    Info (12023): Found entity 1: group_debounce
-Info (12021): Found 2 design units, including 1 entities, in source file single_port_ram.vhd
-    Info (12022): Found design unit 1: single_port_ram-rtl
-    Info (12023): Found entity 1: single_port_ram
 Info (12127): Elaborating entity "sram_test" for the top level hierarchy
 Info (12128): Elaborating entity "single_port_ram" for hierarchy "single_port_ram:instance_ram"
 Info (12128): Elaborating entity "group_debounce" for hierarchy "group_debounce:instance_debounce"
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "single_port_ram:instance_ram|ram_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
-        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTH_A set to 16
         Info (286033): Parameter WIDTHAD_A set to 8
         Info (286033): Parameter NUMWORDS_A set to 256
         Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
@@ -531,7 +531,7 @@ Info (19000): Inferred 1 megafunctions from design logic
 Info (12130): Elaborated megafunction instantiation "single_port_ram:instance_ram|altsyncram:ram_rtl_0"
 Info (12133): Instantiated megafunction "single_port_ram:instance_ram|altsyncram:ram_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
-    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTH_A" = "16"
     Info (12134): Parameter "WIDTHAD_A" = "8"
     Info (12134): Parameter "NUMWORDS_A" = "256"
     Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
@@ -539,23 +539,23 @@ Info (12133): Instantiated megafunction "single_port_ram:instance_ram|altsyncram
     Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_cf41.tdf
-    Info (12023): Found entity 1: altsyncram_cf41
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ef41.tdf
+    Info (12023): Found entity 1: altsyncram_ef41
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/johnj/Documents/Development/FPGA/FPGA-Projects/Projects/RAM/SRAM/sram_test/output_files/sram_test.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 278 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 37 input pins
-    Info (21059): Implemented 47 output pins
-    Info (21061): Implemented 162 logic cells
-    Info (21064): Implemented 32 RAM segments
+Info (21057): Implemented 214 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 21 input pins
+    Info (21059): Implemented 31 output pins
+    Info (21061): Implemented 146 logic cells
+    Info (21064): Implemented 16 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 787 megabytes
-    Info: Processing ended: Tue Sep 15 18:59:41 2015
+    Info: Peak virtual memory: 785 megabytes
+    Info: Processing ended: Wed Sep 16 21:15:03 2015
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Total CPU time (on all processors): 00:00:23
 
 
 +------------------------------------------+

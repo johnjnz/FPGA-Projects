@@ -20,7 +20,7 @@
 ## PROGRAM "Quartus II"
 ## VERSION "Version 15.0.2 Build 153 07/15/2015 SJ Web Edition"
 
-## DATE    "Tue Sep 08 16:35:23 2015"
+## DATE    "Fri Sep 18 20:54:32 2015"
 
 ##
 ## DEVICE  "EP4CE115F29C7"
@@ -39,7 +39,8 @@ set_time_format -unit ns -decimal_places 3
 # Create Clock
 #**************************************************************
 
-create_clock -name {s_spi_sck_i} -period 6.500 -waveform { 0.000 3.250 } [get_ports { s_spi_sck_i }]
+create_clock -name {s_spi_sck_i} -period 8.000 -waveform { 0.000 4.000 } [get_ports { s_spi_sck_i }]
+create_clock -name {clk50} -period 8.000 -waveform { 0.000 4.000 } [get_ports { clk50 }]
 
 
 #**************************************************************
@@ -62,6 +63,18 @@ set_clock_uncertainty -rise_from [get_clocks {s_spi_sck_i}] -rise_to [get_clocks
 set_clock_uncertainty -rise_from [get_clocks {s_spi_sck_i}] -fall_to [get_clocks {s_spi_sck_i}]  0.020  
 set_clock_uncertainty -fall_from [get_clocks {s_spi_sck_i}] -rise_to [get_clocks {s_spi_sck_i}]  0.020  
 set_clock_uncertainty -fall_from [get_clocks {s_spi_sck_i}] -fall_to [get_clocks {s_spi_sck_i}]  0.020  
+set_clock_uncertainty -rise_from [get_clocks {clk50}] -rise_to [get_clocks {clk50}]  0.020  
+set_clock_uncertainty -rise_from [get_clocks {clk50}] -fall_to [get_clocks {clk50}]  0.020  
+set_clock_uncertainty -rise_from [get_clocks {clk50}] -rise_to [get_clocks {s_spi_sck_i}]  0.030  
+set_clock_uncertainty -rise_from [get_clocks {clk50}] -fall_to [get_clocks {s_spi_sck_i}]  0.030  
+set_clock_uncertainty -fall_from [get_clocks {clk50}] -rise_to [get_clocks {clk50}]  0.020  
+set_clock_uncertainty -fall_from [get_clocks {clk50}] -fall_to [get_clocks {clk50}]  0.020  
+set_clock_uncertainty -fall_from [get_clocks {clk50}] -rise_to [get_clocks {s_spi_sck_i}]  0.030  
+set_clock_uncertainty -fall_from [get_clocks {clk50}] -fall_to [get_clocks {s_spi_sck_i}]  0.030  
+set_clock_uncertainty -rise_from [get_clocks {s_spi_sck_i}] -rise_to [get_clocks {clk50}]  0.030  
+set_clock_uncertainty -rise_from [get_clocks {s_spi_sck_i}] -fall_to [get_clocks {clk50}]  0.030  
+set_clock_uncertainty -fall_from [get_clocks {s_spi_sck_i}] -rise_to [get_clocks {clk50}]  0.030  
+set_clock_uncertainty -fall_from [get_clocks {s_spi_sck_i}] -fall_to [get_clocks {clk50}]  0.030  
 
 
 #**************************************************************

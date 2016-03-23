@@ -8,10 +8,17 @@ use work.SSD.all;
 
 entity SPI_Comms is
     Generic (   
-        N                   :       positive  := 32;                                    -- Serial word length
-        CPOL                :       std_logic := '0';                                    
-        CPHA                :       std_logic := '0';                                    
-        PREFETCH            :       positive  := 3  
+        CPOL                :       std_logic   := '0';                                    
+        CPHA                :       std_logic   := '0';                                    
+        PREFETCH            :       positive    := 3;
+
+        CLK_PERIOD_NS       :       positive    := 10;                                    -- 100 Mhz
+
+        DATA_WIDTH          :       positive    := 32;
+        ADDR_WIDTH          :       positive    := 12;
+        
+        NUM_KEYS            :       positive    := 4
+ 
         );                                  
     Port(
         clk50               : in    std_logic;
@@ -22,9 +29,15 @@ entity SPI_Comms is
         s_spi_miso_o        : out   std_logic;
  
         ssd_hex0            : out	std_logic_vector(6 downto 0)    := (others => '1');
+        ssd_hex1            : out	std_logic_vector(6 downto 0)    := (others => '1');
+        ssd_hex2            : out	std_logic_vector(6 downto 0)    := (others => '1');
+                
+        ssd_hex6            : out	std_logic_vector(6 downto 0)    := (others => '1');
+        ssd_hex7            : out	std_logic_vector(6 downto 0)    := (others => '1');
+
         leds                : out   std_logic_vector(25 downto 0)   := (others => '0');
         
-        reset_key           : in    std_logic;                                          -- assigned to KEY0 for reset
+        keys                : in    std_logic_vector(NUM_KEYS-1 downto 0);
         led_hb              : out   std_logic;                                          -- assigned to LEDG8 for Heartbeat
         
         lcd_e               : out   std_logic;
@@ -35,52 +48,13 @@ entity SPI_Comms is
         );
 end SPI_Comms;
 
-architecture Structural of SPI_Comms is
+architecture structural of SPI_Comms is
 
-    component spi_slave is
-    generic (    
-        N                   :       positive    := 32;  
-        CPOL                :       std_logic   := '0'; 
-        CPHA                :       std_logic   := '0'; 
-        PREFETCH            :       positive    := 3
-    );
-    port (  
-        clk_i               : IN    std_logic := 'X';  
-        spi_ssel_i          : IN    std_logic := 'X'; 
-        spi_sck_i           : IN    std_logic := 'X'; 
-        spi_mosi_i          : IN    std_logic := 'X';
-        spi_miso_o          : OUT   std_logic := 'X';
-        di_req_o            : OUT   std_logic;
-        di_i                : IN    std_logic_vector (N-1 downto 0) := (others => 'X'); 
-        wren_i              : IN    std_logic := 'X';                                   
-        wr_ack_o            : OUT   std_logic;                                       
-        do_valid_o          : OUT   std_logic;                                     
-        do_o                : OUT   std_logic_vector (N-1 downto 0)                     
-    );          
-    end component spi_slave;
-    
- 
-    component lcd16x2_ctrl is
-    generic (
-        CLK_PERIOD_NS       : positive := 20
-    );
-    port (
-        clk                 : in    std_logic;
-        rst                 : in    std_logic;
-        lcd_e               : out   std_logic;
-        lcd_rs              : out   std_logic;
-        lcd_rw              : out   std_logic;
-        lcd_db              : out   std_logic_vector(7 downto 4);
-        line1_buffer        : in    std_logic_vector(127 downto 0);  -- 16x8bit
-        line2_buffer        : in    std_logic_vector(127 downto 0)
-    ); 
-    end component lcd16x2_ctrl;
-    
 
     type SPI_STATE_T is (	
         SPI_IDLE,
-        LOAD_DATA,
-        SEND_DATA
+        SPI_LOAD,
+        SPI_SEND
     );
     
     type lcd_display_state_t is (
@@ -98,28 +72,35 @@ architecture Structural of SPI_Comms is
     signal lcd_curr_state   :       lcd_display_state_t := LCD_WAIT_MSG;
     signal lcd_next_state   :       lcd_display_state_t := LCD_WAIT_MSG;
     
-    signal s_di_i           :       std_logic_vector (N-1 downto 0) := (others => 'X');     
+    signal s_di_i           :       std_logic_vector (DATA_WIDTH-1 downto 0) := (others => 'X');     
     signal s_wren_i         :       std_logic := 'X';                                     
     signal s_di_req_o       :       std_logic;                                         
     signal s_do_valid_o     :       std_logic;
-    signal s_do_o           :       std_logic_vector (N-1 downto 0) := (others => '0');
-    signal valid_data       :       std_logic_vector (N-1 downto 0);
+    signal s_do_o           :       std_logic_vector (DATA_WIDTH-1 downto 0) := (others => '0');
+    signal last_data        :       std_logic_vector (DATA_WIDTH-1 downto 0);
 
     signal reset_n          :       std_logic;
     signal clk_1hz          :       std_logic;
 
-    -- component generics
-    constant CLK_PERIOD_NS  :       positive := 10;  -- 100 Mhz
- 
-    -- component ports
     signal line1_buffer     :       std_logic_vector(127 downto 0) := (others => '0');
     signal line2_buffer     :       std_logic_vector(127 downto 0) := (others => '0');
     
+    signal ram_address      :       natural range 0 to 2**ADDR_WIDTH-1;
+    signal ram_display      :       std_logic_vector(ADDR_WIDTH-1 downto 0);
+    signal ram_data_in      :       std_logic_vector(DATA_WIDTH-1 downto 0) := (others => '0');
+    signal ram_data_out     :       std_logic_vector(DATA_WIDTH-1 downto 0) := (others => '0');
+    signal write_en         :       std_logic;
+    
+    signal keys_status      :       std_logic_vector(NUM_KEYS-1 downto 0) := (others => 'X');
+    signal keys_debounced   :       std_logic_vector(NUM_KEYS-1 downto 0);
+    signal key_pressed      :       std_logic;
+    
+    signal temp             :       std_logic_vector(3 downto 0);
 begin
 
-    instance_spi_slave: spi_slave
+    instance_spi_slave: entity work.spi_slave
     generic map (
-        N               => N, 
+        N               => DATA_WIDTH, 
         CPOL            => CPOL, 
         CPHA            => CPHA, 
         PREFETCH        => PREFETCH
@@ -138,8 +119,7 @@ begin
     );
 
     
-     -- component instantiation
-    instance_lcd16x2: lcd16x2_ctrl
+    instance_lcd16x2: entity work.lcd16x2_ctrl
     generic map (
         CLK_PERIOD_NS   => CLK_PERIOD_NS
     )
@@ -154,8 +134,34 @@ begin
         line2_buffer    => line2_buffer
     );
  
+ 
+    instance_ram: entity work.single_port_ram
+    generic map (
+        DATA_WIDTH      => DATA_WIDTH,
+        ADDR_WIDTH      => ADDR_WIDTH
+    )
+    port map (
+        clk		        => clk50,
+        addr	        => ram_address,
+		data	        => ram_data_in,
+		we		        => write_en,
+		q		        => ram_data_out
+       
+    );
+
+    instance_debounce: entity work.group_debounce
+    port map
+    (  
+        clk         => clk50,
+        data_i      => keys,
+        data_o      => keys_debounced,
+        strb_o      => key_pressed                                             
+    );                      
+    
   
-    reset_n <= not reset_key;
+
+  
+    reset_n <= not keys_debounced(0);
     led_hb <= clk_1hz;
   
     --=============================================================================================
@@ -192,7 +198,21 @@ begin
         
     end process fsm_state;
  
+    
+    --=============================================================================================
+    --  Process playback
+    --=============================================================================================
+--    playback: process (clk50)
+--    begin
+--        if key_pressed = '0' and key_pressed = '1' then
+            
+        
+        
+--        end if;
+  
 
+--    end process playback;
+                      
  
     --=============================================================================================
     --  Process RX data
@@ -204,15 +224,46 @@ begin
         
             if reset_n then
                 ssd_hex0 <= (others => '1');
+                ssd_hex1 <= (others => '1');
+                ssd_hex2 <= (others => '1');
+                ssd_hex6 <= (others => '1');
+                ssd_hex7 <= (others => '1');
+                
+                ram_address <= 0;
+
                 leds <= (others => '0');
              
             elsif s_do_valid_o = '1' then
-      
-                SSD_decode(s_do_o(29 downto 26), ssd_hex0);
                 
-                leds(25 downto 0) <= s_do_o(25 downto 0);
-                led_cmd(5 downto 0) <= s_do_o(31 downto 26);
+                if s_do_o /= last_data then
+                    last_data <= s_do_o;
+               
+                    led_cmd(5 downto 0) <= s_do_o(31 downto 26);
+                    
+                    temp(3 downto 2) <= (others => '0');
+                    temp(1 downto 0) <= led_cmd(5 downto 4);
+                                        
+                    SSD_decode(led_cmd(3 downto 0), ssd_hex6);
+                    SSD_decode(temp, ssd_hex7);
 
+                    
+                    leds(25 downto 0) <= s_do_o(25 downto 0);
+                    led_cmd(5 downto 0) <= s_do_o(31 downto 26);
+                
+                        
+                    ram_data_in <= s_do_o;
+                    ram_address <= ram_address + 1;
+                    write_en <= '1';
+
+                    ram_display <=  std_logic_vector(to_unsigned(ram_address, ram_display'length));
+                    
+                    SSD_decode(ram_display(11 downto 8), ssd_hex2);
+                    SSD_decode(ram_display(7 downto 4), ssd_hex1);
+                    SSD_decode(ram_display(3 downto 0), ssd_hex0);
+                end if;
+            else
+                write_en <= '0';
+                    
             end if;
             
         end if;
@@ -235,12 +286,12 @@ begin
                     
                     if s_do_valid_o = '1' then
                         s_di_i <= s_do_o;
-                        spi_next_state <= SEND_DATA;
+                        spi_next_state <= SPI_SEND;
                     else
                         spi_next_state <= SPI_IDLE;
                     end if;
 
-                when SEND_DATA =>
+                when SPI_SEND =>
                     s_wren_i <= '1';
                     spi_next_state <= SPI_IDLE;
                     
@@ -401,5 +452,5 @@ begin
                  
 
         
-end Structural;
+end structural;
 

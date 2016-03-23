@@ -8,7 +8,7 @@ entity sram_test is
 
     generic (
         ADDR_WIDTH      : positive := 8;
-        DATA_WIDTH      : positive := 32;
+        DATA_WIDTH      : positive := 16;
         
         INPUTS          : positive := 4;                                                      
         PERIOD          : positive := 10000  
@@ -52,7 +52,7 @@ architecture rtl of sram_test is
     component single_port_ram is
 	generic 
 	(
-		DATA_WIDTH  : positive := 32;
+		DATA_WIDTH  : positive := 16;
 		ADDR_WIDTH  : positive := 8
 	);
 	port 
@@ -238,32 +238,4 @@ begin
    
  
     
-    
-    -- FSM
-    --  IDLE
-    --  READ
-    --  WRITE
-    --  INC ADDR
-    --  DEC ADDR
-    --  UPDATE SSD
-    
-    --  KEY0 INC ADDR
-    --  KEY1 DEC ADDR
-    --  KEY2 WRITE
-    --  KEY3 READ
-    
-    -- SWITCHES DATA to WRITE
-    
-    --  SSD
-    --      SSD0 - 3 DATA   
-    --      SSD4 - 5 ADDR
-    
-   
-  
-  
-    
-    
-    
-    
-	
 end architecture rtl;
